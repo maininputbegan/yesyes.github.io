@@ -42,7 +42,7 @@
           .shell{border-radius:24px;overflow:hidden;position:relative;background:rgba(10,10,20,.42);-webkit-backdrop-filter:blur(var(--wall-blur)) saturate(180%);backdrop-filter:blur(var(--wall-blur)) saturate(180%);border:1px solid rgba(200,200,255,.14);box-shadow:0 40px 100px rgba(0,0,0,.75),0 0 90px rgba(160,140,255,.14),inset 0 1px 0 rgba(255,255,255,.08)}
           .shellGlow{position:absolute;inset:-3px;border-radius:26px;z-index:-1;background:conic-gradient(from 0deg,transparent 0deg,#a99fff 60deg,transparent 120deg,transparent 180deg,#d8d4ff 240deg,transparent 300deg,transparent 360deg);filter:blur(20px);opacity:.5;will-change:transform;animation:spin 18s linear infinite;pointer-events:none}
           @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-          .top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 26px;flex-wrap:wrap;position:relative;border-bottom:1px solid rgba(200,200,255,.14)}
+          .top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 26px;flex-wrap:wrap;position:sticky;top:0;z-index:50;background:rgba(8,8,18,.75);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(200,200,255,.14)}
           .top::after{content:"";position:absolute;left:26px;right:26px;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,#a99fff,transparent);opacity:.6}
           h1{margin:0;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:19px;font-weight:700;letter-spacing:-.01em}
           .kao{color:#c9bfff;white-space:nowrap;font-weight:600;text-shadow:0 0 14px #a99fff,0 0 34px rgba(160,140,255,.5)}
@@ -62,7 +62,13 @@
           .count b{color:#ffffff;font-weight:600}
           .iconbtn{width:40px;height:40px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(200,200,255,.16);border-radius:12px;background:rgba(10,10,20,.55);color:#c9bfff;cursor:pointer;font-size:16px;transition:all .2s}
           .iconbtn:hover{border-color:rgba(200,180,255,.6);color:#fff;box-shadow:0 8px 22px rgba(160,140,255,.4);transform:translate3d(0,-1px,0)}
-          .groups{display:flex;flex-direction:column;gap:14px;padding:18px}
+          .tabs{display:flex;gap:6px;padding:14px 18px 0;flex-wrap:wrap}
+          .tab{padding:10px 18px;border:1px solid rgba(200,200,255,.16);border-radius:11px 11px 0 0;background:rgba(10,10,20,.5);color:rgba(220,220,240,.7);font:600 11px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:all .2s;border-bottom:none}
+          .tab:hover{color:#fff;border-color:rgba(200,180,255,.5)}
+          .tab.active{background:rgba(24,24,46,.7);color:#fff;border-color:rgba(200,180,255,.55);box-shadow:0 -6px 20px rgba(160,140,255,.25)}
+          .panel{display:none}
+          .panel.on{display:block}
+          .groups{display:flex;flex-direction:column;gap:14px;padding:16px 18px 18px}
           .group{border:1px solid rgba(200,200,255,.14);border-radius:18px;background:rgba(14,14,26,.5);-webkit-backdrop-filter:blur(14px) saturate(180%);backdrop-filter:blur(14px) saturate(180%);overflow:hidden;transition:border-color .28s,box-shadow .28s,background .28s;animation:groupIn .55s ease-out both;animation-delay:calc(var(--g,0) * 25ms);position:relative}
           .group::after{content:"";position:absolute;left:6%;right:6%;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);opacity:.55;pointer-events:none}
           @keyframes groupIn{from{opacity:0;transform:translate3d(0,10px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
@@ -95,6 +101,24 @@
           .empty{display:none;padding:60px 20px;text-align:center;color:rgba(220,220,240,.7)}
           .empty.show{display:block}
           .empty .face{display:block;font-size:36px;color:#c9bfff;margin-bottom:12px;opacity:.85;text-shadow:0 0 24px #a99fff}
+          .gameHero{padding:26px 24px 32px;text-align:center}
+          .gameHero h2{margin:0 0 10px;font:700 24px/1.2 var(--mono);background:linear-gradient(92deg,#e8e5ff,#ffffff 45%,#a99fff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em}
+          .gameHero p{margin:0 auto 22px;max-width:520px;color:rgba(220,220,240,.7);font-size:13px;line-height:1.6}
+          .gameGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px;padding:0 18px 20px}
+          .gameCard{border:1px solid rgba(200,200,255,.16);border-radius:16px;background:rgba(14,14,26,.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);overflow:hidden;transition:all .28s;position:relative;cursor:pointer}
+          .gameCard:hover{border-color:rgba(200,180,255,.55);transform:translate3d(0,-2px,0);box-shadow:0 16px 44px rgba(160,140,255,.35)}
+          .gameCard .cover{aspect-ratio:16/9;background-size:cover;background-position:center;background-color:rgba(0,0,0,.4);position:relative}
+          .gameCard .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.75))}
+          .gameCard .info{padding:14px 16px}
+          .gameCard .name{font:700 14px/1.3 var(--mono);color:#fff;margin-bottom:4px}
+          .gameCard .desc{font-size:11.5px;color:rgba(200,200,230,.65);line-height:1.45}
+          .gameViewer{position:fixed;inset:0;z-index:200;background:#04040a;display:none;flex-direction:column}
+          .gameViewer.on{display:flex;animation:enter .3s ease-out both}
+          .gameViewer header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;background:rgba(10,10,20,.9);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,200,255,.16)}
+          .gameViewer .gTitle{font:700 14px/1 var(--mono);color:#fff;letter-spacing:.02em}
+          .gameViewer iframe{flex:1;width:100%;border:0;background:#000}
+          .gameViewer .gBtn{padding:9px 14px;border:1px solid rgba(200,200,255,.2);border-radius:10px;background:rgba(12,12,26,.7);color:#c9bfff;font:600 11px/1 var(--mono);letter-spacing:.03em;cursor:pointer;transition:all .2s}
+          .gameViewer .gBtn:hover{border-color:rgba(200,180,255,.6);color:#fff;background:rgba(160,140,255,.16)}
           .toast,.sheet{position:fixed;left:50%;bottom:26px;z-index:60;border:1px solid rgba(200,180,255,.6);background:rgba(12,12,26,.96);-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%)}
           .toast{transform:translate3d(-50%,14px,0) scale(.96);opacity:0;pointer-events:none;padding:12px 20px;border-radius:999px;font-size:12px;color:#ffffff;transition:transform .28s ease-out,opacity .28s ease-out}
           .toast.show{opacity:1;transform:translate3d(-50%,0,0) scale(1)}
@@ -102,7 +126,7 @@
           .sheet.show{display:flex}
           .sheet input{flex:1;min-width:0;padding:11px 12px;border:1px solid rgba(200,200,255,.18);border-radius:11px;outline:0;background:rgba(0,0,0,.4);color:#f0f0fa;font:12px var(--mono)}
           .sheet span{color:rgba(220,220,240,.7);font-size:11px;white-space:nowrap}
-          .settings{position:fixed;top:20px;right:20px;z-index:70;width:400px;max-width:calc(100vw - 32px);max-height:calc(100vh - 40px);overflow-y:auto;border-radius:22px;padding:20px;background:rgba(10,10,20,.85);-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(200,180,255,.4);box-shadow:0 40px 100px rgba(0,0,0,.8),0 0 60px rgba(160,140,255,.28);transform-origin:top right;transform:scale(.92) translate3d(12px,-8px,0);opacity:0;pointer-events:none;transition:transform .28s cubic-bezier(.34,1.56,.64,1),opacity .22s ease}
+          .settings{position:fixed;top:20px;right:20px;z-index:70;width:400px;max-width:calc(100vw - 32px);max-height:calc(100vh - 40px);overflow-y:auto;border-radius:22px;padding:20px;background:rgba(10,10,20,.9);-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(200,180,255,.4);box-shadow:0 40px 100px rgba(0,0,0,.8),0 0 60px rgba(160,140,255,.28);transform-origin:top right;transform:scale(.92) translate3d(12px,-8px,0);opacity:0;pointer-events:none;transition:transform .28s cubic-bezier(.34,1.56,.64,1),opacity .22s ease}
           .settings.open{transform:scale(1) translate3d(0,0,0);opacity:1;pointer-events:auto}
           .settings h2{margin:0 0 16px;font:700 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#c9bfff;display:flex;align-items:center;gap:8px}
           .settings h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(200,180,255,.6),transparent)}
@@ -121,7 +145,7 @@
           .set-toggle[aria-checked="true"] .switch::after{transform:translate3d(16px,0,0);background:#ffffff;box-shadow:0 0 12px #c9bfff}
           .set-btn{width:100%;padding:12px 14px;border-radius:13px;cursor:pointer;font:600 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(200,180,255,.5);background:linear-gradient(180deg,rgba(160,140,255,.28),transparent);color:#ffffff;transition:all .22s}
           .set-btn:hover{background:linear-gradient(180deg,rgba(160,140,255,.4),rgba(160,140,255,.12));box-shadow:0 10px 26px rgba(160,140,255,.4)}
-          .swatches{display:flex;gap:8px;padding:6px 8px;border:1px solid rgba(200,200,255,.16);border-radius:12px;background:rgba(14,14,26,.6);align-self:flex-start}
+          .swatches{display:flex;gap:8px;padding:6px 8px;border:1px solid rgba(200,200,255,.16);border-radius:12px;background:rgba(14,14,26,.6);align-self:flex-start;flex-wrap:wrap}
           .sw{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.2);cursor:pointer;padding:0;transition:transform .2s}
           .sw:hover{transform:scale(1.12)}
           .sw[data-s="purple"]{background:radial-gradient(circle at 30% 30%,#d0b8ff,#7c3aed)}
@@ -129,6 +153,7 @@
           .sw[data-s="mono"]{background:radial-gradient(circle at 30% 30%,#f5f5f5,#3a3a3a)}
           .sw[data-s="red"]{background:radial-gradient(circle at 30% 30%,#fcc6c6,#b91c1c)}
           .sw[data-s="green"]{background:radial-gradient(circle at 30% 30%,#bbf7d0,#16a34a)}
+          .sw[data-s="cyan"]{background:radial-gradient(circle at 30% 30%,#a5f3fc,#0891b2)}
           .sw[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 18px #a99fff}
           .set-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
           .wallbtn{aspect-ratio:1/1;border-radius:12px;border:2px solid rgba(200,200,255,.16);background-size:cover;background-position:center;background-color:rgba(0,0,0,.5);cursor:pointer;position:relative;overflow:hidden;transition:all .22s;padding:0}
@@ -137,6 +162,8 @@
           .wallbtn::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
           .wallbtn span{position:absolute;left:0;right:0;bottom:4px;z-index:1;text-align:center;font:600 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff}
           .wallbtn[data-w="0"]{background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 6px,rgba(255,255,255,.1) 6px 12px)}
+          body[data-t="cyan"]{--acc:#a5f3fc;--acc2:#cffafe;--glow-a:rgba(6,182,212,.4)}
+          body[data-t="green"]{--acc:#bbf7d0;--acc2:#dcfce7;--glow-a:rgba(16,185,129,.4)}
           @media (max-width:820px){body{padding:16px 12px 80px}.top{flex-direction:column;align-items:stretch;padding:18px 18px}.tools{flex-direction:row;flex-wrap:wrap;gap:10px}.find{min-width:0;flex:1}.gb{grid-template-columns:1fr}h1{font-size:17px}.settings{left:14px;right:14px;width:auto;top:auto;bottom:16px;max-height:72vh}}
           @media (prefers-reduced-motion:reduce){.cur,.hname,.shellGlow,.wallLayer .wallImg{animation:none}}
         ]]></style>
@@ -161,16 +188,41 @@
               <button id="settingsOpen" class="iconbtn" type="button" title="Settings">⚙</button>
             </div>
           </div>
-          <div id="groups" class="groups"></div>
-          <div id="empty" class="empty"><span class="face">(ToT)</span>no matches</div>
+          <div class="tabs">
+            <button class="tab active" id="tabLinks" type="button">Links</button>
+            <button class="tab" id="tabGames" type="button">Games</button>
+          </div>
+          <div class="panel on" id="panelLinks">
+            <div id="groups" class="groups"></div>
+            <div id="empty" class="empty"><span class="face">(ToT)</span>no matches</div>
+          </div>
+          <div class="panel" id="panelGames">
+            <div class="gameHero">
+              <h2>arcade</h2>
+              <p>hundreds of games served from gn-math. click any card to load it inline. open in new tab if it doesn't respond.</p>
+            </div>
+            <div class="gameGrid" id="gameGrid"></div>
+          </div>
         </div></div>
 
+        <div class="gameViewer" id="gameViewer">
+          <header>
+            <div class="gTitle" id="gTitle">game</div>
+            <div style="display:flex;gap:8px">
+              <button class="gBtn" id="gNew" type="button">new tab</button>
+              <button class="gBtn" id="gFull" type="button">fullscreen</button>
+              <button class="gBtn" id="gClose" type="button">close</button>
+            </div>
+          </header>
+          <iframe id="gameFrame" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+
         <div id="toast" class="toast"></div>
-        <div id="sheet" class="sheet"><span>copy manually</span><input id="sheetUrl" readonly value=""/><button id="sheetX" type="button" class="btn">close</button></div>
+        <div id="sheet" class="sheet"><span>copy manually</span><input id="sheetUrl" readonly="readonly" value=""/><button id="sheetX" type="button" class="btn">close</button></div>
 
         <div id="settings" class="settings">
           <h2>⚙ settings</h2>
-          <div class="setting-row"><label>theme <b id="themeLabel">purple</b></label><div class="swatches"><button class="sw" data-s="purple" aria-pressed="true" type="button"></button><button class="sw" data-s="blue" aria-pressed="false" type="button"></button><button class="sw" data-s="mono" aria-pressed="false" type="button"></button><button class="sw" data-s="red" aria-pressed="false" type="button"></button><button class="sw" data-s="green" aria-pressed="false" type="button"></button></div></div>
+          <div class="setting-row"><label>theme <b id="themeLabel">purple</b></label><div class="swatches"><button class="sw" data-s="purple" aria-pressed="true" type="button"></button><button class="sw" data-s="blue" aria-pressed="false" type="button"></button><button class="sw" data-s="mono" aria-pressed="false" type="button"></button><button class="sw" data-s="red" aria-pressed="false" type="button"></button><button class="sw" data-s="green" aria-pressed="false" type="button"></button><button class="sw" data-s="cyan" aria-pressed="false" type="button"></button></div></div>
           <div class="setting-row"><label>wallpaper</label><div class="set-grid" id="wallGrid"></div></div>
           <div class="setting-row"><label>brightness <b id="dimVal">55%</b></label><input type="range" id="wallDim" min="10" max="100" value="55"/></div>
           <div class="setting-row"><label>frost blur <b id="blurVal">26px</b></label><input type="range" id="wallBlurRange" min="0" max="40" value="26"/></div>
@@ -214,10 +266,13 @@
               { e:"\u2637", n:"B-CDN TEST SET", l:["https://james-gonzalez-21.b-cdn.net","https://daniel-sanchez-82.b-cdn.net","https://jacob-thomas-19.b-cdn.net","https://lucas-jones-14.b-cdn.net","https://harper-hernandez-10.b-cdn.net","https://evelyn-davis-19.b-cdn.net","https://ethan-hernandez-14.b-cdn.net","https://sofia-gonzalez-92.b-cdn.net","https://james-brown-87.b-cdn.net","https://james-gonzalez-20.b-cdn.net","https://storage.googleapis.com/logan223/duckmath.html"]},
               { e:"\u2318", n:"P5JS + GSCRIPT", l:["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxmo-l8H5tXzYfuh8wGzjiVkVOqQZoXDy-mbfMAlxyw-i2Wxh5VgjKGFh8YaEZW-CgCyg/exec","https://assets.editor.p5js.org/69f34707e1b7f4a3a3e5b6d1/6e528b37-2c24-457c-b1de-8b0964eacd2f.svg"]}
             ];
+            var GAMES = [
+              { name:"gn-math", desc:"full library · hundreds of games", url:"https://gn-math.dev", cover:"https://cdn.jsdelivr.net/gh/freebuisness/covers@main/1.png" }
+            ];
             var WALLS = [
               {label:"none", url:""},
               {label:"anime", url:"https://i.ibb.co/tTrhxzyS/uwp5095159.avif"},
-              {label:"stadium", url:"https://i.ibb.co/NgzZm4FZ/uwp4376378.avif"},
+              {label:"stadium", url:"https://i.ibb.co/NjZzm4FZ/uwp4376378.avif"},
               {label:"lambo", url:"https://i.ibb.co/0yVFsHPq/uwp5095504.avif"},
               {label:"night", url:"https://i.ibb.co/j11Q4rG/wp14253291.jpg"}
             ];
@@ -259,6 +314,28 @@
               groups.appendChild(d);
             });
 
+            var grid=$("gameGrid");
+            GAMES.forEach(function(g){
+              var card=mk("div",{class:"gameCard"});
+              var cover=mk("div",{class:"cover"}); cover.style.backgroundImage="url('"+g.cover+"')";
+              var info=mk("div",{class:"info"});
+              info.appendChild(mk("div",{class:"name"},g.name));
+              info.appendChild(mk("div",{class:"desc"},g.desc));
+              card.appendChild(cover); card.appendChild(info);
+              card.addEventListener("click",function(){ openGame(g); });
+              grid.appendChild(card);
+            });
+
+            var viewer=$("gameViewer"), frame=$("gameFrame");
+            function openGame(g){
+              $("gTitle").textContent=g.name;
+              frame.src=g.url;
+              viewer.classList.add("on");
+            }
+            $("gClose").addEventListener("click",function(){ viewer.classList.remove("on"); frame.src="about:blank"; });
+            $("gNew").addEventListener("click",function(){ window.open(frame.src,"_blank","noopener"); });
+            $("gFull").addEventListener("click",function(){ try{ frame.requestFullscreen(); }catch(e){} });
+
             function update(){
               var q=(search.value||"").trim().toLowerCase(); var g=0,l=0;
               var all=groups.querySelectorAll(".group");
@@ -283,8 +360,12 @@
             search.addEventListener("input",update);
             document.addEventListener("keydown",function(e){
               if(e.key==="/"&&document.activeElement!==search){ e.preventDefault(); search.focus(); search.select(); }
-              else if(e.key==="Escape"){ if(sheet) sheet.classList.remove("show"); if(search.value){ search.value=""; update(); } }
+              else if(e.key==="Escape"){ if(viewer.classList.contains("on")) viewer.classList.remove("on"); else { if(sheet) sheet.classList.remove("show"); if($("settings")) $("settings").classList.remove("open"); if(search.value){ search.value=""; update(); } } }
             });
+
+            var tabLinks=$("tabLinks"), tabGames=$("tabGames"), panelLinks=$("panelLinks"), panelGames=$("panelGames");
+            tabLinks.addEventListener("click",function(){ tabLinks.classList.add("active"); tabGames.classList.remove("active"); panelLinks.classList.add("on"); panelGames.classList.remove("on"); });
+            tabGames.addEventListener("click",function(){ tabGames.classList.add("active"); tabLinks.classList.remove("active"); panelGames.classList.add("on"); panelLinks.classList.remove("on"); });
 
             var swatches=document.querySelectorAll(".sw");
             function setTheme(t){ document.body.setAttribute("data-t",t); for(var i=0;i<swatches.length;i++){ swatches[i].setAttribute("aria-pressed", swatches[i].getAttribute("data-s")===t?"true":"false"); } var tl=$("themeLabel"); if(tl) tl.textContent=t; try{ localStorage.setItem("pi-theme",t); }catch(e){} }
