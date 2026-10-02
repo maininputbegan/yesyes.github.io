@@ -1,414 +1,231 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" width="100%" height="100%" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid meet">
-<foreignObject width="100%" height="100%" style="overflow:visible">
+<foreignObject width="100%" height="100%">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 <script>(function(){var XHTML="http://www.w3.org/1999/xhtml";var root=document.querySelector("foreignObject").firstElementChild;var oce=document.createElement.bind(document);var ocens=document.createElementNS.bind(document);Object.defineProperty(document,"head",{get:function(){return root.querySelector("head")},configurable:true});Object.defineProperty(document,"body",{get:function(){return root.querySelector("body")},configurable:true});Object.defineProperty(document,"documentElement",{get:function(){return root},configurable:true});document.createElement=function(t,o){if(typeof t==="string"){return ocens(XHTML,t,o)}return oce(t,o)};document.createElementNS=function(n,q,o){if(n==null||n===XHTML){return ocens(XHTML,q,o)}return ocens(n,q,o)};})();</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Science Packet — Chapter 1 Review</title>
+<title>Science Packet</title>
 <style><![CDATA[
-html,body{margin:0;width:100%;height:100%;overflow:hidden}
-foreignObject{overflow:visible}
+:root{--bg:#0c0e14;--card:#151922;--hover:#1c2230;--bd:#252b3a;--txt:#e8eaf0;--dim:#8b92a8;--mut:#5c6478;--ac:#6366f1;--ac2:#818cf8;--gr:#10b981;--sh:0 8px 28px rgba(0,0,0,.45)}
+[data-th=light]{--bg:#f4f6fb;--card:#fff;--hover:#eef1f8;--bd:#dce1ec;--txt:#151a28;--dim:#5a6478;--mut:#8a93a8;--ac:#4f46e5;--ac2:#4338ca;--gr:#059669;--sh:0 8px 28px rgba(0,0,0,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;min-height:100%;width:100%}
+body{background-image:radial-gradient(ellipse at 20% 0%,rgba(99,102,241,.12),transparent 55%),radial-gradient(ellipse at 85% 100%,rgba(16,185,129,.07),transparent 50%)}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 16px 100px}
+.head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;margin-bottom:20px;background:var(--card);border:1px solid var(--bd);border-radius:12px;box-shadow:var(--sh);gap:12px;flex-wrap:wrap}
+.hi{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--ac),#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.ht{flex:1;min-width:160px}
+.ht h1{font-size:15px;font-weight:650;margin-bottom:1px}
+.ht .m{font-size:11px;color:var(--dim)}
+.bt{width:34px;height:34px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--dim);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px}
+.bt:hover{border-color:var(--ac);color:var(--ac2)}
+.pn{display:none}.pn.on{display:block}
+.nt{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:22px 24px;box-shadow:var(--sh);line-height:1.7}
+.nt h2{font-size:17px;font-weight:700;margin:20px 0 8px;color:var(--txt);padding-left:11px;position:relative}
+.nt h2:first-child{margin-top:0}
+.nt h2::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:3px;background:var(--ac);border-radius:2px}
+.nt p{font-size:13.5px;color:var(--dim);margin-bottom:9px}
+.nt ul,.nt ol{margin:6px 0 12px 18px;font-size:13.5px;color:var(--dim)}
+.nt li{margin-bottom:4px}
+.nt strong{color:var(--txt)}
+.nt code{background:rgba(99,102,241,.12);border:1px solid var(--bd);padding:1px 5px;border-radius:4px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--ac2)}
+.nt table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.nt th{text-align:left;padding:8px 10px;background:rgba(99,102,241,.08);border-bottom:1px solid var(--bd);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--txt)}
+.nt td{padding:7px 10px;border-bottom:1px solid var(--bd);color:var(--dim)}
+.srch{margin-bottom:16px;padding:11px 14px;background:var(--card);border:1px solid var(--bd);border-radius:10px;box-shadow:var(--sh)}
+.srch input{width:100%;background:transparent;border:none;outline:none;color:var(--txt);font-size:14px;font-family:inherit}
+.srch input::placeholder{color:var(--mut)}
+.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.gp{background:var(--card);border:1px solid var(--bd);border-radius:11px;overflow:hidden;transition:transform .15s ease,border-color .15s ease}
+.gp:hover{transform:translateY(-2px);border-color:var(--ac)}
+.gp.hide{display:none}
+.gh{display:flex;align-items:center;gap:9px;padding:12px 13px;cursor:pointer;user-select:none;border-bottom:1px solid var(--bd)}
+.ge{font-size:16px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:var(--bg);border-radius:7px;flex-shrink:0}
+.gn{flex:1;font-weight:650;font-size:12.5px;color:var(--txt)}
+.gc{font-size:10px;color:var(--ac2);padding:2px 7px;background:rgba(99,102,241,.12);border-radius:20px;font-family:ui-monospace,monospace}
+.gv{color:var(--mut);font-size:11px;transition:transform .2s ease}
+.gp.col .gv{transform:rotate(-90deg)}
+.gp.col .gb{display:none}
+.gb{padding:5px}
+.lk{display:flex;align-items:center;gap:7px;padding:7px 9px;border-radius:6px;color:var(--dim);text-decoration:none;font-size:12px;font-family:ui-monospace,Menlo,monospace;transition:all .13s ease}
+.lk:hover{background:var(--hover);color:var(--ac2);padding-left:12px}
+.lk::before{content:"›";color:var(--mut);font-family:sans-serif;font-size:14px}
+.lt{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lc{opacity:.3;width:22px;height:22px;border-radius:5px;border:1px solid var(--bd);background:var(--bg);color:var(--dim);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+.lk:hover .lc{opacity:1}
+.lc.ok{border-color:var(--gr);color:var(--gr)}
+.nr{text-align:center;padding:40px 12px;color:var(--mut);font-size:13px;display:none}
+.nr.on{display:block}
+.fn{margin-top:24px;padding:14px;text-align:center;font-size:11px;color:var(--mut);border-top:1px solid var(--bd)}
+.to{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--card);border:1px solid var(--gr);color:var(--gr);padding:8px 16px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:var(--sh);opacity:0;z-index:9999;pointer-events:none;transition:all .22s ease}
+.to.on{transform:translateX(-50%) translateY(0);opacity:1}
+.sb{position:fixed;bottom:12px;left:12px;width:28px;height:28px;border-radius:50%;z-index:9998;cursor:pointer;background:rgba(99,102,241,.4);display:flex;align-items:center;justify-content:center;font-size:14px;opacity:.35;transition:all .18s ease;user-select:none;border:1px solid rgba(99,102,241,.35);color:#fff;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.sb:hover,.sb.on{opacity:1;background:var(--ac);transform:scale(1.08)}
+@media(max-width:600px){.wrap{padding:14px 10px 90px}.nt{padding:16px}.gr{grid-template-columns:1fr}.sb{bottom:8px;left:8px}}
 ]]></style>
 </head>
-<body style="background:#0b0a12">
-<div id="app-root"></div>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div class="hi">🔬</div>
+    <div class="ht">
+      <h1>Science Packet — Chapter 1</h1>
+      <div class="m">3rd Period · Room 221 · Mrs. C</div>
+    </div>
+    <button class="bt" id="themeBtn" type="button">🌙</button>
+  </div>
+
+  <div class="pn on" id="panelNotes">
+    <div class="nt">
+      <h2>What Is Science?</h2>
+      <p>Science is the systematic study of the natural world. It relies on observation, experimentation, and evidence — not opinions.</p>
+      <p>Three main branches:</p>
+      <ul>
+        <li><strong>Life Science</strong> — living things (biology)</li>
+        <li><strong>Physical Science</strong> — matter and energy (chemistry + physics)</li>
+        <li><strong>Earth Science</strong> — Earth and space</li>
+      </ul>
+      <h2>Scientific Method</h2>
+      <ol>
+        <li>Ask a question</li>
+        <li>Research what is already known</li>
+        <li>Form a testable hypothesis (<code>If… then… because…</code>)</li>
+        <li>Design and run a controlled experiment</li>
+        <li>Collect and record data</li>
+        <li>Analyze the data</li>
+        <li>Draw a conclusion</li>
+        <li>Share the results</li>
+      </ol>
+      <h2>Variables</h2>
+      <ul>
+        <li><strong>Independent Variable</strong> — what you change on purpose</li>
+        <li><strong>Dependent Variable</strong> — what you measure</li>
+        <li><strong>Constants</strong> — what stays the same</li>
+      </ul>
+      <p>The control group does not receive the treatment so you have something to compare against.</p>
+      <h2>Data Types</h2>
+      <ul>
+        <li><strong>Qualitative</strong> — descriptions using the senses</li>
+        <li><strong>Quantitative</strong> — numbers and measurements</li>
+      </ul>
+      <h2>Key Vocabulary</h2>
+      <table>
+        <tr><th>Term</th><th>Definition</th></tr>
+        <tr><td>Hypothesis</td><td>Testable prediction</td></tr>
+        <tr><td>Independent Variable</td><td>What the scientist changes</td></tr>
+        <tr><td>Dependent Variable</td><td>What is measured</td></tr>
+        <tr><td>Control Group</td><td>Group without the treatment</td></tr>
+        <tr><td>Theory</td><td>Well-supported explanation</td></tr>
+        <tr><td>Law</td><td>Description of a natural pattern</td></tr>
+      </table>
+      <p style="margin-top:16px;font-size:12px;color:var(--mut);font-style:italic">Tap the small button in the bottom-left corner for the reference library.</p>
+    </div>
+  </div>
+
+  <div class="pn" id="panelVault">
+    <div class="srch"><input id="searchInput" type="text" placeholder="Search groups or links…" autocomplete="off" spellcheck="false"/></div>
+    <div class="gr" id="grid"></div>
+    <div class="nr" id="noResults">no results</div>
+    <div class="fn">End of packet</div>
+  </div>
+</div>
+
+<div class="to" id="toast">copied</div>
+<div class="sb" id="secretBtn">😏</div>
 
 <script><![CDATA[
 (function(){
-  var CSS = ""
-  + ":root{"
-  + "--bg:#0b0a12;"
-  + "--bg-g1:rgba(120,80,200,.08);"
-  + "--bg-g2:rgba(30,200,150,.05);"
-  + "--card:rgba(24,22,36,.82);"
-  + "--card-s:#171522;"
-  + "--card-h:rgba(34,30,52,.9);"
-  + "--bd:rgba(139,92,246,.14);"
-  + "--bd-hi:rgba(139,92,246,.5);"
-  + "--bd-in:rgba(255,255,255,.05);"
-  + "--txt:#f2f0ff;"
-  + "--dim:#a8a4c0;"
-  + "--mut:#6b6884;"
-  + "--faint:#3f3d54;"
-  + "--ac:#8b5cf6;"
-  + "--ac2:#a78bfa;"
-  + "--ac3:#c4b5fd;"
-  + "--teal:#14b8a6;"
-  + "--teal2:#5eead4;"
-  + "--amber:#f59e0b;"
-  + "--mag:#d946ef;"
-  + "--gr:#10b981;"
-  + "--sh-md:0 12px 40px rgba(0,0,0,.5);"
-  + "--gl:0 0 0 1px rgba(139,92,246,.35),0 0 36px rgba(139,92,246,.2),inset 0 1px 0 rgba(255,255,255,.06);"
-  + "--ease:cubic-bezier(.4,0,.2,1);"
-  + "--spring:cubic-bezier(.34,1.56,.64,1);"
-  + "}"
-  + "[data-th=light]{"
-  + "--bg:#f4f2fb;--bg-g1:rgba(120,80,200,.06);--bg-g2:rgba(30,200,150,.04);"
-  + "--card:rgba(255,255,255,.9);--card-s:#fff;--card-h:rgba(246,244,255,.95);"
-  + "--bd:rgba(60,40,120,.12);--bd-hi:rgba(124,58,237,.45);--bd-in:rgba(255,255,255,.9);"
-  + "--txt:#141026;--dim:#5a5478;--mut:#8b85a4;--faint:#c9c4de;"
-  + "--ac:#7c3aed;--ac2:#6d28d9;--ac3:#5b21b6;--teal:#0d9488;--teal2:#14b8a6;"
-  + "--amber:#d97706;--mag:#c026d3;--gr:#059669;"
-  + "--sh-md:0 12px 40px rgba(40,20,80,.1);"
-  + "--gl:0 0 0 1px rgba(124,58,237,.3),0 0 28px rgba(124,58,237,.18),inset 0 1px 0 rgba(255,255,255,.85);"
-  + "}"
-  + "*{margin:0;padding:0;box-sizing:border-box}"
-  + "::selection{background:rgba(139,92,246,.35);color:var(--txt)}"
-  + "::-webkit-scrollbar{width:9px;height:9px}"
-  + "::-webkit-scrollbar-track{background:transparent}"
-  + "::-webkit-scrollbar-thumb{background:rgba(139,92,246,.3);border-radius:6px;border:2px solid transparent;background-clip:content-box}"
-  + "::-webkit-scrollbar-thumb:hover{background:rgba(139,92,246,.55);background-clip:content-box}"
-  + "html,body{background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;letter-spacing:.005em;min-height:100%;-webkit-font-smoothing:antialiased}"
-  + "body{background-image:radial-gradient(circle at 12% 0%,var(--bg-g1),transparent 48%),radial-gradient(circle at 88% 100%,var(--bg-g2),transparent 48%);background-attachment:fixed}"
-  + ".wrap{max-width:1080px;margin:0 auto;padding:32px 22px 110px;position:relative;z-index:2}"
-  + ".head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;margin-bottom:24px;gap:16px;flex-wrap:wrap;background:var(--card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--bd);border-radius:20px;box-shadow:var(--sh-md),inset 0 1px 0 var(--bd-in);position:relative;overflow:hidden}"
-  + ".head::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.4;background:radial-gradient(500px circle at 18% 0%,rgba(139,92,246,.12),transparent 45%)}"
-  + ".hi{width:46px;height:46px;border-radius:13px;flex-shrink:0;background:linear-gradient(135deg,var(--ac),var(--mag));display:flex;align-items:center;justify-content:center;font-size:21px;box-shadow:0 8px 24px rgba(139,92,246,.4),inset 0 1px 0 rgba(255,255,255,.2);position:relative;z-index:1}"
-  + ".ht{flex:1;min-width:210px;position:relative;z-index:1}"
-  + ".ht h1{font-family:'Instrument Serif',Georgia,serif;font-size:22px;font-weight:400;letter-spacing:-.02em;margin-bottom:3px;background:linear-gradient(135deg,var(--txt) 0%,var(--ac3) 55%,var(--ac) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2}"
-  + ".ht .m{font-size:11px;color:var(--dim);display:flex;gap:11px;flex-wrap:wrap;letter-spacing:.07em;text-transform:uppercase;font-weight:500}"
-  + ".ht .m span+span::before{content:'\\00b7';color:var(--mut);margin-right:11px;font-weight:400}"
-  + ".bt{width:40px;height:40px;border-radius:11px;border:1px solid var(--bd);background:var(--card-s);color:var(--dim);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:15px;transition:all .22s var(--ease);position:relative;z-index:1}"
-  + ".bt:hover{border-color:var(--bd-hi);color:var(--ac2);box-shadow:var(--gl);transform:translateY(-1px)}"
-  + ".bt:focus-visible{outline:2px solid var(--ac2);outline-offset:2px}"
-  + ".pn{display:none}.pn.on{display:block;animation:panelIn .38s var(--ease) both}"
-  + "@keyframes panelIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}"
-  + ".nt{background:var(--card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--bd);border-radius:20px;padding:36px 42px;box-shadow:var(--sh-md),inset 0 1px 0 var(--bd-in);line-height:1.78;position:relative}"
-  + ".nt::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(139,92,246,.45),rgba(20,184,166,.3),transparent)}"
-  + ".nt h2{font-family:'Instrument Serif',Georgia,serif;font-size:24px;font-weight:400;letter-spacing:-.02em;margin:32px 0 14px;color:var(--txt);position:relative;padding-left:16px;line-height:1.25}"
-  + ".nt h2:first-child{margin-top:0}"
-  + ".nt h2::before{content:'';position:absolute;left:0;top:5px;bottom:5px;width:3px;background:linear-gradient(180deg,var(--ac),var(--teal));border-radius:3px;box-shadow:0 0 10px rgba(139,92,246,.45)}"
-  + ".nt p{font-size:14.5px;color:var(--dim);margin-bottom:14px}"
-  + ".nt ul,.nt ol{margin:10px 0 16px 24px;font-size:14.5px;color:var(--dim)}"
-  + ".nt li{margin-bottom:7px}"
-  + ".nt li::marker{color:var(--ac2)}"
-  + ".nt strong{color:var(--txt);font-weight:600}"
-  + ".nt code{background:rgba(139,92,246,.1);border:1px solid var(--bd);padding:2px 7px;border-radius:5px;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--ac3)}"
-  + ".nt bq{display:block;border-left:3px solid var(--ac);padding:18px 22px;margin:18px 0;background:linear-gradient(90deg,rgba(139,92,246,.1),rgba(20,184,166,.03) 60%,transparent);border-radius:0 12px 12px 0;font-size:13.5px;color:var(--dim);line-height:1.8}"
-  + ".nt table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px}"
-  + ".nt th{text-align:left;padding:12px 14px;background:rgba(139,92,246,.07);border-bottom:1px solid var(--bd);font-weight:600;color:var(--txt);font-size:11px;letter-spacing:.07em;text-transform:uppercase}"
-  + ".nt td{padding:11px 14px;border-bottom:1px solid var(--faint);color:var(--dim)}"
-  + ".nt tr:last-child td{border-bottom:none}"
-  + ".nt tr:hover td{background:rgba(139,92,246,.04)}"
-  + ".srch-wrap{margin-bottom:22px;position:sticky;top:14px;z-index:40}"
-  + ".srch{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--bd);border-radius:14px;box-shadow:var(--sh-md),inset 0 1px 0 var(--bd-in);transition:all .22s var(--ease);position:relative;overflow:hidden}"
-  + ".srch::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);pointer-events:none}"
-  + ".srch:focus-within{border-color:var(--bd-hi);box-shadow:var(--gl),var(--sh-md)}"
-  + ".srch:focus-within::after{animation:shimmer 2.8s linear infinite}"
-  + "@keyframes shimmer{from{left:-100%}to{left:100%}}"
-  + ".srch-icon{color:var(--mut);flex-shrink:0;font-size:14px}"
-  + ".srch input{flex:1;background:transparent;border:none;outline:none;color:var(--txt);font-size:14.5px;font-family:inherit}"
-  + ".srch input::placeholder{color:var(--mut)}"
-  + ".gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}"
-  + ".gp{background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--bd);border-radius:16px;overflow:hidden;transition:all .25s var(--ease);box-shadow:inset 0 1px 0 var(--bd-in)}"
-  + ".gp:hover{transform:translateY(-3px);border-color:var(--bd-hi);box-shadow:0 16px 42px rgba(139,92,246,.2),0 0 0 1px rgba(139,92,246,.18),inset 0 1px 0 rgba(255,255,255,.06)}"
-  + ".gp.hide{display:none}"
-  + ".gh{display:flex;align-items:center;gap:12px;padding:15px 16px;cursor:pointer;user-select:none;border-bottom:1px solid var(--bd);background:linear-gradient(180deg,rgba(139,92,246,.05),transparent);transition:background .18s ease}"
-  + ".gh:hover{background:linear-gradient(180deg,rgba(139,92,246,.09),transparent)}"
-  + ".ge{font-size:18px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:var(--card-s);border-radius:10px;flex-shrink:0;border:1px solid var(--bd);box-shadow:inset 0 1px 0 var(--bd-in);transition:all .28s var(--spring)}"
-  + ".gp:hover .ge{transform:rotate(-5deg) scale(1.05);border-color:var(--bd-hi)}"
-  + ".gn{flex:1;font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--txt)}"
-  + ".gc{font-size:10px;color:var(--ac3);padding:3px 9px;background:linear-gradient(135deg,rgba(139,92,246,.2),rgba(139,92,246,.08));border:1px solid rgba(139,92,246,.22);border-radius:20px;font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}"
-  + ".gv{color:var(--mut);font-size:11px;transition:transform .25s var(--ease),color .18s ease}"
-  + ".gh:hover .gv{color:var(--ac2)}"
-  + ".gp.col .gv{transform:rotate(-90deg)}"
-  + ".gp.col .gb{max-height:0;padding-top:0;padding-bottom:0;opacity:0}"
-  + ".gp.col .gh{border-bottom-color:transparent;position:relative}"
-  + ".gp.col .gh::after{content:'';position:absolute;bottom:-1px;left:16px;right:16px;height:2px;background:linear-gradient(90deg,var(--ac),var(--teal));border-radius:2px;opacity:.85}"
-  + ".gb{padding:8px;max-height:2600px;opacity:1;overflow:hidden;transition:max-height .38s var(--ease),padding .28s ease,opacity .22s ease}"
-  + ".lk{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:9px;color:var(--dim);text-decoration:none;font-size:12.5px;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;transition:all .16s var(--ease);letter-spacing:-.01em}"
-  + ".lk::before{content:'\\203a';color:var(--faint);font-family:'Inter',sans-serif;font-size:16px;margin-right:3px;transition:all .16s ease;flex-shrink:0}"
-  + ".lk:hover{background:var(--card-h);color:var(--ac3);padding-left:16px;box-shadow:inset 0 0 0 1px rgba(139,92,246,.14)}"
-  + ".lk:hover::before{color:var(--ac);transform:translateX(2px)}"
-  + ".lk:focus-visible{outline:2px solid var(--ac2);outline-offset:-2px}"
-  + ".lt{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}"
-  + ".lc{opacity:0;width:26px;height:26px;border-radius:7px;border:1px solid var(--bd);background:var(--card-s);color:var(--dim);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;transition:all .2s var(--ease);transform:translateX(-5px)}"
-  + ".lk:hover .lc{opacity:1;transform:translateX(0)}"
-  + ".lc:hover{border-color:var(--ac);color:var(--ac2);box-shadow:0 0 10px rgba(139,92,246,.35)}"
-  + ".lc.ok{border-color:var(--gr);color:var(--gr);background:rgba(16,185,129,.12)}"
-  + ".nr{text-align:center;padding:64px 20px;color:var(--mut);font-size:14px;display:none}"
-  + ".nr.on{display:block;animation:panelIn .28s ease both}"
-  + ".nr-ghost{font-size:38px;opacity:.22;display:block;margin-bottom:10px}"
-  + ".fn{margin-top:36px;padding:22px;text-align:center;font-size:11.5px;color:var(--mut);border-top:1px solid var(--faint);letter-spacing:.06em;text-transform:uppercase}"
-  + ".to{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(110px);background:var(--card-s);border:1px solid var(--gr);color:var(--gr);padding:11px 22px;border-radius:12px;font-size:13px;font-weight:600;box-shadow:0 16px 40px rgba(0,0,0,.55),0 0 24px rgba(16,185,129,.18);opacity:0;z-index:9999;pointer-events:none;transition:all .38s var(--spring);letter-spacing:.02em;display:flex;align-items:center;gap:7px}"
-  + ".to::before{content:'\\2713';font-weight:700}"
-  + ".to.on{transform:translateX(-50%) translateY(0);opacity:1}"
-  + ".sb{position:fixed;bottom:18px;left:18px;width:32px;height:32px;border-radius:50%;z-index:9998;cursor:pointer;background:rgba(139,92,246,.3);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(139,92,246,.22);font-size:16px;line-height:1;opacity:.32;transition:all .28s var(--spring);user-select:none;border:1px solid rgba(139,92,246,.28);-webkit-tap-highlight-color:transparent;touch-action:manipulation;color:#fff;animation:breathe 4.2s ease-in-out infinite}"
-  + "@keyframes breathe{0%,100%{filter:drop-shadow(0 0 3px rgba(139,92,246,.2))}50%{filter:drop-shadow(0 0 9px rgba(139,92,246,.4))}}"
-  + ".sb:hover{opacity:1;transform:scale(1.16) rotate(7deg);background:rgba(139,92,246,.9);box-shadow:0 7px 24px rgba(139,92,246,.55);animation:none}"
-  + ".sb.on{opacity:.9;background:linear-gradient(135deg,var(--ac),var(--mag));animation:none}"
-  + "@media(max-width:640px){.wrap{padding:18px 14px 100px}.nt{padding:24px 20px}.nt h2{font-size:21px}.gr{grid-template-columns:1fr}.sb{bottom:12px;left:12px;width:28px;height:28px;font-size:14px}.ht h1{font-size:18px}}";
-
-  var DATA = [
-    { e:"\u26a1", n:"KITE", l:["https://f5fy.z13.web.core.windows.net","https://ofiq.z19.web.core.windows.net","https://qb3p.z9.web.core.windows.net","https://tq7o.z4.web.core.windows.net"]},
-    { e:"\u2600\ufe0f", n:"SOLARA", l:["https://solara.tokeslaszlo.ro","https://solara.survet.cl","https://solara.explosionlearning.org","https://solara.lasersoft.net.au","https://solara.actadigital.com.ar"]},
-    { e:"\ud83c\udf19", n:"LUNAR", l:["https://lunar.explosionlearning.org","https://lunar.actadigital.com.ar","https://saugatrlunar-uicvr.xcel.ch"]},
-    { e:"\ud83c\udf0c", n:"AURORA", l:["https://aurora.tokeslaszlo.ro","https://aurora.explosionlearning.org","https://aurora.actadigital.com.ar"]},
-    { e:"\u2728", n:"GLIM", l:["https://sgt7.s3.amazonaws.com/index.html","https://s3.us-east-1.amazonaws.com/axk4/index.html","https://s3.amazonaws.com/sz1n/index.html","https://axk4.s3.amazonaws.com/index.html"]},
-    { e:"\ud83d\udcad", n:"DAYDREAMX", l:["https://h7ww.s3.amazonaws.com/index.html","https://h7ww.s3.us-east-1.amazonaws.com/index.html","https://s3.amazonaws.com/h7ww/index.html"]},
-    { e:"\ud83d\ude80", n:"INTERSTELLAR", l:["https://gnd9.z13.web.core.windows.net","https://zzqf.z19.web.core.windows.net","https://agek.z5.web.core.windows.net","https://fyeq.z1.web.core.windows.net","https://kpkz.z21.web.core.windows.net"]},
-    { e:"\ud83c\udfad", n:"CINERA", l:["https://cinera.explosionlearning.org","https://cinera.actadigital.com.ar"]},
-    { e:"\ud83d\udd25", n:"FLARE", l:["https://note.adis.web.id","https://max.brusin.net","https://lab.labgarreguevara.com.ar","https://study.innovacioneseducativas.com.mx","https://global.mrgshrimp.com","https://map.wayhomeapp.org"]},
-    { e:"\ud83c\udf06", n:"UTOPIA", l:["https://utopia.tokeslaszlo.ro","https://utopia.explosionlearning.org","https://utopia.actadigital.com.ar"]},
-    { e:"\ud83c\udfac", n:"TRIPLE T HD", l:["https://triplethd.explosionlearning.org","https://triplethd.lasersoft.net.au","https://triplethd.actadigital.com.ar"]},
-    { e:"\ud83d\udef0\ufe0f", n:"SPACE", l:["https://space.explosionlearning.org","https://space.actadigital.com.ar"]},
-    { e:"\ud83e\udded", n:"VOYA", l:["https://voya.tokeslaszlo.ro","https://voya.explosionlearning.org","https://voya.actadigital.com.ar"]},
-    { e:"\ud83c\udf53", n:"STROBERRI", l:["https://stroberri.explosionlearning.org","https://stroberri.actadigital.com.ar"]},
-    { e:"\ud83d\udcda", n:"STUDY HUB", l:["https://studyhub.tokeslaszlo.ro","https://studyhub.explosionlearning.org"]},
-    { e:"\ud83d\udc24", n:"TUNG TUNG", l:["https://tungtung.survet.cl","https://tungtung.nikeinvest.ro","https://tungtung.cpmecatronica.cl","https://tungtung.colegiosanmarcel.cl","https://jhkf.z21.web.core.windows.net","https://gy5k.z22.web.core.windows.net","https://saugatrbaseball.7geo7.ru","https://saugatrtungtung-agylt.bisovea.ru","https://math268863-saugatr.ololow.com","https://saugatrtungtung-iouku.soynutrimeraki.cl"]},
-    { e:"\ud83c\udff9", n:"ASTRA", l:["https://sixseven.chanka.com","https://astra-bull.noble-house.tk","https://astra-education.top","https://animals.solidaritysafaris.com","https://bull.solidaritysafaris.com","https://saugatrastra-cacw.creative-words.se","https://info.veranda.co.id","https://tra.ipdz.com","https://gilead.org.il"]},
-    { e:"\ud83c\udf40", n:"FERN", l:["https://family267740-saugatr.biec.com.np","https://saugatrfern-pzamu.biec.com.np","https://education265213-saugatr.codex-bot.com","https://saugatrgreat.hyperlum.nl","https://subsaugatr.pirazymatma.pl"]},
-    { e:"\ud83e\udd86", n:"DUCK SET", l:["https://unpkg.com/classroomduck@1.0.0/index.html","https://unpkg.com/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck@1.0.0/index.html","https://esm.sh/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck/index.html","https://esm.sh/classroomduck/index.svg","https://esm.sh/jacorn-7fz3@1.0.0/index.html","https://unpkg.com/jacorn-7fz3@1.0.0/index.html","https://esm.sh/quietcorn@1.0.1/index.html","https://esm.sh/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.html","https://esm.sh/classroomduck@1.0.65/index.html","https://storage.googleapis.com/mathlessons/duckmath.svg","https://cdn.jsdelivr.net/gh/freezenovasrl/cdn/duckmath.svg"]},
-    { e:"\ud83d\udce6", n:"S3 / AMAZON", l:["https://leahh-5a8u.s3.amazonaws.com/index.html","https://lmeyo-cok1.s3.amazonaws.com/index.html","https://ralsei.s3.amazonaws.com/index.html","https://lmeyo.s3.amazonaws.com/index.html","https://id5y.s3.amazonaws.com/index.html","https://fyr3.s3.amazonaws.com/index.html","https://axk4.s3.amazonaws.com/index.html","https://h7ww.s3.amazonaws.com/index.html"]},
-    { e:"\ud83c\udfa8", n:"EXTRAS", l:["https://gelaoshi.global.ssl.fastly.net","https://fstudentsareinventors.s3.amazonaws.com/index.html","https://glwithfinals.s3.amazonaws.com/index.html","https://celestialdevsalot.github.io/celestialisbest","https://mathhomeworkhelperthingy.free.nf/?i=2","https://schoolbook1.radioimpactfm.ro","https://cdn.jsdelivr.net/gh/reeyuki/YukiOsSingleHtml@main/yukios.svg","https://cdn.jsdelivr.net/gh/drewalow860-ctrl/PeteZahStaticDone@959d81f/new.svg","https://cdn.jsdelivr.net/gh/cherriunblocked/svg/index.svg","https://cdn.jsdelivr.net/gh/coinbaselarper/svg@latest/logo.svg","https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg","https://raw.githack.com/un-pkg/npm/main/bundle-min.svg","https://aw3k.s3.us-east-2.amazonaws.com/index.html","https://mathvc.s3.amazonaws.com/index.html","https://lsrelay-a.s3.amazonaws.com/index.html","https://s3.amazonaws.com/elliotslinks-tnjavxyp/homework65988/index.html"]},
-    { e:"\ud83c\udf10", n:"MISC HOSTS", l:["https://mathtechmrk61.parcomunica.com","https://edumathschooledu.parcomunica.com","https://rkmathtech3.parcomunica.com","https://itsforubaks.parcomunica.com","https://techmathsch20.art-motel.com","https://okokokitsok.art-motel.com","https://mathschool8tech.art-motel.com","https://vcsastudying.lervs.ro","https://studyhubv2.litescripts.com","https://vcsastudying.meridiano.com.br","https://cipher.radioimpactfm.ro","https://studyvcsa.savenewport.com","https://rammer.nana.euforiacs.com","https://rammer.nana.dataon.cl","https://atharvseduhub.networkguru.com","https://scienceforuuu.parcomunica.com","https://mkmkmath.parcomunica.com","https://englishmath33.parcomunica.com","https://mathmathsc.art-motel.com","https://mathhh.art-motel.com","https://triplet.expertdiagnoza.ro","https://xylora.expertdiagnoza.ro","https://ck.gen1.srivaishnavam.org.au","https://ck.contentkeeper1.ekocleaner.ro","https://ck.contentkeeper2.forever-20.com","https://content.keeper2.savenewport.com","https://vinemanmath.srivaishnavam.org.au","https://mathbabysitting.srivaishnavam.org.au","https://babysittingmath.srivaishnavam.org.au","https://keyboardmath27.forever-20.com","https://backtobank8.forever-20.com","https://vinemanmath28.srivaishnavam.org.au","https://likethisaubmemrk.srivaishnavam.org.au","https://primathsc27.radioimpactfm.ro","https://25plesmath8.forever-20.com","https://keyboardmath20.expertdiagnoza.ro"]},
-    { e:"\ud83e\uddea", n:"B-CDN TEST SET", l:["https://james-gonzalez-21.b-cdn.net","https://daniel-sanchez-82.b-cdn.net","https://jacob-thomas-19.b-cdn.net","https://lucas-jones-14.b-cdn.net","https://harper-hernandez-10.b-cdn.net","https://evelyn-davis-19.b-cdn.net","https://ethan-hernandez-14.b-cdn.net","https://sofia-gonzalez-92.b-cdn.net","https://james-brown-87.b-cdn.net","https://james-gonzalez-20.b-cdn.net","https://storage.googleapis.com/logan223/duckmath.html"]},
-    { e:"\ud83d\udd17", n:"JSDELIVR SVG DUMP", l:["https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6fd2c561e28a4b6ca92ceb469dfdd36f863b71fe/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@67e41572172f300e84665ac72832d7761526fed9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0ecd95c04ba98451334a183dfd3a1250072a13/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0d6662c28b6510aebc5a2e2b126656bfd028b2cc/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@00d9539b57bfb855ae8e7ffa759c7f31d3a3b90f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@c3c51b51dad2213a92ed044fa996b28d8b62aef9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2ed5e58213307b56b1bbfa3d4f263edfb5c13c2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@b61d31d3d29bbedca587dd88594edb1a8630826d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e4fc8a1b4ab060e6e0bbf4429a8787494e5ef9cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7ab7bf52f7cc33f34472278961b720502a493105/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0046466b902a2bb123e3934f1486249c8cc893d2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@f64976fc6cf51579c06b0a5ccd24afc23100f60d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cf6ae96ba8cd3dcbdd9e48ff20c08d20aeb0043e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@720e070ddcbb05e6afe910a928f1502f25539084/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@daae934ac1ad0c68c881aef5a106b45368a2f0cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7114716e89c599b7108aa97593542bcbcbbdd34e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0d4c25fd9fdeac75ad0c8cea0b7add8449518c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6121c06c9d018fcc1607bd5dfa6afbcb7a5c00a3/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@39f58bd818ec12af5246b0184e7fbb63e08fea6b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@44ddf9b09055522f11d1f693d94ae2f923bb6f8b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@929f0279d8e394b07430540eb38b5f236d6d9041/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e45b7bdb1d971b8d24f5afbf1a94d2e62398579f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@ec6c24715f7f6cee52af17981a079389096eefe4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a12ce72097b0510a6cd6b4d3aa33b3000fc2f891/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@bd400eeece2a92d0f253951a2a671b642bd1b6a4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@11d9ae8d23d34a395a801f7fe28d65a83f93e75f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e15cb9f2b041ae068cfdf1ac183161e48c94dff4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@3e816503eda60576ab69604a91567f4ee844416c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2d5eb7852ee930b31b341c9240d7b2d32e685d7/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@09e32815e3c1407f021c1c0e85dda270cd30c9f9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0a4d82edf6cb3f7f931e2e13288bb6773a518f6d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@9b2ad5e65760ffd8b816b796cec347ada4814486/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e5ea252bd574caeb70fc5d227fa3a2e3fb200784/index.svg"]},
-    { e:"\ud83e\udde9", n:"GOOGLE SCRIPT + P5JS", l:["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxmo-l8H5tXzYfuh8wGzjiVkVOqQZoXDy-mbfMAlxyw-i2Wxh5VgjKGFh8YaEZW-CgCyg/exec","https://assets.editor.p5js.org/69f34707e1b8c4295655b517/6e528b37-2c24-457c-b1de-8b0964eacd2f.svg"]}
+  var DATA=[
+    {e:"⚡",n:"KITE",l:["https://f5fy.z13.web.core.windows.net","https://ofiq.z19.web.core.windows.net","https://qb3p.z9.web.core.windows.net","https://tq7o.z4.web.core.windows.net"]},
+    {e:"☀️",n:"SOLARA",l:["https://solara.tokeslaszlo.ro","https://solara.survet.cl","https://solara.explosionlearning.org","https://solara.lasersoft.net.au","https://solara.actadigital.com.ar"]},
+    {e:"🌙",n:"LUNAR",l:["https://lunar.explosionlearning.org","https://lunar.actadigital.com.ar","https://saugatrlunar-uicvr.xcel.ch"]},
+    {e:"🌌",n:"AURORA",l:["https://aurora.tokeslaszlo.ro","https://aurora.explosionlearning.org","https://aurora.actadigital.com.ar"]},
+    {e:"✨",n:"GLIM",l:["https://sgt7.s3.amazonaws.com/index.html","https://s3.us-east-1.amazonaws.com/axk4/index.html","https://s3.amazonaws.com/sz1n/index.html","https://axk4.s3.amazonaws.com/index.html"]},
+    {e:"💭",n:"DAYDREAMX",l:["https://h7ww.s3.amazonaws.com/index.html","https://h7ww.s3.us-east-1.amazonaws.com/index.html","https://s3.amazonaws.com/h7ww/index.html"]},
+    {e:"🚀",n:"INTERSTELLAR",l:["https://gnd9.z13.web.core.windows.net","https://zzqf.z19.web.core.windows.net","https://agek.z5.web.core.windows.net","https://fyeq.z1.web.core.windows.net","https://kpkz.z21.web.core.windows.net"]},
+    {e:"🎭",n:"CINERA",l:["https://cinera.explosionlearning.org","https://cinera.actadigital.com.ar"]},
+    {e:"🔥",n:"FLARE",l:["https://note.adis.web.id","https://max.brusin.net","https://lab.labgarreguevara.com.ar","https://study.innovacioneseducativas.com.mx","https://global.mrgshrimp.com","https://map.wayhomeapp.org"]},
+    {e:"🌆",n:"UTOPIA",l:["https://utopia.tokeslaszlo.ro","https://utopia.explosionlearning.org","https://utopia.actadigital.com.ar"]},
+    {e:"🎬",n:"TRIPLE T HD",l:["https://triplethd.explosionlearning.org","https://triplethd.lasersoft.net.au","https://triplethd.actadigital.com.ar"]},
+    {e:"🛰️",n:"SPACE",l:["https://space.explosionlearning.org","https://space.actadigital.com.ar"]},
+    {e:"🧭",n:"VOYA",l:["https://voya.tokeslaszlo.ro","https://voya.explosionlearning.org","https://voya.actadigital.com.ar"]},
+    {e:"🍓",n:"STROBERRI",l:["https://stroberri.explosionlearning.org","https://stroberri.actadigital.com.ar"]},
+    {e:"📚",n:"STUDY HUB",l:["https://studyhub.tokeslaszlo.ro","https://studyhub.explosionlearning.org"]},
+    {e:"🐤",n:"TUNG TUNG",l:["https://tungtung.survet.cl","https://tungtung.nikeinvest.ro","https://tungtung.cpmecatronica.cl","https://tungtung.colegiosanmarcel.cl","https://jhkf.z21.web.core.windows.net","https://gy5k.z22.web.core.windows.net","https://saugatrbaseball.7geo7.ru","https://saugatrtungtung-agylt.bisovea.ru","https://math268863-saugatr.ololow.com","https://saugatrtungtung-iouku.soynutrimeraki.cl"]},
+    {e:"🏹",n:"ASTRA",l:["https://sixseven.chanka.com","https://astra-bull.noble-house.tk","https://astra-education.top","https://animals.solidaritysafaris.com","https://bull.solidaritysafaris.com","https://saugatrastra-cacw.creative-words.se","https://info.veranda.co.id","https://tra.ipdz.com","https://gilead.org.il"]},
+    {e:"🍀",n:"FERN",l:["https://family267740-saugatr.biec.com.np","https://saugatrfern-pzamu.biec.com.np","https://education265213-saugatr.codex-bot.com","https://saugatrgreat.hyperlum.nl","https://subsaugatr.pirazymatma.pl"]},
+    {e:"🦆",n:"DUCK SET",l:["https://unpkg.com/classroomduck@1.0.0/index.html","https://unpkg.com/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck@1.0.0/index.html","https://esm.sh/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck/index.html","https://esm.sh/classroomduck/index.svg","https://esm.sh/jacorn-7fz3@1.0.0/index.html","https://unpkg.com/jacorn-7fz3@1.0.0/index.html","https://esm.sh/quietcorn@1.0.1/index.html","https://esm.sh/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.html","https://esm.sh/classroomduck@1.0.65/index.html","https://storage.googleapis.com/mathlessons/duckmath.svg","https://cdn.jsdelivr.net/gh/freezenovasrl/cdn/duckmath.svg"]},
+    {e:"📦",n:"S3 / AMAZON",l:["https://leahh-5a8u.s3.amazonaws.com/index.html","https://lmeyo-cok1.s3.amazonaws.com/index.html","https://ralsei.s3.amazonaws.com/index.html","https://lmeyo.s3.amazonaws.com/index.html","https://id5y.s3.amazonaws.com/index.html","https://fyr3.s3.amazonaws.com/index.html","https://axk4.s3.amazonaws.com/index.html","https://h7ww.s3.amazonaws.com/index.html"]},
+    {e:"🎨",n:"EXTRAS",l:["https://gelaoshi.global.ssl.fastly.net","https://fstudentsareinventors.s3.amazonaws.com/index.html","https://glwithfinals.s3.amazonaws.com/index.html","https://celestialdevsalot.github.io/celestialisbest","https://mathhomeworkhelperthingy.free.nf/?i=2","https://schoolbook1.radioimpactfm.ro","https://cdn.jsdelivr.net/gh/reeyuki/YukiOsSingleHtml@main/yukios.svg","https://cdn.jsdelivr.net/gh/drewalow860-ctrl/PeteZahStaticDone@959d81f/new.svg","https://cdn.jsdelivr.net/gh/cherriunblocked/svg/index.svg","https://cdn.jsdelivr.net/gh/coinbaselarper/svg@latest/logo.svg","https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg","https://raw.githack.com/un-pkg/npm/main/bundle-min.svg","https://aw3k.s3.us-east-2.amazonaws.com/index.html","https://mathvc.s3.amazonaws.com/index.html","https://lsrelay-a.s3.amazonaws.com/index.html","https://s3.amazonaws.com/elliotslinks-tnjavxyp/homework65988/index.html"]},
+    {e:"🌐",n:"MISC HOSTS",l:["https://mathtechmrk61.parcomunica.com","https://edumathschooledu.parcomunica.com","https://rkmathtech3.parcomunica.com","https://itsforubaks.parcomunica.com","https://techmathsch20.art-motel.com","https://okokokitsok.art-motel.com","https://mathschool8tech.art-motel.com","https://vcsastudying.lervs.ro","https://studyhubv2.litescripts.com","https://vcsastudying.meridiano.com.br","https://cipher.radioimpactfm.ro","https://studyvcsa.savenewport.com","https://rammer.nana.euforiacs.com","https://rammer.nana.dataon.cl","https://atharvseduhub.networkguru.com","https://scienceforuuu.parcomunica.com","https://mkmkmath.parcomunica.com","https://englishmath33.parcomunica.com","https://mathmathsc.art-motel.com","https://mathhh.art-motel.com","https://triplet.expertdiagnoza.ro","https://xylora.expertdiagnoza.ro","https://ck.gen1.srivaishnavam.org.au","https://ck.contentkeeper1.ekocleaner.ro","https://ck.contentkeeper2.forever-20.com","https://content.keeper2.savenewport.com","https://vinemanmath.srivaishnavam.org.au","https://mathbabysitting.srivaishnavam.org.au","https://babysittingmath.srivaishnavam.org.au","https://keyboardmath27.forever-20.com","https://backtobank8.forever-20.com","https://vinemanmath28.srivaishnavam.org.au","https://likethisaubmemrk.srivaishnavam.org.au","https://primathsc27.radioimpactfm.ro","https://25plesmath8.forever-20.com","https://keyboardmath20.expertdiagnoza.ro"]},
+    {e:"🧪",n:"B-CDN TEST SET",l:["https://james-gonzalez-21.b-cdn.net","https://daniel-sanchez-82.b-cdn.net","https://jacob-thomas-19.b-cdn.net","https://lucas-jones-14.b-cdn.net","https://harper-hernandez-10.b-cdn.net","https://evelyn-davis-19.b-cdn.net","https://ethan-hernandez-14.b-cdn.net","https://sofia-gonzalez-92.b-cdn.net","https://james-brown-87.b-cdn.net","https://james-gonzalez-20.b-cdn.net","https://storage.googleapis.com/logan223/duckmath.html"]},
+    {e:"🔗",n:"JSDELIVR SVG DUMP",l:["https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6fd2c561e28a4b6ca92ceb469dfdd36f863b71fe/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@67e41572172f300e84665ac72832d7761526fed9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0ecd95c04ba98451334a183dfd3a1250072a13/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0d6662c28b6510aebc5a2e2b126656bfd028b2cc/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@00d9539b57bfb855ae8e7ffa759c7f31d3a3b90f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@c3c51b51dad2213a92ed044fa996b28d8b62aef9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2ed5e58213307b56b1bbfa3d4f263edfb5c13c2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@b61d31d3d29bbedca587dd88594edb1a8630826d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e4fc8a1b4ab060e6e0bbf4429a8787494e5ef9cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7ab7bf52f7cc33f34472278961b720502a493105/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0046466b902a2bb123e3934f1486249c8cc893d2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@f64976fc6cf51579c06b0a5ccd24afc23100f60d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cf6ae96ba8cd3dcbdd9e48ff20c08d20aeb0043e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@720e070ddcbb05e6afe910a928f1502f25539084/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@daae934ac1ad0c68c881aef5a106b45368a2f0cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7114716e89c599b7108aa97593542bcbcbbdd34e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0d4c25fd9fdeac75ad0c8cea0b7add8449518c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6121c06c9d018fcc1607bd5dfa6afbcb7a5c00a3/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@39f58bd818ec12af5246b0184e7fbb63e08fea6b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@44ddf9b09055522f11d1f693d94ae2f923bb6f8b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@929f0279d8e394b07430540eb38b5f236d6d9041/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e45b7bdb1d971b8d24f5afbf1a94d2e62398579f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@ec6c24715f7f6cee52af17981a079389096eefe4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a12ce72097b0510a6cd6b4d3aa33b3000fc2f891/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@bd400eeece2a92d0f253951a2a671b642bd1b6a4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@11d9ae8d23d34a395a801f7fe28d65a83f93e75f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e15cb9f2b041ae068cfdf1ac183161e48c94dff4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@3e816503eda60576ab69604a91567f4ee844416c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2d5eb7852ee930b31b341c9240d7b2d32e685d7/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@09e32815e3c1407f021c1c0e85dda270cd30c9f9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0a4d82edf6cb3f7f931e2e13288bb6773a518f6d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@9b2ad5e65760ffd8b816b796cec347ada4814486/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e5ea252bd574caeb70fc5d227fa3a2e3fb200784/index.svg"]},
+    {e:"🧩",n:"GOOGLE SCRIPT + P5JS",l:["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxmo-l8H5tXzYfuh8wGzjiVkVOqQZoXDy-mbfMAlxyw-i2Wxh5VgjKGFh8YaEZW-CgCyg/exec","https://assets.editor.p5js.org/69f34707e1b8c4295655b517/6e528b37-2c24-457c-b1de-8b0964eacd2f.svg"]}
   ];
 
-  var NOTES = "<h2>What Is Science?</h2>"
-    + "<p>Science is the systematic study of the natural world through observation, experimentation, and reasoning. Scientists ask questions, form hypotheses, collect data, and draw conclusions based on evidence \u2014 not opinions or guesses.</p>"
-    + "<p>The three main branches of science:</p>"
-    + "<ul><li><strong>Life Science</strong> \u2014 the study of living things (biology)</li><li><strong>Physical Science</strong> \u2014 the study of matter and energy (chemistry + physics)</li><li><strong>Earth Science</strong> \u2014 the study of Earth and space (geology, meteorology, astronomy)</li></ul>"
-    + "<h2>The Scientific Method</h2>"
-    + "<p>The scientific method is a step-by-step process scientists use to investigate questions. The steps are not always linear \u2014 scientists often loop back and revise.</p>"
-    + "<ol><li><strong>Ask a Question</strong> \u2014 What do you want to know?</li><li><strong>Research</strong> \u2014 What do you already know? What have others discovered?</li><li><strong>Form a Hypothesis</strong> \u2014 A testable prediction. <code>If\u2026 then\u2026 because\u2026</code></li><li><strong>Experiment</strong> \u2014 Design a controlled test.</li><li><strong>Collect Data</strong> \u2014 Record observations and measurements.</li><li><strong>Analyze Data</strong> \u2014 Look for patterns, calculate averages, make graphs.</li><li><strong>Draw Conclusions</strong> \u2014 Was your hypothesis supported or not?</li><li><strong>Communicate Results</strong> \u2014 Share findings with others.</li></ol>"
-    + "<h2>Variables and Controls</h2>"
-    + "<p>Every good experiment has three types of variables:</p>"
-    + "<ul><li><strong>Independent Variable (IV)</strong> \u2014 The one thing you change on purpose.</li><li><strong>Dependent Variable (DV)</strong> \u2014 The thing you measure; it depends on the IV.</li><li><strong>Control Variables (Constants)</strong> \u2014 Everything that stays the same.</li></ul>"
-    + "<p><strong>Control Group:</strong> The group that does not receive the experimental treatment. Used for comparison. Example: A plant given no fertilizer while others get fertilizer.</p>"
-    + "<p><strong>Experimental Group:</strong> The group that receives the treatment.</p>"
-    + "<h2>Data and Graphing</h2>"
-    + "<p>Data comes in two flavors:</p>"
-    + "<ul><li><strong>Qualitative Data</strong> \u2014 Descriptions. Uses your senses. (\"The liquid turned cloudy.\")</li><li><strong>Quantitative Data</strong> \u2014 Numbers. Measurements. (\"The liquid reached 45\u00b0C.\")</li></ul>"
-    + "<p>Types of graphs:</p>"
-    + "<ul><li><strong>Bar Graph</strong> \u2014 Comparing categories.</li><li><strong>Line Graph</strong> \u2014 Showing change over time.</li><li><strong>Pie Chart</strong> \u2014 Showing parts of a whole.</li></ul>"
-    + "<p>Rules for graphing: label both axes with units, give the graph a title like <code>The Effect of [IV] on [DV]</code>, use a ruler. Neatness counts.</p>"
-    + "<h2>Example \u2014 Why Bread Gets Soggy</h2>"
-    + "<bq><strong>Question:</strong> Why does my sandwich bread get soggy when I put sauce on it?<br/><br/><strong>Background research:</strong> Bread is porous \u2014 it has tiny holes. Sauce has water in it. Water moves from wet things to dry things through a process called diffusion. The bread soaks up the water from the sauce. This is why the bread gets soggy.<br/><br/><strong>Hypothesis:</strong> If I put sauce on bread and wait, then the bread will get soggy because the water in the sauce soaks into the bread.<br/><br/><strong>Experiment:</strong> Take 3 slices of the same bread. Slice 1 gets no sauce (control). Slice 2 gets 1 tablespoon of sauce. Slice 3 gets 3 tablespoons of sauce. Wait 10 minutes. Measure how soggy each slice is by pressing a paper towel on it and seeing how much water comes off.<br/><br/><strong>Data:</strong> Slice 1 \u2014 paper towel dry. Slice 2 \u2014 small wet spot. Slice 3 \u2014 big wet spot, bread falling apart.<br/><br/><strong>Conclusion:</strong> The hypothesis was supported. More sauce = more sogginess. The water in the sauce soaks into the bread.<br/><br/><strong>Real-world fix:</strong> Put a layer of something between the sauce and the bread \u2014 like lettuce, cheese, or butter. Butter is fat and fat blocks water. This is why people butter their bread before making a sandwich.</bq>"
-    + "<h2>Vocabulary Review</h2>"
-    + "<table><tr><th>Term</th><th>Definition</th></tr>"
-    + "<tr><td>Science</td><td>The systematic study of the natural world</td></tr>"
-    + "<tr><td>Hypothesis</td><td>A testable prediction based on observations</td></tr>"
-    + "<tr><td>Independent Variable</td><td>The variable the scientist changes on purpose</td></tr>"
-    + "<tr><td>Dependent Variable</td><td>The variable that is measured</td></tr>"
-    + "<tr><td>Control Group</td><td>The group that receives no experimental treatment</td></tr>"
-    + "<tr><td>Constant</td><td>A factor that stays the same in an experiment</td></tr>"
-    + "<tr><td>Data</td><td>Information collected during an experiment</td></tr>"
-    + "<tr><td>Qualitative Data</td><td>Descriptive observations using the senses</td></tr>"
-    + "<tr><td>Quantitative Data</td><td>Numerical measurements</td></tr>"
-    + "<tr><td>Inference</td><td>A logical conclusion based on evidence</td></tr>"
-    + "<tr><td>Observation</td><td>Information gathered using the five senses</td></tr>"
-    + "<tr><td>Theory</td><td>A well-tested explanation supported by much evidence</td></tr>"
-    + "<tr><td>Law</td><td>A rule describing a pattern in nature</td></tr>"
-    + "<tr><td>Model</td><td>A representation used to explain something</td></tr>"
-    + "</table>"
-    + "<p style='margin-top:26px;font-style:italic;color:var(--mut);font-size:13px'>End of Chapter 1 notes. Additional reference material available via the button in the corner.</p>";
+  var grid=document.getElementById("grid"),noResults=document.getElementById("noResults"),searchInput=document.getElementById("searchInput"),toast=document.getElementById("toast"),panelNotes=document.getElementById("panelNotes"),panelVault=document.getElementById("panelVault"),secretBtn=document.getElementById("secretBtn"),themeBtn=document.getElementById("themeBtn");
+  var vaultOpen=false,lastEsc=0,memTheme="dark";
 
-  var root = document.getElementById("app-root");
-  var style = document.createElement("style");
-  style.textContent = CSS;
-  document.head.appendChild(style);
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
+  function showToast(m){toast.textContent=m;toast.classList.add("on");clearTimeout(showToast._t);showToast._t=setTimeout(function(){toast.classList.remove("on")},1400)}
+  function fallbackCopy(url,btn){var ta=document.createElement("textarea");ta.value=url;ta.style.cssText="position:fixed;opacity:0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");showToast("copied")}catch(e){}document.body.removeChild(ta);if(btn){btn.classList.add("ok");btn.textContent="✓";setTimeout(function(){btn.classList.remove("ok");btn.textContent="📋"},1000)}}
 
-  var html = ""
-    + "<div class='wrap'>"
-    + "<div class='head'><div class='hi'>\ud83d\udd2c</div><div class='ht'><h1>Science Packet \u2014 Chapter 1 Review</h1><div class='m'><span>3rd Period</span><span>Room 221</span><span>Mrs. C</span></div></div><div><button class='bt' id='themeBtn' type='button' title='Toggle theme'>\ud83c\udf19</button></div></div>"
-    + "<div class='pn on' id='panelNotes'><div class='nt'>" + NOTES + "</div></div>"
-    + "<div class='pn' id='panelVault'><div class='srch-wrap'><div class='srch'><span class='srch-icon'>\ud83d\udd0d</span><input id='searchInput' type='text' placeholder='Search groups or links\u2026' autocomplete='off' spellcheck='false'/></div></div><div class='gr' id='grid'></div><div class='nr' id='noResults'><span class='nr-ghost'>\ud83d\udd0d</span>no results. try a different search.</div><div class='fn'>End of packet. Do not lose this document \u2014 replacements will not be issued.</div></div>"
-    + "</div>"
-    + "<div class='to' id='toast'>copied</div>"
-    + "<div class='sb' id='secretBtn' title='.'>\ud83d\ude0f</div>";
-
-  root.innerHTML = html;
-
-  var grid = document.getElementById("grid");
-  var noResults = document.getElementById("noResults");
-  var searchInput = document.getElementById("searchInput");
-  var toast = document.getElementById("toast");
-  var panelNotes = document.getElementById("panelNotes");
-  var panelVault = document.getElementById("panelVault");
-  var secretBtn = document.getElementById("secretBtn");
-  var themeBtn = document.getElementById("themeBtn");
-  var vaultOpen = false;
-  var memTheme = "dark";
-  var lastEsc = 0;
-  var otherKey = false;
-
-  function esc(s){
-    return String(s).replace(/[&<>"']/g,function(c){
-      return({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c];
-    });
-  }
-  function showToast(m){
-    toast.textContent = m;
-    toast.classList.add("on");
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(function(){ toast.classList.remove("on"); },1400);
-  }
-  function fallbackCopy(url, btn){
-    var ta = document.createElement("textarea");
-    ta.value = url;
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    var ok = false;
-    try { ok = document.execCommand("copy"); } catch(e){}
-    document.body.removeChild(ta);
-    if(ok) showToast("copied");
-    else showToast("copy failed");
-    if(btn){
-      btn.classList.add("ok");
-      btn.textContent = "\u2713";
-      setTimeout(function(){ btn.classList.remove("ok"); btn.textContent = "\ud83d\udccb"; },1200);
-    }
-  }
-  function bindCard(card){
-    var head = card.querySelector(".gh");
-    head.onclick = function(e){
-      if(e.target && e.target.closest && e.target.closest(".lc")) return;
-      card.classList.toggle("col");
-    };
-    var cps = card.querySelectorAll(".lc");
-    for(var i=0;i<cps.length;i++){
-      (function(btn){
-        btn.onclick = function(e){
-          e.preventDefault();
-          e.stopPropagation();
-          var url = btn.closest(".lk").dataset.u;
-          try {
-            if(navigator.clipboard && navigator.clipboard.writeText){
-              navigator.clipboard.writeText(url).then(function(){
-                btn.classList.add("ok");
-                btn.textContent = "\u2713";
-                showToast("copied");
-                setTimeout(function(){ btn.classList.remove("ok"); btn.textContent = "\ud83d\udccb"; },1200);
-              }).catch(function(){ fallbackCopy(url, btn); });
-            } else {
-              fallbackCopy(url, btn);
-            }
-          } catch(err){
-            fallbackCopy(url, btn);
-          }
-        };
-      })(cps[i]);
-    }
-  }
   function render(){
-    grid.innerHTML = "";
-    DATA.forEach(function(g, i){
-      var card = document.createElement("div");
-      card.className = "gp";
-      card.style.setProperty("--i", i);
-      card.dataset.n = g.n.toLowerCase();
-      card.dataset.l = g.l.join(" ").toLowerCase();
-      var h = "<div class='gh'><div class='ge'>"+g.e+"</div><div class='gn'>"+esc(g.n)+"</div><div class='gc'>"+g.l.length+"</div><div class='gv'>\u25bc</div></div><div class='gb'>";
-      g.l.forEach(function(u){
-        h += "<a class='lk' href='"+esc(u)+"' target='_blank' rel='noopener noreferrer' data-u='"+esc(u)+"'><span class='lt'>"+esc(u.replace(/^https?:\/\//,""))+"</span><button class='lc' title='Copy' type='button'>\ud83d\udccb</button></a>";
+    grid.innerHTML="";
+    DATA.forEach(function(g){
+      var card=document.createElement("div");
+      card.className="gp";
+      card.dataset.n=g.n.toLowerCase();
+      card.dataset.l=g.l.join(" ").toLowerCase();
+      var h="<div class='gh'><div class='ge'>"+g.e+"</div><div class='gn'>"+esc(g.n)+"</div><div class='gc'>"+g.l.length+"</div><div class='gv'>▼</div></div><div class='gb'>";
+      g.l.forEach(function(u){h+="<a class='lk' href='"+esc(u)+"' target='_blank' rel='noopener noreferrer' data-u='"+esc(u)+"'><span class='lt'>"+esc(u.replace(/^https?:\/\//,""))+"</span><button class='lc' type='button'>📋</button></a>"});
+      h+="</div>";
+      card.innerHTML=h;
+      card.querySelector(".gh").onclick=function(e){if(e.target.closest&&e.target.closest(".lc"))return;card.classList.toggle("col")};
+      card.querySelectorAll(".lc").forEach(function(btn){
+        btn.onclick=function(e){
+          e.preventDefault();e.stopPropagation();
+          var url=btn.closest(".lk").dataset.u;
+          try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){btn.classList.add("ok");btn.textContent="✓";showToast("copied");setTimeout(function(){btn.classList.remove("ok");btn.textContent="📋"},1000)}).catch(function(){fallbackCopy(url,btn)})}else{fallbackCopy(url,btn)}}catch(err){fallbackCopy(url,btn)}
+        };
       });
-      h += "</div>";
-      card.innerHTML = h;
-      bindCard(card);
       grid.appendChild(card);
     });
-    // force repaint so cards appear reliably
-    grid.classList.remove("fade");
-    requestAnimationFrame(function(){
-      requestAnimationFrame(function(){
-        grid.classList.add("fade");
-      });
-    });
   }
+
   function filter(q){
-    q = (q||"").trim().toLowerCase();
-    var visible = false;
-    var cards = document.querySelectorAll(".gp");
-    for(var i=0;i<cards.length;i++){
-      var c = cards[i];
-      var m = !q || c.dataset.n.indexOf(q) !== -1 || c.dataset.l.indexOf(q) !== -1;
-      if(m){
-        c.classList.remove("hide");
-        visible = true;
-      } else {
-        c.classList.add("hide");
-      }
-    }
-    if(noResults) noResults.classList.toggle("on", !visible);
+    q=(q||"").trim().toLowerCase();
+    var vis=false;
+    document.querySelectorAll(".gp").forEach(function(c){
+      var m=!q||c.dataset.n.indexOf(q)!==-1||c.dataset.l.indexOf(q)!==-1;
+      if(m){c.classList.remove("hide");vis=true}else{c.classList.add("hide")}
+    });
+    noResults.classList.toggle("on",!vis);
   }
+
   function switchPanel(open){
-    vaultOpen = open;
-    if(open){
-      panelNotes.classList.remove("on");
-      panelVault.classList.add("on");
-      if(secretBtn) secretBtn.classList.add("on");
-      render();
-      if(searchInput){
-        searchInput.value = "";
-        filter("");
-        setTimeout(function(){ searchInput.focus(); }, 40);
-      }
-    } else {
-      panelVault.classList.remove("on");
-      panelNotes.classList.add("on");
-      if(secretBtn) secretBtn.classList.remove("on");
-    }
+    vaultOpen=open;
+    if(open){panelNotes.classList.remove("on");panelVault.classList.add("on");secretBtn.classList.add("on");render();if(searchInput){searchInput.value="";filter("")}}
+    else{panelVault.classList.remove("on");panelNotes.classList.add("on");secretBtn.classList.remove("on")}
     window.scrollTo(0,0);
   }
-  if(searchInput){
-    searchInput.addEventListener("input", function(e){ filter(e.target.value); });
-  }
-  document.addEventListener("keydown", function(e){
-    if(e.key === "/" && document.activeElement !== searchInput && searchInput){
-      e.preventDefault();
-      searchInput.focus();
-      searchInput.select();
-    }
-  });
-  function secretClick(e){
-    if(e) e.stopPropagation();
-    switchPanel(!vaultOpen);
-  }
-  if(secretBtn){
-    secretBtn.addEventListener("touchstart", secretClick, {passive:true});
-    secretBtn.addEventListener("touchend", secretClick, {passive:true});
-    secretBtn.addEventListener("click", secretClick, false);
-    secretBtn.onclick = secretClick;
-  }
-  try { memTheme = localStorage.getItem("theme") || "dark"; } catch(e){}
-  document.documentElement.setAttribute("data-th", memTheme);
+
+  if(searchInput)searchInput.oninput=function(e){filter(e.target.value)};
+  document.addEventListener("keydown",function(e){if(e.key==="/"&&document.activeElement!==searchInput&&searchInput){e.preventDefault();searchInput.focus();searchInput.select()}});
+
+  function secretClick(e){if(e)e.stopPropagation();switchPanel(!vaultOpen)}
+  if(secretBtn){secretBtn.addEventListener("touchstart",secretClick,{passive:true});secretBtn.addEventListener("touchend",secretClick,{passive:true});secretBtn.addEventListener("click",secretClick);secretBtn.onclick=secretClick}
+
+  try{memTheme=localStorage.getItem("theme")||"dark"}catch(e){}
+  document.documentElement.setAttribute("data-th",memTheme);
   if(themeBtn){
-    themeBtn.textContent = memTheme === "dark" ? "\ud83c\udf19" : "\u2600\ufe0f";
-    function toggleTheme(e){
-      if(e) e.stopPropagation();
-      var cur = document.documentElement.getAttribute("data-th");
-      var nxt = cur === "dark" ? "light" : "dark";
-      memTheme = nxt;
-      document.documentElement.setAttribute("data-th", nxt);
-      try { localStorage.setItem("theme", nxt); } catch(err){}
-      themeBtn.textContent = nxt === "dark" ? "\ud83c\udf19" : "\u2600\ufe0f";
-    }
-    themeBtn.addEventListener("touchstart", toggleTheme, {passive:true});
-    themeBtn.addEventListener("click", toggleTheme, false);
-    themeBtn.onclick = toggleTheme;
+    themeBtn.textContent=memTheme==="dark"?"🌙":"☀️";
+    function toggle(e){if(e)e.stopPropagation();var n=document.documentElement.getAttribute("data-th")==="dark"?"light":"dark";memTheme=n;document.documentElement.setAttribute("data-th",n);try{localStorage.setItem("theme",n)}catch(err){}themeBtn.textContent=n==="dark"?"🌙":"☀️"}
+    themeBtn.addEventListener("touchstart",toggle,{passive:true});themeBtn.addEventListener("click",toggle);themeBtn.onclick=toggle;
   }
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape"){
-      var now = Date.now();
-      if(now - lastEsc < 400 && !otherKey){
-        try { window.location.replace("https://classroom.google.com/"); } catch(err){}
-      }
-      lastEsc = now;
-      otherKey = false;
-    } else {
-      otherKey = true;
-    }
-  });
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){var now=Date.now();if(now-lastEsc<400){try{window.location.replace("https://classroom.google.com/")}catch(err){}}lastEsc=now}});
 })();
 ]]></script>
 </body>
