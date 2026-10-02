@@ -185,7 +185,7 @@ header.doc-head{
 }
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 
-/* SECRET SMILEY — small, subtle, low-profile */
+/* SECRET SMILEY — small, subtle */
 .secret-btn{
   position:fixed;bottom:16px;left:16px;width:32px;height:32px;
   border-radius:50%;z-index:9998;cursor:pointer;
@@ -195,6 +195,8 @@ header.doc-head{
   font-size:16px;line-height:1;opacity:.35;
   transition:all .25s cubic-bezier(.4,0,.2,1);
   user-select:none;border:1px solid rgba(139,92,246,.3);
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
 }
 .secret-btn:hover{
   opacity:1;transform:scale(1.15);
@@ -452,7 +454,6 @@ function switchPanel(openVault){
     panelNotes.classList.remove('active');
     panelVault.classList.add('active');
     if(secretBtn)secretBtn.classList.add('active');
-    /* re-render on every open to force SVG repaint */
     render();
     if(searchInput){searchInput.value='';filter('');}
     window.scrollTo(0,0);
@@ -474,14 +475,14 @@ document.addEventListener('keydown',function(e){
   }
 });
 
-/* SECRET BUTTON — single click + touch, no hold */
+/* SECRET BUTTON — touchstart WITHOUT preventDefault = single tap, no hold */
 function secretClick(e){
-  if(e){e.preventDefault();e.stopPropagation();}
+  if(e){e.stopPropagation();}
   switchPanel(!vaultOpen);
 }
 if(secretBtn){
+  secretBtn.addEventListener('touchstart',secretClick,{passive:true});
   secretBtn.addEventListener('click',secretClick,false);
-  secretBtn.addEventListener('touchend',secretClick,false);
   secretBtn.onclick=secretClick;
 }
 
@@ -492,15 +493,15 @@ document.documentElement.setAttribute('data-theme',saved);
 if(themeBtn){
   themeBtn.textContent=saved==='dark'?'🌙':'☀️';
   function toggleTheme(e){
-    if(e){e.preventDefault();e.stopPropagation();}
+    if(e){e.stopPropagation();}
     var cur=document.documentElement.getAttribute('data-theme');
     var next=cur==='dark'?'light':'dark';
     document.documentElement.setAttribute('data-theme',next);
     try{localStorage.setItem('theme',next);}catch(err){}
     themeBtn.textContent=next==='dark'?'🌙':'☀️';
   }
+  themeBtn.addEventListener('touchstart',toggleTheme,{passive:true});
   themeBtn.addEventListener('click',toggleTheme,false);
-  themeBtn.addEventListener('touchend',toggleTheme,false);
   themeBtn.onclick=toggleTheme;
 }
 
@@ -516,7 +517,6 @@ document.addEventListener('keydown',function(e){
   }
 });
 
-/* initial render */
 render();
 ]]></script>
 
