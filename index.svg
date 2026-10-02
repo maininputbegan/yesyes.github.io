@@ -2,333 +2,64 @@
   <foreignObject width="100%" height="100%">
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
       <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <title>Proxy Index</title>
         <style><![CDATA[
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
           :root{
-            --bg:#07090d;
-            --bg2:#0d1117;
-            --panel:#121821;
-            --panel-2:#171d28;
-            --line:rgba(255,255,255,0.08);
-            --line-strong:rgba(255,255,255,0.12);
-            --text:#edf4ff;
-            --muted:#94a3b8;
-            --soft:#67778c;
-            --accent:#7ee7c5;
-            --accent-2:#b3f9dd;
+            --bg:#07090d; --bg2:#0d1117; --panel:#121821; --line:rgba(255,255,255,0.08);
+            --text:#edf4ff; --muted:#94a3b8; --accent:#7ee7c5; --glass:rgba(255,255,255,0.02);
             --shadow:0 24px 60px rgba(0,0,0,0.45);
           }
-
           *{box-sizing:border-box}
-          html,body{
-            margin:0;
-            width:100%;
-            height:100%;
-            background:
-              radial-gradient(circle at top, rgba(126,231,197,0.08), transparent 32%),
-              linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-            color:var(--text);
-            font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-          }
-
-          body{
-            display:flex;
-            justify-content:center;
-            align-items:flex-start;
-            padding:28px 18px;
-          }
-
-          .shell{
-            width:min(1160px,100%);
-            min-height:900px;
-            background:rgba(255,255,255,0.012);
-            border:1px solid var(--line);
-            border-radius:28px;
-            box-shadow:var(--shadow);
-            overflow:hidden;
-            backdrop-filter:blur(8px);
-          }
-
-          .topbar{
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:20px;
-            padding:22px 24px 18px;
-            border-bottom:1px solid var(--line);
-            background:rgba(255,255,255,0.01);
-          }
-
-          .brand{
-            display:flex;
-            flex-direction:column;
-            gap:6px;
-          }
-
-          .brand h1{
-            margin:0;
-            font-size:18px;
-            letter-spacing:0.18em;
-            text-transform:uppercase;
-            font-weight:800;
-          }
-
-          .brand small{
-            color:var(--muted);
-            font-size:11px;
-            letter-spacing:0.12em;
-            text-transform:uppercase;
-          }
-
-          .toolbar{
-            display:flex;
-            align-items:center;
-            gap:12px;
-          }
-
-          .search{
-            width:min(430px,50vw);
-            min-width:220px;
-            background:var(--panel);
-            border:1px solid var(--line);
-            border-radius:12px;
-            color:var(--text);
-            font-size:13px;
-            padding:11px 14px;
-            outline:none;
-            transition:border-color .18s ease, box-shadow .18s ease, background .18s ease;
-          }
-
-          .search::placeholder{color:var(--soft)}
-          .search:focus{
-            border-color:rgba(126,231,197,0.72);
-            box-shadow:0 0 0 4px rgba(126,231,197,0.12);
-            background:var(--panel-2);
-          }
-
-          .count{
-            color:var(--muted);
-            font-size:11px;
-            letter-spacing:0.08em;
-            text-transform:uppercase;
-            white-space:nowrap;
-            padding:9px 10px;
-            border-radius:10px;
-          }
-
-          .groups{
-            display:flex;
-            flex-direction:column;
-            gap:14px;
-            padding:20px 18px 22px;
-          }
-
-          .group{
-            background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.008));
-            border:1px solid var(--line);
-            border-radius:16px;
-            overflow:hidden;
-            transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-          }
-
-          .group:hover{
-            border-color:var(--line-strong);
-            box-shadow:0 10px 28px rgba(0,0,0,0.18);
-          }
-
-          .group.hidden{display:none}
-
-          .group-head{
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:16px;
-            padding:14px 16px;
-            cursor:pointer;
-            user-select:none;
-          }
-
-          .group-head:hover{
-            background:rgba(255,255,255,0.02);
-          }
-
-          .group-title{
-            display:flex;
-            align-items:center;
-            gap:12px;
-            min-width:0;
-          }
-
-          .group-name{
-            font-size:12px;
-            letter-spacing:0.18em;
-            text-transform:uppercase;
-            font-weight:700;
-            white-space:nowrap;
-            overflow:hidden;
-            text-overflow:ellipsis;
-          }
-
-          .group-pill{
-            min-width:30px;
-            height:22px;
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            padding:0 9px;
-            border-radius:999px;
-            border:1px solid var(--line);
-            background:rgba(255,255,255,0.02);
-            color:var(--muted);
-            font-size:11px;
-            font-weight:600;
-          }
-
-          .chev{
-            color:var(--muted);
-            font-size:12px;
-            transition:transform .16s ease;
-          }
-
+          html,body{height:100%;width:100%;margin:0;background:
+            radial-gradient(circle at top, rgba(126,231,197,0.06), transparent 28%),
+            linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);color:var(--text);
+            font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+          body{display:flex;justify-content:center;align-items:flex-start;padding:28px}
+          .shell{width:min(1160px,100%);min-height:900px;background:rgba(255,255,255,0.012);
+            border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+          .topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line)}
+          .brand h1{margin:0;font-size:18px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase}
+          .brand small{color:var(--muted);font-size:11px}
+          .toolbar{display:flex;align-items:center;gap:12px}
+          .search{min-width:220px;width:min(480px,46vw);padding:10px 12px;border-radius:10px;border:1px solid var(--line);
+            background:var(--panel);color:var(--text);outline:none}
+          .search::placeholder{color:var(--muted)}
+          .count{color:var(--muted);font-size:12px;padding:8px 10px}
+          .groups{display:flex;flex-direction:column;gap:12px;padding:18px}
+          .group{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.008));
+            border:1px solid var(--line);border-radius:14px;overflow:hidden}
+          .group-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;cursor:pointer}
+          .group-title{display:flex;align-items:center;gap:10px}
+          .group-name{font-weight:700;letter-spacing:0.08em;text-transform:uppercase;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+          .group-pill{min-width:30px;height:22px;display:inline-flex;align-items:center;justify-content:center;padding:0 8px;border-radius:999px;background:var(--glass);color:var(--muted);font-size:11px;border:1px solid rgba(255,255,255,0.02)}
+          .chev{color:var(--muted);transition:transform .15s}
           .group.closed .chev{transform:rotate(-90deg)}
-          .group-body{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-            gap:10px;
-            padding:0 14px 14px;
-          }
-
-          .group.closed .group-body{display:none}
-
-          .link-item{
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:10px;
-            min-height:74px;
-            padding:10px 12px;
-            border-radius:12px;
-            background:rgba(255,255,255,0.014);
-            border:1px solid rgba(255,255,255,0.04);
-            text-decoration:none;
-            color:var(--text);
-            transition:transform .12s ease, border-color .12s ease, background .12s ease;
-          }
-
-          .link-item:hover{
-            transform:translateY(-1px);
-            border-color:rgba(126,231,197,0.65);
-            background:rgba(255,255,255,0.024);
-          }
-
+          .group-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;padding:0 12px 12px}
+          .link-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px;border-radius:12px;background:rgba(255,255,255,0.012);border:1px solid rgba(255,255,255,0.04);text-decoration:none;color:var(--text)}
+          .link-item:hover{transform:translateY(-1px);border-color:rgba(126,231,197,0.6);background:rgba(255,255,255,0.02)}
           .link-main{flex:1;min-width:0}
-          .link-url{
-            white-space:nowrap;
-            overflow:hidden;
-            text-overflow:ellipsis;
-            font-size:13px;
-            color:var(--text);
-            line-height:1.4;
-          }
-
-          .link-host{
-            margin-top:4px;
-            font-size:11px;
-            letter-spacing:0.04em;
-            color:var(--muted);
-            text-transform:lowercase;
-          }
-
-          .actions{
-            display:flex;
-            align-items:center;
-            gap:8px;
-            flex-shrink:0;
-          }
-
-          .btn{
-            appearance:none;
-            border:1px solid var(--line);
-            background:rgba(255,255,255,0.02);
-            color:var(--muted);
-            border-radius:9px;
-            padding:7px 8px;
-            min-width:54px;
-            font-size:10px;
-            letter-spacing:0.1em;
-            text-transform:uppercase;
-            cursor:pointer;
-            transition:all .12s ease;
-          }
-
-          .btn:hover{
-            color:var(--accent-2);
-            border-color:rgba(126,231,197,0.6);
-          }
-
-          .btn.ok{
-            color:var(--accent-2);
-            border-color:rgba(126,231,197,0.7);
-            background:rgba(126,231,197,0.08);
-          }
-
-          .empty{
-            display:none;
-            margin:0 18px 18px;
-            padding:32px 20px;
-            text-align:center;
-            color:var(--muted);
-            border:1px dashed rgba(255,255,255,0.08);
-            border-radius:14px;
-            background:rgba(255,255,255,0.006);
-          }
-
+          .link-url{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px}
+          .link-host{margin-top:4px;color:var(--muted);font-size:11px;text-transform:lowercase}
+          .actions{display:flex;gap:8px;flex-shrink:0}
+          .btn{appearance:none;border:1px solid var(--line);background:rgba(255,255,255,0.02);color:var(--muted);border-radius:9px;padding:7px 8px;min-width:54px;font-size:10px;text-transform:uppercase;cursor:pointer}
+          .btn.ok{color:var(--accent);border-color:rgba(126,231,197,0.7);background:rgba(126,231,197,0.08)}
+          .empty{display:none;padding:28px;text-align:center;color:var(--muted)}
           .empty.show{display:block}
-
-          .toast{
-            position:fixed;
-            left:50%;
-            bottom:26px;
-            transform:translateX(-50%) translateY(12px);
-            background:rgba(17,20,26,0.94);
-            color:var(--text);
-            border:1px solid var(--line);
-            border-radius:999px;
-            padding:10px 16px;
-            font-size:10px;
-            letter-spacing:0.12em;
-            text-transform:uppercase;
-            opacity:0;
-            pointer-events:none;
-            transition:all .18s ease;
-          }
-
-          .toast.show{
-            opacity:1;
-            transform:translateX(-50%) translateY(0);
-          }
-
-          @media (max-width:700px){
-            .topbar{flex-direction:column;align-items:flex-start}
-            .toolbar{width:100%;justify-content:space-between}
-            .search{width:100%;min-width:0}
-          }
+          .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(12px);opacity:0;pointer-events:none;background:rgba(17,20,26,0.96);padding:10px 14px;border-radius:999px;border:1px solid var(--line);color:var(--text);transition:all .18s ease;font-size:12px;text-transform:uppercase}
+          .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+          @media (max-width:700px){body{padding:14px}.topbar{flex-direction:column;align-items:flex-start}.search{width:100%}}
         ]]></style>
       </head>
       <body>
-        <div class="shell">
+        <div class="shell" role="application" aria-label="Proxy index">
           <div class="topbar">
-            <div class="brand">
-              <h1>Proxy Index</h1>
-              <small>Grouped links</small>
-            </div>
-
+            <div class="brand"><h1>Proxy Index</h1><small>Grouped links</small></div>
             <div class="toolbar">
-              <input id="search" class="search" type="search" placeholder="Search groups or URLs" aria-label="Search links"/>
+              <input id="search" class="search" type="search" placeholder="Search groups or URLs (press /)" aria-label="Search links"/>
               <div id="count" class="count">0 groups • 0 links</div>
             </div>
           </div>
@@ -369,196 +100,87 @@
               {n:"GOOGLE SCRIPT + P5JS",l:["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxmo-l8H5tXzYfuh8wGzjiVkVOqQZoXDy-mbfMAlxyw-i2Wxh5VgjKGFh8YaEZW-CgCyg/exec","https://assets.editor.p5js.org/69f34707e1b8c4295655b517/6e528b37-2c24-457c-b1de-8b0964eacd2f.svg"]}
             ];
 
-            function esc(s){
-              return String(s).replace(/[&<>"']/g, function(c){
-                return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+            function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];}); }
+            function hostFrom(url){ try{ return (new URL(url)).host.replace(/^www\./i,''); }catch(e){ return url.replace(/^https?:\/\//i,'').split('/')[0]; } }
+
+            function buildGroupElement(g){
+              var section = document.createElement('section'); section.className='group';
+              var head = document.createElement('div'); head.className='group-head';
+              head.innerHTML = '<div class="group-title"><span class="group-name">'+esc(g.n)+'</span><span class="group-pill">'+g.l.length+'</span></div><span class="chev">▾</span>';
+              var body = document.createElement('div'); body.className='group-body';
+              g.l.forEach(function(u){
+                var a=document.createElement('a'); a.className='link-item'; a.href=u; a.target='_blank'; a.rel='noopener noreferrer';
+                var main=document.createElement('div'); main.className='link-main';
+                var urlEl=document.createElement('div'); urlEl.className='link-url'; urlEl.textContent = u.replace(/^https?:\/\//i,'');
+                var hostEl=document.createElement('div'); hostEl.className='link-host'; hostEl.textContent = hostFrom(u);
+                main.appendChild(urlEl); main.appendChild(hostEl);
+                var actions=document.createElement('div'); actions.className='actions';
+                var copyBtn=document.createElement('button'); copyBtn.type='button'; copyBtn.className='btn'; copyBtn.textContent='Copy';
+                copyBtn.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); copyToClipboard(u,copyBtn); });
+                var openBtn=document.createElement('button'); openBtn.type='button'; openBtn.className='btn'; openBtn.textContent='Open';
+                openBtn.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); window.open(u,'_blank','noopener'); });
+                actions.appendChild(copyBtn); actions.appendChild(openBtn);
+                a.appendChild(main); a.appendChild(actions); body.appendChild(a);
               });
+              head.addEventListener('click',function(){ section.classList.toggle('closed'); });
+              section.appendChild(head); section.appendChild(body);
+              return section;
             }
 
-            function hostFrom(url){
-              try{
-                return new URL(url).host.replace(/^www\./i, '');
-              } catch(e){
-                return url.replace(/^https?:\/\//i, '').split('/')[0];
-              }
-            }
-
-            function render(){
+            function renderAll(){
               var host = document.getElementById('groups');
-              host.innerHTML = '';
-
-              DATA.forEach(function(group){
-                var section = document.createElement('section');
-                section.className = 'group';
-
-                var head = document.createElement('div');
-                head.className = 'group-head';
-                head.innerHTML =
-                  '<div class="group-title">' +
-                    '<span class="group-name">' + esc(group.n) + '</span>' +
-                    '<span class="group-pill">' + group.l.length + '</span>' +
-                  '</div>' +
-                  '<span class="chev">▾</span>';
-
-                var body = document.createElement('div');
-                body.className = 'group-body';
-
-                group.l.forEach(function(url){
-                  var item = document.createElement('a');
-                  item.className = 'link-item';
-                  item.href = url;
-                  item.target = '_blank';
-                  item.rel = 'noopener noreferrer';
-
-                  var main = document.createElement('div');
-                  main.className = 'link-main';
-
-                  var urlEl = document.createElement('div');
-                  urlEl.className = 'link-url';
-                  urlEl.textContent = url.replace(/^https?:\/\//i, '');
-
-                  var hostEl = document.createElement('div');
-                  hostEl.className = 'link-host';
-                  hostEl.textContent = hostFrom(url);
-
-                  main.appendChild(urlEl);
-                  main.appendChild(hostEl);
-
-                  var actions = document.createElement('div');
-                  actions.className = 'actions';
-
-                  var copyBtn = document.createElement('button');
-                  copyBtn.type = 'button';
-                  copyBtn.className = 'btn';
-                  copyBtn.textContent = 'Copy';
-                  copyBtn.addEventListener('click', function(e){
-                    e.preventDefault();
-                    e.stopPropagation();
-                    if (navigator.clipboard && navigator.clipboard.writeText) {
-                      navigator.clipboard.writeText(url).then(function(){
-                        copyBtn.classList.add('ok');
-                        copyBtn.textContent = 'OK';
-                        showToast('Copied');
-                        setTimeout(function(){
-                          copyBtn.classList.remove('ok');
-                          copyBtn.textContent = 'Copy';
-                        }, 900);
-                      }).catch(function(){
-                        fallbackCopy(url, copyBtn);
-                      });
-                    } else {
-                      fallbackCopy(url, copyBtn);
-                    }
-                  });
-
-                  var openBtn = document.createElement('button');
-                  openBtn.type = 'button';
-                  openBtn.className = 'btn';
-                  openBtn.textContent = 'Open';
-                  openBtn.addEventListener('click', function(e){
-                    e.preventDefault();
-                    e.stopPropagation();
-                    window.open(url, '_blank', 'noopener');
-                  });
-
-                  actions.appendChild(copyBtn);
-                  actions.appendChild(openBtn);
-
-                  item.appendChild(main);
-                  item.appendChild(actions);
-                  body.appendChild(item);
-                });
-
-                head.addEventListener('click', function(){
-                  section.classList.toggle('closed');
-                });
-
-                section.appendChild(head);
-                section.appendChild(body);
-                host.appendChild(section);
-              });
-
+              host.innerHTML='';
+              for(var i=0;i<DATA.length;i++){ host.appendChild(buildGroupElement(DATA[i])); }
+              document.getElementById('empty').classList.remove('show');
               updateCounter();
             }
 
-            function fallbackCopy(text, btn){
-              var ta = document.createElement('textarea');
-              ta.value = text;
-              ta.style.position = 'fixed';
-              ta.style.opacity = '0';
-              document.body.appendChild(ta);
-              ta.select();
-              try {
-                document.execCommand('copy');
-                btn.classList.add('ok');
-                btn.textContent = 'OK';
-                showToast('Copied');
-              } catch (e) {
-                showToast('Copy failed');
-              }
-              setTimeout(function(){
-                btn.classList.remove('ok');
-                btn.textContent = 'Copy';
-              }, 900);
-              document.body.removeChild(ta);
+            function updateCounter(){
+              var groups = document.querySelectorAll('.group:not(.hidden)');
+              var totalLinks=0; groups.forEach(function(g){ totalLinks += g.querySelectorAll('.link-item').length; });
+              var cnt = document.getElementById('count'); if(cnt) cnt.textContent = groups.length + ' groups • ' + totalLinks + ' links';
             }
 
             function showToast(msg){
-              var toast = document.getElementById('toast');
-              toast.textContent = msg || 'Copied';
-              toast.classList.add('show');
-              clearTimeout(showToast.t);
-              showToast.t = setTimeout(function(){
-                toast.classList.remove('show');
-              }, 1400);
+              var t=document.getElementById('toast'); t.textContent = msg||'Copied'; t.classList.add('show'); clearTimeout(showToast.t);
+              showToast.t = setTimeout(function(){ t.classList.remove('show'); }, 1400);
             }
 
-            function updateCounter(){
-              var groups = document.querySelectorAll('.group');
-              var totalLinks = 0;
-              groups.forEach(function(g){
-                totalLinks += g.querySelectorAll('.link-item').length;
-              });
-              document.getElementById('count').textContent = groups.length + ' groups • ' + totalLinks + ' links';
+            function copyToClipboard(text, btn){
+              if(navigator.clipboard && navigator.clipboard.writeText){
+                navigator.clipboard.writeText(text).then(function(){ flashBtn(btn); showToast('Copied'); }).catch(function(){ fallbackCopy(text,btn); });
+              } else fallbackCopy(text,btn);
             }
+
+            function fallbackCopy(text,btn){
+              var ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select();
+              try{ document.execCommand('copy'); flashBtn(btn); showToast('Copied'); }catch(e){ showToast('Copy failed'); }
+              document.body.removeChild(ta);
+            }
+
+            function flashBtn(btn){ if(!btn) return; btn.classList.add('ok'); btn.textContent='OK'; setTimeout(function(){ btn.classList.remove('ok'); btn.textContent='Copy'; },900); }
 
             function filter(){
-              var q = document.getElementById('search').value.trim().toLowerCase();
-              var groups = document.querySelectorAll('.group');
-              var any = false;
-
+              var q = (document.getElementById('search').value || '').trim().toLowerCase();
+              var groups = document.querySelectorAll('.group'); var any=false;
               groups.forEach(function(group){
-                var name = group.querySelector('.group-name').textContent.toLowerCase();
-                var urls = Array.from(group.querySelectorAll('.link-url')).map(function(el){ return el.textContent.toLowerCase(); }).join(' ');
-                var hosts = Array.from(group.querySelectorAll('.link-host')).map(function(el){ return el.textContent.toLowerCase(); }).join(' ');
-                var hay = name + ' ' + urls + ' ' + hosts;
-
-                var show = !q || hay.indexOf(q) !== -1;
-                group.classList.toggle('hidden', !show);
-
-                if (show) any = true;
+                var name = (group.querySelector('.group-name')||{}).textContent || '';
+                var urls = Array.from(group.querySelectorAll('.link-url')).map(function(n){ return n.textContent; }).join(' ');
+                var hosts = Array.from(group.querySelectorAll('.link-host')).map(function(n){ return n.textContent; }).join(' ');
+                var hay = (name + ' ' + urls + ' ' + hosts).toLowerCase();
+                var show = !q || hay.indexOf(q) !== -1; group.classList.toggle('hidden', !show); if(show) any=true;
               });
-
               document.getElementById('empty').classList.toggle('show', !any);
               updateCounter();
             }
 
-            document.getElementById('search').addEventListener('input', filter);
+            // immediate run: build DOM (script is located after elements so DOM nodes exist)
+            renderAll();
 
-            document.addEventListener('keydown', function(e){
-              if (e.key === '/' && document.activeElement !== document.getElementById('search')) {
-                e.preventDefault();
-                var s = document.getElementById('search');
-                s.focus();
-                s.select();
-              }
-            });
-
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', render);
-            } else {
-              render();
-            }
+            // wire search and shortcut
+            var s = document.getElementById('search');
+            if(s){ s.addEventListener('input', filter); }
+            document.addEventListener('keydown', function(e){ if(e.key === '/' && document.activeElement !== s){ e.preventDefault(); s.focus(); s.select(); } });
           })();
         ]]></script>
       </body>
