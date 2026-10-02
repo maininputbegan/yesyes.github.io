@@ -1,9 +1,11 @@
 {
-  "name": "fjnny-proxy-index",
+  "name": "@fjnny/proxy-index",
   "version": "1.0.0",
   "description": "study index",
   "main": "index.svg",
   "files": ["index.svg"],
-  "author": "fjnny",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
