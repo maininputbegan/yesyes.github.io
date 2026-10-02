@@ -2,8 +2,8 @@
   <foreignObject width="100%" height="100%">
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
       <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Proxy Index</title>
         <style><![CDATA[
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -21,7 +21,6 @@
             --accent:#7ee7c5;
             --accent-2:#b3f9dd;
             --shadow:0 24px 60px rgba(0,0,0,0.45);
-            --radius:18px;
           }
 
           *{box-sizing:border-box}
@@ -51,7 +50,7 @@
             border-radius:28px;
             box-shadow:var(--shadow);
             overflow:hidden;
-            backdrop-filter: blur(8px);
+            backdrop-filter:blur(8px);
           }
 
           .topbar{
@@ -91,10 +90,6 @@
             gap:12px;
           }
 
-          .search-wrap{
-            position:relative;
-          }
-
           .search{
             width:min(430px,50vw);
             min-width:220px;
@@ -122,7 +117,6 @@
             text-transform:uppercase;
             white-space:nowrap;
             padding:9px 10px;
-            border:1px solid transparent;
             border-radius:10px;
           }
 
@@ -146,9 +140,7 @@
             box-shadow:0 10px 28px rgba(0,0,0,0.18);
           }
 
-          .group.hidden{
-            display:none;
-          }
+          .group.hidden{display:none}
 
           .group-head{
             display:flex;
@@ -202,9 +194,7 @@
             transition:transform .16s ease;
           }
 
-          .group.closed .chev{
-            transform:rotate(-90deg);
-          }
+          .group.closed .chev{transform:rotate(-90deg)}
 
           .group-body{
             display:grid;
@@ -213,9 +203,7 @@
             padding:0 14px 14px;
           }
 
-          .group.closed .group-body{
-            display:none;
-          }
+          .group.closed .group-body{display:none}
 
           .link-item{
             display:flex;
@@ -238,11 +226,7 @@
             background:rgba(255,255,255,0.024);
           }
 
-          .link-main{
-            flex:1;
-            min-width:0;
-          }
-
+          .link-main{flex:1;min-width:0}
           .link-url{
             white-space:nowrap;
             overflow:hidden;
@@ -304,9 +288,7 @@
             background:rgba(255,255,255,0.006);
           }
 
-          .empty.show{
-            display:block;
-          }
+          .empty.show{display:block}
 
           .toast{
             position:fixed;
@@ -332,20 +314,9 @@
           }
 
           @media (max-width:700px){
-            .topbar{
-              flex-direction:column;
-              align-items:flex-start;
-            }
-
-            .toolbar{
-              width:100%;
-              justify-content:space-between;
-            }
-
-            .search{
-              width:100%;
-              min-width:0;
-            }
+            .topbar{flex-direction:column;align-items:flex-start}
+            .toolbar{width:100%;justify-content:space-between}
+            .search{width:100%;min-width:0}
           }
         ]]></style>
       </head>
@@ -358,10 +329,8 @@
             </div>
 
             <div class="toolbar">
-              <div class="search-wrap">
-                <input id="search" class="search" type="search" placeholder="Search groups or URLs" aria-label="Search links" />
-              </div>
-              <div id="count" class="count">0 groups</div>
+              <input id="search" class="search" type="search" placeholder="Search groups or URLs" aria-label="Search links"/>
+              <div id="count" class="count">0 groups • 0 links</div>
             </div>
           </div>
 
@@ -397,189 +366,161 @@
               {n:"EXTRAS",l:["https://gelaoshi.global.ssl.fastly.net","https://fstudentsareinventors.s3.amazonaws.com/index.html","https://glwithfinals.s3.amazonaws.com/index.html","https://celestialdevsalot.github.io/celestialisbest","https://mathhomeworkhelperthingy.free.nf/?i=2","https://schoolbook1.radioimpactfm.ro","https://cdn.jsdelivr.net/gh/reeyuki/YukiOsSingleHtml@main/yukios.svg","https://cdn.jsdelivr.net/gh/drewalow860-ctrl/PeteZahStaticDone@959d81f/new.svg","https://cdn.jsdelivr.net/gh/cherriunblocked/svg/index.svg","https://cdn.jsdelivr.net/gh/coinbaselarper/svg@latest/logo.svg","https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg","https://raw.githack.com/un-pkg/npm/main/bundle-min.svg","https://aw3k.s3.us-east-2.amazonaws.com/index.html","https://mathvc.s3.amazonaws.com/index.html","https://lsrelay-a.s3.amazonaws.com/index.html","https://s3.amazonaws.com/elliotslinks-tnjavxyp/homework65988/index.html"]},
               {n:"MISC HOSTS",l:["https://mathtechmrk61.parcomunica.com","https://edumathschooledu.parcomunica.com","https://rkmathtech3.parcomunica.com","https://itsforubaks.parcomunica.com","https://techmathsch20.art-motel.com","https://okokokitsok.art-motel.com","https://mathschool8tech.art-motel.com","https://vcsastudying.lervs.ro","https://studyhubv2.litescripts.com","https://vcsastudying.meridiano.com.br","https://cipher.radioimpactfm.ro","https://studyvcsa.savenewport.com","https://rammer.nana.euforiacs.com","https://rammer.nana.dataon.cl","https://atharvseduhub.networkguru.com","https://scienceforuuu.parcomunica.com","https://mkmkmath.parcomunica.com","https://englishmath33.parcomunica.com","https://mathmathsc.art-motel.com","https://mathhh.art-motel.com","https://triplet.expertdiagnoza.ro","https://xylora.expertdiagnoza.ro","https://ck.gen1.srivaishnavam.org.au","https://ck.contentkeeper1.ekocleaner.ro","https://ck.contentkeeper2.forever-20.com","https://content.keeper2.savenewport.com","https://vinemanmath.srivaishnavam.org.au","https://mathbabysitting.srivaishnavam.org.au","https://babysittingmath.srivaishnavam.org.au","https://keyboardmath27.forever-20.com","https://backtobank8.forever-20.com","https://vinemanmath28.srivaishnavam.org.au","https://likethisaubmemrk.srivaishnavam.org.au","https://primathsc27.radioimpactfm.ro","https://25plesmath8.forever-20.com","https://keyboardmath20.expertdiagnoza.ro"]},
               {n:"B-CDN TEST SET",l:["https://james-gonzalez-21.b-cdn.net","https://daniel-sanchez-82.b-cdn.net","https://jacob-thomas-19.b-cdn.net","https://lucas-jones-14.b-cdn.net","https://harper-hernandez-10.b-cdn.net","https://evelyn-davis-19.b-cdn.net","https://ethan-hernandez-14.b-cdn.net","https://sofia-gonzalez-92.b-cdn.net","https://james-brown-87.b-cdn.net","https://james-gonzalez-20.b-cdn.net","https://storage.googleapis.com/logan223/duckmath.html"]},
-              {n:"JSDELIVR SVG DUMP",l:["https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6fd2c561e28a4b6ca92ceb469dfdd36f863b71fe/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@67e41572172f300e84665ac72832d7761526fed9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0ecd95c04ba98451334a183dfd3a1250072a13/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0d6662c28b6510aebc5a2e2b126656bfd028b2cc/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@00d9539b57bfb855ae8e7ffa759c7f31d3a3b90f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@c3c51b51dad2213a92ed044fa996b28d8b62aef9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2ed5e58213307b56b1bbfa3d4f263edfb5c13c2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@b61d31d3d29bbedca587dd88594bedb1a8630826d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e4fc8a1b4ab060e6e0bbf4429a8787494e5ef9cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7ab7bf52f7cc33f34472278961b720502a493105/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0046466b902a2bb123e3934f1486249c8cc893d2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@f64976fc6cf51579c06b0a5ccd24afc23100f60d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cf6ae96ba8cd3dcbdd9e48ff20c08d20aeb0043e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@720e070ddcbb05e6afe910a928f1502f25539084/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@daae934ac1ad0c68c881aef5a106b45368a2f0cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7114716e89c599b7108aa97593542bcbcbbdd34e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0d4c25fd9fdeac75ad0c8cea0b7add8449518c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6121c06c9d018fcc1607bd5dfa6afbcb7a5c00a3/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@39f58bd818ec12af5246b0184e7fbb63e08fea6b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@44ddf9b09055522f11d1f693d94ae2f923bb6f8b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@929f0279d8e394b07430540eb38b5f236d6d9041/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e45b7bdb1d971b8d24f5afbf1a94d2e62398579f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@ec6c24715f7f6cee52af17981a079389096eefe4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a12ce72097b0510a6cd6b4d3aa33b3000fc2f891/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@bd400eeece2a92d0f253951a2a671b642bd1b6a4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@11d9ae8d23d34a395a801f7fe28d65a83f93e75f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e15cb9f2b041ae068cfdf1ac183161e48c94dff4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@3e816503eda60576ab69604a91567f4ee844416c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2d5eb7852ee930b31b341c9240d7b2d32e685d7/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@09e32815e3c1407f021c1c0e85dda270cd30c9f9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0a4d82edf6cb3f7f931e2e13288bb6773a518f6d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@9b2ad5e65760ffd8b816b796cec347ada4814486/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e5ea252bd574caeb70fc5d227fa3a2e3fb200784/index.svg"]},
+              {n:"JSDELIVR SVG DUMP",l:["https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6fd2c561e28a4b6ca92ceb469dfdd36f863b71fe/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@67e41572172f300e84665ac72832d7761526fed9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0ecd95c04ba98451334a183dfd3a1250072a13/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0d6662c28b6510aebc5a2e2b126656bfd028b2cc/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@00d9539b57bfb855ae8e7ffa759c7f31d3a3b90f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@c3c51b51dad2213a92ed044fa996b28d8b62aef9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2ed5e58213307b56b1bbfa3d4f263edfb5c13c2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@b61d31d3d29bbedca587dd88594edb1a8630826d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e4fc8a1b4ab060e6e0bbf4429a8787494e5ef9cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7ab7bf52f7cc33f34472278961b720502a493105/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0046466b902a2bb123e3934f1486249c8cc893d2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@f64976fc6cf51579c06b0a5ccd24afc23100f60d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cf6ae96ba8cd3dcbdd9e48ff20c08d20aeb0043e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@720e070ddcbb05e6afe910a928f1502f25539084/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@daae934ac1ad0c68c881aef5a106b45368a2f0cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7114716e89c599b7108aa97593542bcbcbbdd34e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0d4c25fd9fdeac75ad0c8cea0b7add8449518c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6121c06c9d018fcc1607bd5dfa6afbcb7a5c00a3/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@39f58bd818ec12af5246b0184e7fbb63e08fea6b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@44ddf9b09055522f11d1f693d94ae2f923bb6f8b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@929f0279d8e394b07430540eb38b5f236d6d9041/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e45b7bdb1d971b8d24f5afbf1a94d2e62398579f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@ec6c24715f7f6cee52af17981a079389096eefe4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a12ce72097b0510a6cd6b4d3aa33b3000fc2f891/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@bd400eeece2a92d0f253951a2a671b642bd1b6a4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@11d9ae8d23d34a395a801f7fe28d65a83f93e75f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e15cb9f2b041ae068cfdf1ac183161e48c94dff4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@3e816503eda60576ab69604a91567f4ee844416c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2d5eb7852ee930b31b341c9240d7b2d32e685d7/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@09e32815e3c1407f021c1c0e85dda270cd30c9f9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0a4d82edf6cb3f7f931e2e13288bb6773a518f6d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@9b2ad5e65760ffd8b816b796cec347ada4814486/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e5ea252bd574caeb70fc5d227fa3a2e3fb200784/index.svg"]},
               {n:"GOOGLE SCRIPT + P5JS",l:["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxmo-l8H5tXzYfuh8wGzjiVkVOqQZoXDy-mbfMAlxyw-i2Wxh5VgjKGFh8YaEZW-CgCyg/exec","https://assets.editor.p5js.org/69f34707e1b8c4295655b517/6e528b37-2c24-457c-b1de-8b0964eacd2f.svg"]}
             ];
 
-            function esc(str){
-              return String(str).replace(/[&<>\"']/g, function(ch){
-                return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch];
-              });
-            }
+            function esc(s){ return String(s).replace(/[&<>\"']/g,function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+            function hostFrom(url){ try{ return (new URL(url)).host.replace(/^www\./i,''); } catch(e){ return url.replace(/^https?:\/\//i,'').split('/')[0]; } }
 
-            function getHost(url){
-              try{
-                return new URL(url).host.replace(/^www\./i,'');
-              }catch(e){
-                return url.replace(/^https?:\/\//i,'').split('/')[0];
-              }
-            }
-
-            function updateCounter(count){
-              var el = document.getElementById("count");
-              if (el) el.textContent = count + " groups";
+            function updateCounter(){
+              var groups = document.querySelectorAll('.group:not(.hidden)');
+              var totalLinks = 0;
+              groups.forEach(function(g){ totalLinks += g.querySelectorAll('.link-item').length; });
+              document.getElementById('count').textContent = groups.length + ' groups • ' + totalLinks + ' links';
             }
 
             function showToast(msg){
-              var toast = document.getElementById("toast");
-              toast.textContent = msg || "Copied";
-              toast.classList.add("show");
+              var toast = document.getElementById('toast');
+              toast.textContent = msg || 'Copied';
+              toast.classList.add('show');
               clearTimeout(showToast.t);
-              showToast.t = setTimeout(function(){ toast.classList.remove("show"); }, 1400);
+              showToast.t = setTimeout(function(){ toast.classList.remove('show'); }, 1400);
+            }
+
+            function flashBtn(btn){
+              if(!btn) return;
+              btn.classList.add('ok');
+              btn.textContent = 'OK';
+              setTimeout(function(){ btn.classList.remove('ok'); btn.textContent = 'Copy'; }, 900);
             }
 
             function copyText(text, btn){
               if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text)
-                  .then(function(){
-                    btn.classList.add("ok");
-                    btn.textContent = "OK";
-                    showToast("Copied");
-                    setTimeout(function(){
-                      btn.classList.remove("ok");
-                      btn.textContent = "Copy";
-                    }, 900);
-                  })
-                  .catch(function(){ fallbackCopy(text, btn); });
+                navigator.clipboard.writeText(text).then(function(){
+                  flashBtn(btn);
+                  showToast('Copied');
+                }).catch(function(){ fallbackCopy(text, btn); });
               } else {
                 fallbackCopy(text, btn);
               }
             }
 
             function fallbackCopy(text, btn){
-              var ta = document.createElement("textarea");
+              var ta = document.createElement('textarea');
               ta.value = text;
-              ta.style.position = "fixed";
-              ta.style.opacity = "0";
+              ta.style.position = 'fixed';
+              ta.style.opacity = '0';
               document.body.appendChild(ta);
               ta.focus();
               ta.select();
-              try {
-                document.execCommand("copy");
-                btn.classList.add("ok");
-                btn.textContent = "OK";
-                showToast("Copied");
-              } catch (err) {
-                showToast("Copy failed");
-              }
-              setTimeout(function(){
-                btn.classList.remove("ok");
-                btn.textContent = "Copy";
-              }, 900);
+              try { document.execCommand('copy'); flashBtn(btn); showToast('Copied'); }
+              catch(e){ showToast('Copy failed'); }
               document.body.removeChild(ta);
             }
 
-            function render(){
-              var groupsHost = document.getElementById("groups");
-              groupsHost.innerHTML = "";
+            function makeGroup(g){
+              var section = document.createElement('section');
+              section.className = 'group';
 
-              DATA.forEach(function(group){
-                var section = document.createElement("section");
-                section.className = "group";
+              var head = document.createElement('div');
+              head.className = 'group-head';
+              head.innerHTML = '<div class=\"group-title\"><span class=\"group-name\">' + esc(g.n) + '</span><span class=\"group-pill\">' + g.l.length + '</span></div><span class=\"chev\">▾</span>';
 
-                var head = document.createElement("div");
-                head.className = "group-head";
-                head.innerHTML =
-                  '<div class=\"group-title\">' +
-                    '<span class=\"group-name\">' + esc(group.n) + '</span>' +
-                    '<span class=\"group-pill\">' + group.l.length + '</span>' +
-                  '</div>' +
-                  '<span class=\"chev\">▾</span>';
+              var body = document.createElement('div');
+              body.className = 'group-body';
 
-                var body = document.createElement("div");
-                body.className = "group-body";
+              g.l.forEach(function(u){
+                var item = document.createElement('a');
+                item.className = 'link-item';
+                item.href = u;
+                item.target = '_blank';
+                item.rel = 'noopener noreferrer';
 
-                group.l.forEach(function(url){
-                  var item = document.createElement("a");
-                  item.className = "link-item";
-                  item.href = url;
-                  item.target = "_blank";
-                  item.rel = "noopener noreferrer";
+                var main = document.createElement('div');
+                main.className = 'link-main';
+                var urlEl = document.createElement('div');
+                urlEl.className = 'link-url';
+                urlEl.textContent = u.replace(/^https?:\/\//i,'');
+                var hostEl = document.createElement('div');
+                hostEl.className = 'link-host';
+                hostEl.textContent = hostFrom(u);
 
-                  var main = document.createElement("div");
-                  main.className = "link-main";
+                main.appendChild(urlEl);
+                main.appendChild(hostEl);
 
-                  var urlEl = document.createElement("div");
-                  urlEl.className = "link-url";
-                  urlEl.textContent = url.replace(/^https?:\/\//i, "");
+                var actions = document.createElement('div');
+                actions.className = 'actions';
 
-                  var hostEl = document.createElement("div");
-                  hostEl.className = "link-host";
-                  hostEl.textContent = getHost(url);
-
-                  main.appendChild(urlEl);
-                  main.appendChild(hostEl);
-
-                  var actions = document.createElement("div");
-                  actions.className = "actions";
-
-                  var copyBtn = document.createElement("button");
-                  copyBtn.type = "button";
-                  copyBtn.className = "btn";
-                  copyBtn.textContent = "Copy";
-                  copyBtn.onclick = function(e){
-                    e.preventDefault();
-                    e.stopPropagation();
-                    copyText(url, copyBtn);
-                  };
-
-                  var openBtn = document.createElement("button");
-                  openBtn.type = "button";
-                  openBtn.className = "btn";
-                  openBtn.textContent = "Open";
-                  openBtn.onclick = function(e){
-                    e.preventDefault();
-                    e.stopPropagation();
-                    window.open(url, "_blank", "noopener");
-                  };
-
-                  actions.appendChild(copyBtn);
-                  actions.appendChild(openBtn);
-
-                  item.appendChild(main);
-                  item.appendChild(actions);
-                  body.appendChild(item);
-                });
-
-                head.onclick = function(){
-                  section.classList.toggle("closed");
+                var copyBtn = document.createElement('button');
+                copyBtn.type = 'button';
+                copyBtn.className = 'btn';
+                copyBtn.textContent = 'Copy';
+                copyBtn.onclick = function(e){
+                  e.preventDefault(); e.stopPropagation();
+                  copyText(u, copyBtn);
                 };
 
-                section.appendChild(head);
-                section.appendChild(body);
-                groupsHost.appendChild(section);
+                var openBtn = document.createElement('button');
+                openBtn.type = 'button';
+                openBtn.className = 'btn';
+                openBtn.textContent = 'Open';
+                openBtn.onclick = function(e){
+                  e.preventDefault(); e.stopPropagation();
+                  window.open(u, '_blank', 'noopener');
+                };
+
+                actions.appendChild(copyBtn);
+                actions.appendChild(openBtn);
+
+                item.appendChild(main);
+                item.appendChild(actions);
+                body.appendChild(item);
               });
 
-              updateCounter(DATA.length);
+              head.addEventListener('click', function(){
+                section.classList.toggle('closed');
+              });
+
+              section.appendChild(head);
+              section.appendChild(body);
+              return section;
             }
 
             function filter(){
-              var q = document.getElementById("search").value.trim().toLowerCase();
-              var groups = document.querySelectorAll(".group");
-              var visible = 0;
-              var empty = document.getElementById("empty");
+              var q = document.getElementById('search').value.trim().toLowerCase();
+              var groups = document.querySelectorAll('.group');
+              var any = false;
 
               groups.forEach(function(group){
-                var title = group.querySelector(".group-name").textContent.toLowerCase();
-                var allText = group.textContent.toLowerCase();
-
-                var show = !q || allText.indexOf(q) !== -1 || title.indexOf(q) !== -1;
-                group.classList.toggle("hidden", !show);
-
-                if (show) visible++;
+                var name = group.querySelector('.group-name').textContent.toLowerCase();
+                var urls = Array.from(group.querySelectorAll('.link-url')).map(function(n){ return n.textContent.toLowerCase(); }).join(' ');
+                var hosts = Array.from(group.querySelectorAll('.link-host')).map(function(n){ return n.textContent.toLowerCase(); }).join(' ');
+                var text = (name + ' ' + urls + ' ' + hosts).toLowerCase();
+                var show = !q || text.indexOf(q) !== -1;
+                group.classList.toggle('hidden', !show);
+                if(show) any = true;
               });
 
-              empty.classList.toggle("show", visible === 0);
-              updateCounter(visible);
+              document.getElementById('empty').classList.toggle('show', !any);
+              updateCounter();
             }
 
-            document.getElementById("search").addEventListener("input", filter);
+            function render(){
+              var host = document.getElementById('groups');
+              host.innerHTML = '';
+              DATA.forEach(function(g){ host.appendChild(makeGroup(g)); });
+              updateCounter();
+            }
 
-            document.addEventListener("keydown", function(e){
-              if (e.key === "/" && document.activeElement !== document.getElementById("search")) {
+            document.getElementById('search').addEventListener('input', filter);
+
+            document.addEventListener('keydown', function(e){
+              if (e.key === '/' && document.activeElement !== document.getElementById('search')) {
                 e.preventDefault();
-                document.getElementById("search").focus();
-                document.getElementById("search").select();
+                var s = document.getElementById('search');
+                s.focus();
+                s.select();
               }
             });
 
