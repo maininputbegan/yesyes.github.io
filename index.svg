@@ -3,283 +3,238 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 <script>(function(){var XHTML="http://www.w3.org/1999/xhtml";var root=document.querySelector("foreignObject").firstElementChild;var oce=document.createElement.bind(document);var ocens=document.createElementNS.bind(document);Object.defineProperty(document,"head",{get:function(){return root.querySelector("head")},configurable:true});Object.defineProperty(document,"body",{get:function(){return root.querySelector("body")},configurable:true});Object.defineProperty(document,"documentElement",{get:function(){return root},configurable:true});document.createElement=function(t,o){if(typeof t==="string"){return ocens(XHTML,t,o)}return oce(t,o)};document.createElementNS=function(n,q,o){if(n==null||n===XHTML){return ocens(XHTML,q,o)}return ocens(n,q,o)};})();</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Links</title>
 <style><![CDATA[
 :root {
-  --bg: #09090b;
-  --card: #121214;
-  --hover: #1a1a1e;
-  --bd: #27272a;
-  --txt: #fafafa;
-  --dim: #a1a1aa;
-  --mut: #71717a;
-  --ac: #a78bfa;
-  --ac2: #c4b5fd;
-  --gr: #34d399;
-  --sh: 0 8px 30px rgba(0,0,0,.4);
+  --bg: #0a0a0a;
+  --surface: #111;
+  --border: #222;
+  --text: #e5e5e5;
+  --muted: #888;
+  --dim: #555;
+  --accent: #e5e5e5;
 }
 [data-th=light] {
-  --bg: #fafafa;
-  --card: #ffffff;
-  --hover: #f4f4f5;
-  --bd: #e4e4e7;
-  --txt: #09090b;
-  --dim: #52525b;
-  --mut: #a1a1aa;
-  --ac: #7c3aed;
-  --ac2: #6d28d9;
-  --gr: #059669;
-  --sh: 0 8px 30px rgba(0,0,0,.06);
+  --bg: #f5f5f5;
+  --surface: #fff;
+  --border: #ddd;
+  --text: #111;
+  --muted: #666;
+  --dim: #999;
+  --accent: #111;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html, body {
   background: var(--bg);
-  color: var(--txt);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text);
+  font-family: "SF Mono", "Cascadia Code", "Consolas", "Courier New", monospace;
+  font-size: 13px;
   line-height: 1.5;
   min-height: 100%;
   width: 100%;
-  -webkit-font-smoothing: antialiased;
 }
 .wrap {
-  max-width: 1100px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 28px 18px 80px;
+  padding: 32px 20px 60px;
 }
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+.top h1 {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.theme {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 11px;
+  padding: 4px 10px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+.theme:hover { color: var(--text); border-color: var(--text); }
+.search {
+  margin-bottom: 24px;
+}
+.search input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 10px 12px;
+  outline: none;
+}
+.search input:focus { border-color: var(--text); }
+.search input::placeholder { color: var(--dim); }
+.list { display: flex; flex-direction: column; gap: 1px; }
+.group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.group.hide { display: none; }
 .head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
-  gap: 12px;
-}
-.head h1 {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--txt);
-}
-.bt {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  border: 1px solid var(--bd);
-  background: var(--card);
-  color: var(--dim);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  transition: all .15s ease;
-}
-.bt:hover {
-  border-color: var(--ac);
-  color: var(--ac);
-}
-.srch {
-  margin-bottom: 20px;
-  padding: 12px 14px;
-  background: var(--card);
-  border: 1px solid var(--bd);
-  border-radius: 10px;
-  transition: border-color .15s ease;
-}
-.srch:focus-within {
-  border-color: var(--ac);
-}
-.srch input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--txt);
-  font-size: 14px;
-  font-family: inherit;
-}
-.srch input::placeholder { color: var(--mut); }
-.gr {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 12px;
-}
-.gp {
-  background: var(--card);
-  border: 1px solid var(--bd);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: border-color .15s ease;
-}
-.gp:hover { border-color: #3f3f46; }
-.gp.hide { display: none; }
-.gh {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
+  padding: 10px 14px;
   cursor: pointer;
   user-select: none;
-  border-bottom: 1px solid var(--bd);
+  border-bottom: 1px solid var(--border);
 }
-.ge {
-  font-size: 15px;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.gn {
-  flex: 1;
-  font-weight: 600;
+.head:hover { background: #161616; }
+[data-th=light] .head:hover { background: #f0f0f0; }
+.name {
   font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--txt);
-}
-.gc {
-  font-size: 10px;
-  color: var(--mut);
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
 }
-.gv {
-  color: var(--mut);
+.count {
+  font-size: 11px;
+  color: var(--dim);
+}
+.chev {
   font-size: 10px;
-  transition: transform .18s ease;
+  color: var(--dim);
+  margin-left: 12px;
+  transition: transform 0.15s ease;
 }
-.gp.col .gv { transform: rotate(-90deg); }
-.gp.col .gb { display: none; }
-.gb { padding: 6px; }
-.lk {
+.group.closed .chev { transform: rotate(-90deg); }
+.group.closed .body { display: none; }
+.body { padding: 4px 0; }
+.link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  border-radius: 6px;
-  color: var(--dim);
+  justify-content: space-between;
+  padding: 7px 14px;
+  color: var(--muted);
   text-decoration: none;
   font-size: 12px;
-  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
-  transition: all .12s ease;
+  border-left: 2px solid transparent;
+  transition: all 0.1s ease;
 }
-.lk:hover {
-  background: var(--hover);
-  color: var(--ac2);
+.link:hover {
+  color: var(--text);
+  background: #161616;
+  border-left-color: var(--text);
 }
-.lt {
+[data-th=light] .link:hover { background: #f0f0f0; }
+.url {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-right: 12px;
 }
-.lc {
-  opacity: 0;
-  width: 22px;
-  height: 22px;
-  border-radius: 5px;
-  border: 1px solid var(--bd);
-  background: transparent;
+.copy {
+  background: none;
+  border: none;
   color: var(--dim);
+  font-family: inherit;
+  font-size: 11px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  flex-shrink: 0;
-  transition: all .12s ease;
+  opacity: 0;
+  padding: 2px 6px;
+  letter-spacing: 0.04em;
 }
-.lk:hover .lc { opacity: 1; }
-.lc:hover { border-color: var(--ac); color: var(--ac); }
-.lc.ok { border-color: var(--gr); color: var(--gr); }
-.nr {
+.link:hover .copy { opacity: 1; }
+.copy:hover { color: var(--text); }
+.copy.done { color: var(--text); opacity: 1; }
+.empty {
   text-align: center;
-  padding: 48px 16px;
-  color: var(--mut);
-  font-size: 13px;
+  padding: 40px;
+  color: var(--dim);
+  font-size: 12px;
   display: none;
 }
-.nr.on { display: block; }
-.to {
+.empty.show { display: block; }
+.toast {
   position: fixed;
-  bottom: 24px;
+  bottom: 20px;
   left: 50%;
-  transform: translateX(-50%) translateY(60px);
-  background: var(--card);
-  border: 1px solid var(--gr);
-  color: var(--gr);
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 500;
-  box-shadow: var(--sh);
+  transform: translateX(-50%) translateY(40px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 11px;
+  padding: 6px 14px;
+  letter-spacing: 0.06em;
   opacity: 0;
-  z-index: 9999;
+  transition: all 0.2s ease;
+  z-index: 100;
   pointer-events: none;
-  transition: all .2s ease;
 }
-.to.on {
+.toast.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
-@media (max-width: 640px) {
-  .wrap { padding: 18px 12px 70px; }
-  .gr { grid-template-columns: 1fr; }
-  .head h1 { font-size: 16px; }
+@media (max-width: 600px) {
+  .wrap { padding: 20px 12px 50px; }
+  .link { font-size: 11px; }
 }
 ]]></style>
 </head>
 <body>
 <div class="wrap">
-  <div class="head">
-    <h1>Links</h1>
-    <button class="bt" id="themeBtn" type="button">◐</button>
+  <div class="top">
+    <h1>Index</h1>
+    <button class="theme" id="themeBtn" type="button">Theme</button>
   </div>
 
-  <div class="srch">
-    <input id="searchInput" type="text" placeholder="Search…" autocomplete="off" spellcheck="false"/>
+  <div class="search">
+    <input id="searchInput" type="text" placeholder="Filter…" autocomplete="off" spellcheck="false"/>
   </div>
 
-  <div class="gr" id="grid"></div>
-  <div class="nr" id="noResults">no results</div>
+  <div class="list" id="grid"></div>
+  <div class="empty" id="noResults">No matches</div>
 </div>
 
-<div class="to" id="toast">copied</div>
+<div class="toast" id="toast">Copied</div>
 
 <script><![CDATA[
 (function(){
   var DATA = [
-    {e:"⚡",n:"KITE",l:["https://f5fy.z13.web.core.windows.net","https://ofiq.z19.web.core.windows.net","https://qb3p.z9.web.core.windows.net","https://tq7o.z4.web.core.windows.net"]},
-    {e:"☀️",n:"SOLARA",l:["https://solara.tokeslaszlo.ro","https://solara.survet.cl","https://solara.explosionlearning.org","https://solara.lasersoft.net.au","https://solara.actadigital.com.ar"]},
-    {e:"🌙",n:"LUNAR",l:["https://lunar.explosionlearning.org","https://lunar.actadigital.com.ar","https://saugatrlunar-uicvr.xcel.ch"]},
-    {e:"🌌",n:"AURORA",l:["https://aurora.tokeslaszlo.ro","https://aurora.explosionlearning.org","https://aurora.actadigital.com.ar"]},
-    {e:"✨",n:"GLIM",l:["https://sgt7.s3.amazonaws.com/index.html","https://s3.us-east-1.amazonaws.com/axk4/index.html","https://s3.amazonaws.com/sz1n/index.html","https://axk4.s3.amazonaws.com/index.html"]},
-    {e:"💭",n:"DAYDREAMX",l:["https://h7ww.s3.amazonaws.com/index.html","https://h7ww.s3.us-east-1.amazonaws.com/index.html","https://s3.amazonaws.com/h7ww/index.html"]},
-    {e:"🚀",n:"INTERSTELLAR",l:["https://gnd9.z13.web.core.windows.net","https://zzqf.z19.web.core.windows.net","https://agek.z5.web.core.windows.net","https://fyeq.z1.web.core.windows.net","https://kpkz.z21.web.core.windows.net"]},
-    {e:"🎭",n:"CINERA",l:["https://cinera.explosionlearning.org","https://cinera.actadigital.com.ar"]},
-    {e:"🔥",n:"FLARE",l:["https://note.adis.web.id","https://max.brusin.net","https://lab.labgarreguevara.com.ar","https://study.innovacioneseducativas.com.mx","https://global.mrgshrimp.com","https://map.wayhomeapp.org"]},
-    {e:"🌆",n:"UTOPIA",l:["https://utopia.tokeslaszlo.ro","https://utopia.explosionlearning.org","https://utopia.actadigital.com.ar"]},
-    {e:"🎬",n:"TRIPLE T HD",l:["https://triplethd.explosionlearning.org","https://triplethd.lasersoft.net.au","https://triplethd.actadigital.com.ar"]},
-    {e:"🛰️",n:"SPACE",l:["https://space.explosionlearning.org","https://space.actadigital.com.ar"]},
-    {e:"🧭",n:"VOYA",l:["https://voya.tokeslaszlo.ro","https://voya.explosionlearning.org","https://voya.actadigital.com.ar"]},
-    {e:"🍓",n:"STROBERRI",l:["https://stroberri.explosionlearning.org","https://stroberri.actadigital.com.ar"]},
-    {e:"📚",n:"STUDY HUB",l:["https://studyhub.tokeslaszlo.ro","https://studyhub.explosionlearning.org"]},
-    {e:"🐤",n:"TUNG TUNG",l:["https://tungtung.survet.cl","https://tungtung.nikeinvest.ro","https://tungtung.cpmecatronica.cl","https://tungtung.colegiosanmarcel.cl","https://jhkf.z21.web.core.windows.net","https://gy5k.z22.web.core.windows.net","https://saugatrbaseball.7geo7.ru","https://saugatrtungtung-agylt.bisovea.ru","https://math268863-saugatr.ololow.com","https://saugatrtungtung-iouku.soynutrimeraki.cl"]},
-    {e:"🏹",n:"ASTRA",l:["https://sixseven.chanka.com","https://astra-bull.noble-house.tk","https://astra-education.top","https://animals.solidaritysafaris.com","https://bull.solidaritysafaris.com","https://saugatrastra-cacw.creative-words.se","https://info.veranda.co.id","https://tra.ipdz.com","https://gilead.org.il"]},
-    {e:"🍀",n:"FERN",l:["https://family267740-saugatr.biec.com.np","https://saugatrfern-pzamu.biec.com.np","https://education265213-saugatr.codex-bot.com","https://saugatrgreat.hyperlum.nl","https://subsaugatr.pirazymatma.pl"]},
-    {e:"🦆",n:"DUCK SET",l:["https://unpkg.com/classroomduck@1.0.0/index.html","https://unpkg.com/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck@1.0.0/index.html","https://esm.sh/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck/index.html","https://esm.sh/classroomduck/index.svg","https://esm.sh/jacorn-7fz3@1.0.0/index.html","https://unpkg.com/jacorn-7fz3@1.0.0/index.html","https://esm.sh/quietcorn@1.0.1/index.html","https://esm.sh/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.html","https://esm.sh/classroomduck@1.0.65/index.html","https://storage.googleapis.com/mathlessons/duckmath.svg","https://cdn.jsdelivr.net/gh/freezenovasrl/cdn/duckmath.svg"]},
-    {e:"📦",n:"S3 / AMAZON",l:["https://leahh-5a8u.s3.amazonaws.com/index.html","https://lmeyo-cok1.s3.amazonaws.com/index.html","https://ralsei.s3.amazonaws.com/index.html","https://lmeyo.s3.amazonaws.com/index.html","https://id5y.s3.amazonaws.com/index.html","https://fyr3.s3.amazonaws.com/index.html","https://axk4.s3.amazonaws.com/index.html","https://h7ww.s3.amazonaws.com/index.html"]},
-    {e:"🎨",n:"EXTRAS",l:["https://gelaoshi.global.ssl.fastly.net","https://fstudentsareinventors.s3.amazonaws.com/index.html","https://glwithfinals.s3.amazonaws.com/index.html","https://celestialdevsalot.github.io/celestialisbest","https://mathhomeworkhelperthingy.free.nf/?i=2","https://schoolbook1.radioimpactfm.ro","https://cdn.jsdelivr.net/gh/reeyuki/YukiOsSingleHtml@main/yukios.svg","https://cdn.jsdelivr.net/gh/drewalow860-ctrl/PeteZahStaticDone@959d81f/new.svg","https://cdn.jsdelivr.net/gh/cherriunblocked/svg/index.svg","https://cdn.jsdelivr.net/gh/coinbaselarper/svg@latest/logo.svg","https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg","https://raw.githack.com/un-pkg/npm/main/bundle-min.svg","https://aw3k.s3.us-east-2.amazonaws.com/index.html","https://mathvc.s3.amazonaws.com/index.html","https://lsrelay-a.s3.amazonaws.com/index.html","https://s3.amazonaws.com/elliotslinks-tnjavxyp/homework65988/index.html"]},
-    {e:"🌐",n:"MISC HOSTS",l:["https://mathtechmrk61.parcomunica.com","https://edumathschooledu.parcomunica.com","https://rkmathtech3.parcomunica.com","https://itsforubaks.parcomunica.com","https://techmathsch20.art-motel.com","https://okokokitsok.art-motel.com","https://mathschool8tech.art-motel.com","https://vcsastudying.lervs.ro","https://studyhubv2.litescripts.com","https://vcsastudying.meridiano.com.br","https://cipher.radioimpactfm.ro","https://studyvcsa.savenewport.com","https://rammer.nana.euforiacs.com","https://rammer.nana.dataon.cl","https://atharvseduhub.networkguru.com","https://scienceforuuu.parcomunica.com","https://mkmkmath.parcomunica.com","https://englishmath33.parcomunica.com","https://mathmathsc.art-motel.com","https://mathhh.art-motel.com","https://triplet.expertdiagnoza.ro","https://xylora.expertdiagnoza.ro","https://ck.gen1.srivaishnavam.org.au","https://ck.contentkeeper1.ekocleaner.ro","https://ck.contentkeeper2.forever-20.com","https://content.keeper2.savenewport.com","https://vinemanmath.srivaishnavam.org.au","https://mathbabysitting.srivaishnavam.org.au","https://babysittingmath.srivaishnavam.org.au","https://keyboardmath27.forever-20.com","https://backtobank8.forever-20.com","https://vinemanmath28.srivaishnavam.org.au","https://likethisaubmemrk.srivaishnavam.org.au","https://primathsc27.radioimpactfm.ro","https://25plesmath8.forever-20.com","https://keyboardmath20.expertdiagnoza.ro"]},
-    {e:"🧪",n:"B-CDN TEST SET",l:["https://james-gonzalez-21.b-cdn.net","https://daniel-sanchez-82.b-cdn.net","https://jacob-thomas-19.b-cdn.net","https://lucas-jones-14.b-cdn.net","https://harper-hernandez-10.b-cdn.net","https://evelyn-davis-19.b-cdn.net","https://ethan-hernandez-14.b-cdn.net","https://sofia-gonzalez-92.b-cdn.net","https://james-brown-87.b-cdn.net","https://james-gonzalez-20.b-cdn.net","https://storage.googleapis.com/logan223/duckmath.html"]},
-    {e:"🔗",n:"JSDELIVR SVG DUMP",l:["https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6fd2c561e28a4b6ca92ceb469dfdd36f863b71fe/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@67e41572172f300e84665ac72832d7761526fed9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0ecd95c04ba98451334a183dfd3a1250072a13/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0d6662c28b6510aebc5a2e2b126656bfd028b2cc/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@00d9539b57bfb855ae8e7ffa759c7f31d3a3b90f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@c3c51b51dad2213a92ed044fa996b28d8b62aef9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2ed5e58213307b56b1bbfa3d4f263edfb5c13c2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@b61d31d3d29bbedca587dd88594edb1a8630826d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e4fc8a1b4ab060e6e0bbf4429a8787494e5ef9cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7ab7bf52f7cc33f34472278961b720502a493105/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0046466b902a2bb123e3934f1486249c8cc893d2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@f64976fc6cf51579c06b0a5ccd24afc23100f60d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cf6ae96ba8cd3dcbdd9e48ff20c08d20aeb0043e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@720e070ddcbb05e6afe910a928f1502f25539084/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@daae934ac1ad0c68c881aef5a106b45368a2f0cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7114716e89c599b7108aa97593542bcbcbbdd34e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0d4c25fd9fdeac75ad0c8cea0b7add8449518c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6121c06c9d018fcc1607bd5dfa6afbcb7a5c00a3/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@39f58bd818ec12af5246b0184e7fbb63e08fea6b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@44ddf9b09055522f11d1f693d94ae2f923bb6f8b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@929f0279d8e394b07430540eb38b5f236d6d9041/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e45b7bdb1d971b8d24f5afbf1a94d2e62398579f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@ec6c24715f7f6cee52af17981a079389096eefe4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a12ce72097b0510a6cd6b4d3aa33b3000fc2f891/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@bd400eeece2a92d0f253951a2a671b642bd1b6a4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@11d9ae8d23d34a395a801f7fe28d65a83f93e75f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e15cb9f2b041ae068cfdf1ac183161e48c94dff4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@3e816503eda60576ab69604a91567f4ee844416c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2d5eb7852ee930b31b341c9240d7b2d32e685d7/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@09e32815e3c1407f021c1c0e85dda270cd30c9f9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0a4d82edf6cb3f7f931e2e13288bb6773a518f6d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@9b2ad5e65760ffd8b816b796cec347ada4814486/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e5ea252bd574caeb70fc5d227fa3a2e3fb200784/index.svg"]},
-    {e:"🧩",n:"GOOGLE SCRIPT + P5JS",l:["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxmo-l8H5tXzYfuh8wGzjiVkVOqQZoXDy-mbfMAlxyw-i2Wxh5VgjKGFh8YaEZW-CgCyg/exec","https://assets.editor.p5js.org/69f34707e1b8c4295655b517/6e528b37-2c24-457c-b1de-8b0964eacd2f.svg"]}
+    {n:"KITE",l:["https://f5fy.z13.web.core.windows.net","https://ofiq.z19.web.core.windows.net","https://qb3p.z9.web.core.windows.net","https://tq7o.z4.web.core.windows.net"]},
+    {n:"SOLARA",l:["https://solara.tokeslaszlo.ro","https://solara.survet.cl","https://solara.explosionlearning.org","https://solara.lasersoft.net.au","https://solara.actadigital.com.ar"]},
+    {n:"LUNAR",l:["https://lunar.explosionlearning.org","https://lunar.actadigital.com.ar","https://saugatrlunar-uicvr.xcel.ch"]},
+    {n:"AURORA",l:["https://aurora.tokeslaszlo.ro","https://aurora.explosionlearning.org","https://aurora.actadigital.com.ar"]},
+    {n:"GLIM",l:["https://sgt7.s3.amazonaws.com/index.html","https://s3.us-east-1.amazonaws.com/axk4/index.html","https://s3.amazonaws.com/sz1n/index.html","https://axk4.s3.amazonaws.com/index.html"]},
+    {n:"DAYDREAMX",l:["https://h7ww.s3.amazonaws.com/index.html","https://h7ww.s3.us-east-1.amazonaws.com/index.html","https://s3.amazonaws.com/h7ww/index.html"]},
+    {n:"INTERSTELLAR",l:["https://gnd9.z13.web.core.windows.net","https://zzqf.z19.web.core.windows.net","https://agek.z5.web.core.windows.net","https://fyeq.z1.web.core.windows.net","https://kpkz.z21.web.core.windows.net"]},
+    {n:"CINERA",l:["https://cinera.explosionlearning.org","https://cinera.actadigital.com.ar"]},
+    {n:"FLARE",l:["https://note.adis.web.id","https://max.brusin.net","https://lab.labgarreguevara.com.ar","https://study.innovacioneseducativas.com.mx","https://global.mrgshrimp.com","https://map.wayhomeapp.org"]},
+    {n:"UTOPIA",l:["https://utopia.tokeslaszlo.ro","https://utopia.explosionlearning.org","https://utopia.actadigital.com.ar"]},
+    {n:"TRIPLE T HD",l:["https://triplethd.explosionlearning.org","https://triplethd.lasersoft.net.au","https://triplethd.actadigital.com.ar"]},
+    {n:"SPACE",l:["https://space.explosionlearning.org","https://space.actadigital.com.ar"]},
+    {n:"VOYA",l:["https://voya.tokeslaszlo.ro","https://voya.explosionlearning.org","https://voya.actadigital.com.ar"]},
+    {n:"STROBERRI",l:["https://stroberri.explosionlearning.org","https://stroberri.actadigital.com.ar"]},
+    {n:"STUDY HUB",l:["https://studyhub.tokeslaszlo.ro","https://studyhub.explosionlearning.org"]},
+    {n:"TUNG TUNG",l:["https://tungtung.survet.cl","https://tungtung.nikeinvest.ro","https://tungtung.cpmecatronica.cl","https://tungtung.colegiosanmarcel.cl","https://jhkf.z21.web.core.windows.net","https://gy5k.z22.web.core.windows.net","https://saugatrbaseball.7geo7.ru","https://saugatrtungtung-agylt.bisovea.ru","https://math268863-saugatr.ololow.com","https://saugatrtungtung-iouku.soynutrimeraki.cl"]},
+    {n:"ASTRA",l:["https://sixseven.chanka.com","https://astra-bull.noble-house.tk","https://astra-education.top","https://animals.solidaritysafaris.com","https://bull.solidaritysafaris.com","https://saugatrastra-cacw.creative-words.se","https://info.veranda.co.id","https://tra.ipdz.com","https://gilead.org.il"]},
+    {n:"FERN",l:["https://family267740-saugatr.biec.com.np","https://saugatrfern-pzamu.biec.com.np","https://education265213-saugatr.codex-bot.com","https://saugatrgreat.hyperlum.nl","https://subsaugatr.pirazymatma.pl"]},
+    {n:"DUCK SET",l:["https://unpkg.com/classroomduck@1.0.0/index.html","https://unpkg.com/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck@1.0.0/index.html","https://esm.sh/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck/index.html","https://esm.sh/classroomduck/index.svg","https://esm.sh/jacorn-7fz3@1.0.0/index.html","https://unpkg.com/jacorn-7fz3@1.0.0/index.html","https://esm.sh/quietcorn@1.0.1/index.html","https://esm.sh/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.html","https://esm.sh/classroomduck@1.0.65/index.html","https://storage.googleapis.com/mathlessons/duckmath.svg","https://cdn.jsdelivr.net/gh/freezenovasrl/cdn/duckmath.svg"]},
+    {n:"S3 / AMAZON",l:["https://leahh-5a8u.s3.amazonaws.com/index.html","https://lmeyo-cok1.s3.amazonaws.com/index.html","https://ralsei.s3.amazonaws.com/index.html","https://lmeyo.s3.amazonaws.com/index.html","https://id5y.s3.amazonaws.com/index.html","https://fyr3.s3.amazonaws.com/index.html","https://axk4.s3.amazonaws.com/index.html","https://h7ww.s3.amazonaws.com/index.html"]},
+    {n:"EXTRAS",l:["https://gelaoshi.global.ssl.fastly.net","https://fstudentsareinventors.s3.amazonaws.com/index.html","https://glwithfinals.s3.amazonaws.com/index.html","https://celestialdevsalot.github.io/celestialisbest","https://mathhomeworkhelperthingy.free.nf/?i=2","https://schoolbook1.radioimpactfm.ro","https://cdn.jsdelivr.net/gh/reeyuki/YukiOsSingleHtml@main/yukios.svg","https://cdn.jsdelivr.net/gh/drewalow860-ctrl/PeteZahStaticDone@959d81f/new.svg","https://cdn.jsdelivr.net/gh/cherriunblocked/svg/index.svg","https://cdn.jsdelivr.net/gh/coinbaselarper/svg@latest/logo.svg","https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg","https://raw.githack.com/un-pkg/npm/main/bundle-min.svg","https://aw3k.s3.us-east-2.amazonaws.com/index.html","https://mathvc.s3.amazonaws.com/index.html","https://lsrelay-a.s3.amazonaws.com/index.html","https://s3.amazonaws.com/elliotslinks-tnjavxyp/homework65988/index.html"]},
+    {n:"MISC HOSTS",l:["https://mathtechmrk61.parcomunica.com","https://edumathschooledu.parcomunica.com","https://rkmathtech3.parcomunica.com","https://itsforubaks.parcomunica.com","https://techmathsch20.art-motel.com","https://okokokitsok.art-motel.com","https://mathschool8tech.art-motel.com","https://vcsastudying.lervs.ro","https://studyhubv2.litescripts.com","https://vcsastudying.meridiano.com.br","https://cipher.radioimpactfm.ro","https://studyvcsa.savenewport.com","https://rammer.nana.euforiacs.com","https://rammer.nana.dataon.cl","https://atharvseduhub.networkguru.com","https://scienceforuuu.parcomunica.com","https://mkmkmath.parcomunica.com","https://englishmath33.parcomunica.com","https://mathmathsc.art-motel.com","https://mathhh.art-motel.com","https://triplet.expertdiagnoza.ro","https://xylora.expertdiagnoza.ro","https://ck.gen1.srivaishnavam.org.au","https://ck.contentkeeper1.ekocleaner.ro","https://ck.contentkeeper2.forever-20.com","https://content.keeper2.savenewport.com","https://vinemanmath.srivaishnavam.org.au","https://mathbabysitting.srivaishnavam.org.au","https://babysittingmath.srivaishnavam.org.au","https://keyboardmath27.forever-20.com","https://backtobank8.forever-20.com","https://vinemanmath28.srivaishnavam.org.au","https://likethisaubmemrk.srivaishnavam.org.au","https://primathsc27.radioimpactfm.ro","https://25plesmath8.forever-20.com","https://keyboardmath20.expertdiagnoza.ro"]},
+    {n:"B-CDN TEST SET",l:["https://james-gonzalez-21.b-cdn.net","https://daniel-sanchez-82.b-cdn.net","https://jacob-thomas-19.b-cdn.net","https://lucas-jones-14.b-cdn.net","https://harper-hernandez-10.b-cdn.net","https://evelyn-davis-19.b-cdn.net","https://ethan-hernandez-14.b-cdn.net","https://sofia-gonzalez-92.b-cdn.net","https://james-brown-87.b-cdn.net","https://james-gonzalez-20.b-cdn.net","https://storage.googleapis.com/logan223/duckmath.html"]},
+    {n:"JSDELIVR SVG DUMP",l:["https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6fd2c561e28a4b6ca92ceb469dfdd36f863b71fe/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@67e41572172f300e84665ac72832d7761526fed9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0ecd95c04ba98451334a183dfd3a1250072a13/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0d6662c28b6510aebc5a2e2b126656bfd028b2cc/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@00d9539b57bfb855ae8e7ffa759c7f31d3a3b90f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@c3c51b51dad2213a92ed044fa996b28d8b62aef9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2ed5e58213307b56b1bbfa3d4f263edfb5c13c2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@b61d31d3d29bbedca587dd88594edb1a8630826d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e4fc8a1b4ab060e6e0bbf4429a8787494e5ef9cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7ab7bf52f7cc33f34472278961b720502a493105/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0046466b902a2bb123e3934f1486249c8cc893d2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@f64976fc6cf51579c06b0a5ccd24afc23100f60d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cf6ae96ba8cd3dcbdd9e48ff20c08d20aeb0043e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@720e070ddcbb05e6afe910a928f1502f25539084/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@daae934ac1ad0c68c881aef5a106b45368a2f0cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7114716e89c599b7108aa97593542bcbcbbdd34e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0d4c25fd9fdeac75ad0c8cea0b7add8449518c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6121c06c9d018fcc1607bd5dfa6afbcb7a5c00a3/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@39f58bd818ec12af5246b0184e7fbb63e08fea6b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@44ddf9b09055522f11d1f693d94ae2f923bb6f8b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@929f0279d8e394b07430540eb38b5f236d6d9041/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e45b7bdb1d971b8d24f5afbf1a94d2e62398579f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@ec6c24715f7f6cee52af17981a079389096eefe4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a12ce72097b0510a6cd6b4d3aa33b3000fc2f891/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@bd400eeece2a92d0f253951a2a671b642bd1b6a4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@11d9ae8d23d34a395a801f7fe28d65a83f93e75f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e15cb9f2b041ae068cfdf1ac183161e48c94dff4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@3e816503eda60576ab69604a91567f4ee844416c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2d5eb7852ee930b31b341c9240d7b2d32e685d7/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@09e32815e3c1407f021c1c0e85dda270cd30c9f9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0a4d82edf6cb3f7f931e2e13288bb6773a518f6d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@9b2ad5e65760ffd8b816b796cec347ada4814486/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e5ea252bd574caeb70fc5d227fa3a2e3fb200784/index.svg"]},
+    {n:"GOOGLE SCRIPT + P5JS",l:["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxmo-l8H5tXzYfuh8wGzjiVkVOqQZoXDy-mbfMAlxyw-i2Wxh5VgjKGFh8YaEZW-CgCyg/exec","https://assets.editor.p5js.org/69f34707e1b8c4295655b517/6e528b37-2c24-457c-b1de-8b0964eacd2f.svg"]}
   ];
 
   var grid = document.getElementById("grid");
@@ -295,11 +250,10 @@ html, body {
     });
   }
 
-  function showToast(m) {
-    toast.textContent = m;
-    toast.classList.add("on");
+  function showToast() {
+    toast.classList.add("show");
     clearTimeout(showToast._t);
-    showToast._t = setTimeout(function(){ toast.classList.remove("on"); }, 1300);
+    showToast._t = setTimeout(function(){ toast.classList.remove("show"); }, 1200);
   }
 
   function fallbackCopy(url, btn) {
@@ -308,12 +262,12 @@ html, body {
     ta.style.cssText = "position:fixed;opacity:0";
     document.body.appendChild(ta);
     ta.select();
-    try { document.execCommand("copy"); showToast("copied"); } catch(e) {}
+    try { document.execCommand("copy"); showToast(); } catch(e) {}
     document.body.removeChild(ta);
     if (btn) {
-      btn.classList.add("ok");
-      btn.textContent = "✓";
-      setTimeout(function(){ btn.classList.remove("ok"); btn.textContent = "⎘"; }, 900);
+      btn.textContent = "OK";
+      btn.classList.add("done");
+      setTimeout(function(){ btn.textContent = "COPY"; btn.classList.remove("done"); }, 900);
     }
   }
 
@@ -321,43 +275,40 @@ html, body {
     grid.innerHTML = "";
     DATA.forEach(function(g) {
       var card = document.createElement("div");
-      card.className = "gp";
+      card.className = "group";
       card.dataset.n = g.n.toLowerCase();
       card.dataset.l = g.l.join(" ").toLowerCase();
 
-      var body = "";
+      var links = "";
       g.l.forEach(function(u) {
-        body += '<a class="lk" href="' + esc(u) + '" target="_blank" rel="noopener noreferrer" data-u="' + esc(u) + '">' +
-                '<span class="lt">' + esc(u.replace(/^https?:\/\//, "")) + '</span>' +
-                '<button class="lc" type="button">⎘</button></a>';
+        links += '<a class="link" href="' + esc(u) + '" target="_blank" rel="noopener noreferrer" data-u="' + esc(u) + '">' +
+                 '<span class="url">' + esc(u.replace(/^https?:\/\//, "")) + '</span>' +
+                 '<button class="copy" type="button">COPY</button></a>';
       });
 
       card.innerHTML =
-        '<div class="gh">' +
-          '<div class="ge">' + g.e + '</div>' +
-          '<div class="gn">' + esc(g.n) + '</div>' +
-          '<div class="gc">' + g.l.length + '</div>' +
-          '<div class="gv">▼</div>' +
+        '<div class="head">' +
+          '<span class="name">' + esc(g.n) + '</span>' +
+          '<span><span class="count">' + g.l.length + '</span><span class="chev">▼</span></span>' +
         '</div>' +
-        '<div class="gb">' + body + '</div>';
+        '<div class="body">' + links + '</div>';
 
-      card.querySelector(".gh").onclick = function(e) {
-        if (e.target.closest && e.target.closest(".lc")) return;
-        card.classList.toggle("col");
+      card.querySelector(".head").onclick = function() {
+        card.classList.toggle("closed");
       };
 
-      card.querySelectorAll(".lc").forEach(function(btn) {
+      card.querySelectorAll(".copy").forEach(function(btn) {
         btn.onclick = function(e) {
           e.preventDefault();
           e.stopPropagation();
-          var url = btn.closest(".lk").dataset.u;
+          var url = btn.closest(".link").dataset.u;
           try {
             if (navigator.clipboard && navigator.clipboard.writeText) {
               navigator.clipboard.writeText(url).then(function() {
-                btn.classList.add("ok");
-                btn.textContent = "✓";
-                showToast("copied");
-                setTimeout(function(){ btn.classList.remove("ok"); btn.textContent = "⎘"; }, 900);
+                btn.textContent = "OK";
+                btn.classList.add("done");
+                showToast();
+                setTimeout(function(){ btn.textContent = "COPY"; btn.classList.remove("done"); }, 900);
               }).catch(function(){ fallbackCopy(url, btn); });
             } else {
               fallbackCopy(url, btn);
@@ -374,17 +325,17 @@ html, body {
 
   function filter(q) {
     q = (q || "").trim().toLowerCase();
-    var vis = false;
-    document.querySelectorAll(".gp").forEach(function(c) {
-      var m = !q || c.dataset.n.indexOf(q) !== -1 || c.dataset.l.indexOf(q) !== -1;
-      if (m) {
+    var any = false;
+    document.querySelectorAll(".group").forEach(function(c) {
+      var match = !q || c.dataset.n.indexOf(q) !== -1 || c.dataset.l.indexOf(q) !== -1;
+      if (match) {
         c.classList.remove("hide");
-        vis = true;
+        any = true;
       } else {
         c.classList.add("hide");
       }
     });
-    noResults.classList.toggle("on", !vis);
+    noResults.classList.toggle("show", !any);
   }
 
   if (searchInput) {
@@ -392,23 +343,20 @@ html, body {
   }
 
   document.addEventListener("keydown", function(e) {
-    if (e.key === "/" && document.activeElement !== searchInput && searchInput) {
+    if (e.key === "/" && document.activeElement !== searchInput) {
       e.preventDefault();
       searchInput.focus();
-      searchInput.select();
     }
   });
 
-  try { memTheme = localStorage.getItem("theme") || "dark"; } catch(e) {}
+  try { memTheme = localStorage.getItem("th") || "dark"; } catch(e) {}
   document.documentElement.setAttribute("data-th", memTheme);
+
   if (themeBtn) {
-    themeBtn.textContent = memTheme === "dark" ? "◐" : "◑";
     themeBtn.onclick = function() {
-      var n = document.documentElement.getAttribute("data-th") === "dark" ? "light" : "dark";
-      memTheme = n;
-      document.documentElement.setAttribute("data-th", n);
-      try { localStorage.setItem("theme", n); } catch(err) {}
-      themeBtn.textContent = n === "dark" ? "◐" : "◑";
+      var next = document.documentElement.getAttribute("data-th") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-th", next);
+      try { localStorage.setItem("th", next); } catch(e) {}
     };
   }
 
