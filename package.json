@@ -1,1 +1,8 @@
-
+{
+  "name": "fjnny-proxy-index",
+  "version": "1.0.0",
+  "description": "study index",
+  "main": "index.svg",
+  "files": ["index.svg", "loader.js"],
+  "license": "MIT"
+}
