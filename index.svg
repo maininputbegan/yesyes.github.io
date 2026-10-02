@@ -1,314 +1,845 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" width="100%" height="100%" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid meet">
-<foreignObject width="100%" height="100%">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-<script>(function(){var XHTML="http://www.w3.org/1999/xhtml";var root=document.querySelector("foreignObject").firstElementChild;var oce=document.createElement.bind(document);var ocens=document.createElementNS.bind(document);Object.defineProperty(document,"head",{get:function(){return root.querySelector("head")},configurable:true});Object.defineProperty(document,"body",{get:function(){return root.querySelector("body")},configurable:true});Object.defineProperty(document,"documentElement",{get:function(){return root},configurable:true});document.createElement=function(t,o){if(typeof t==="string"){return ocens(XHTML,t,o)}return oce(t,o)};document.createElementNS=function(n,q,o){if(n==null||n===XHTML){return ocens(XHTML,q,o)}return ocens(n,q,o)};})();</script>
-<style><![CDATA[
-html,body{margin:0;width:100%;height:100%;overflow:hidden}
-foreignObject{overflow:visible}
-]]></style>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Science Packet — Chapter 1 Review</title>
-</head>
-<body style="background:#08090d">
-<div id="app-root"></div>
+  <foreignObject width="100%" height="100%">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+      <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Science Packet — Chapter 1 Review</title>
+        <style><![CDATA[
+          html, body {
+            margin: 0;
+            width: 100%;
+            min-height: 100%;
+            overflow-x: hidden;
+            background: #0b0d12;
+          }
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+              radial-gradient(circle at top left, rgba(124, 58, 237, 0.28), transparent 30%),
+              radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.18), transparent 30%),
+              #0b0d12;
+            color: #eef2ff;
+          }
+          * { box-sizing: border-box; }
+          a, button, input { font: inherit; }
+          .wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 28px 24px 120px;
+          }
+          .head {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 22px;
+            padding: 18px 20px;
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            border-radius: 22px;
+            background: rgba(15, 18, 28, 0.78);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.45);
+          }
+          .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+            flex: 1;
+          }
+          .hi {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 30%, #14b8a6 100%);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 10px 25px rgba(139,92,246,0.35);
+            font-size: 24px;
+            flex-shrink: 0;
+          }
+          .ht {
+            min-width: 0;
+            flex: 1;
+          }
+          .ht h1 {
+            margin: 0;
+            font-size: clamp(1.05rem, 1.6vw, 1.5rem);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: #f8fbff;
+          }
+          .meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+            font-size: 12px;
+            color: #a9b5cf;
+          }
+          .meta span { position: relative; }
+          .meta span + span::before {
+            content: "•";
+            display: inline-block;
+            margin-right: 10px;
+            color: rgba(148, 163, 184, 0.9);
+          }
+          .actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+          }
+          .tab, .theme {
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            background: rgba(17, 22, 34, 0.88);
+            color: #dfe7ff;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+          }
+          .tab {
+            appearance: none;
+            padding: 9px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+          }
+          .tab.on {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(20, 184, 166, 0.16));
+            border-color: rgba(167, 139, 250, 0.65);
+            color: #f5f3ff;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+          }
+          .theme {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+          }
+          .tab:hover, .theme:hover, .sb:hover {
+            transform: translateY(-1px);
+          }
+          .pn {
+            display: none;
+          }
+          .pn.on {
+            display: block;
+          }
+          .nt {
+            background: rgba(15, 19, 30, 0.88);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            border-radius: 22px;
+            padding: 30px 34px 26px;
+            box-shadow: 0 18px 48px rgba(2, 6, 23, 0.28);
+            line-height: 1.72;
+          }
+          .nt h2 {
+            position: relative;
+            margin: 30px 0 12px;
+            padding-left: 16px;
+            font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #f9fbff;
+          }
+          .nt h2:first-child { margin-top: 0; }
+          .nt h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 3px;
+            bottom: 3px;
+            width: 4px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, #8b5cf6, #22c55e);
+          }
+          .nt p, .nt li {
+            color: #b7c4dc;
+            font-size: 14.5px;
+          }
+          .nt p { margin: 0 0 14px; }
+          .nt ul, .nt ol {
+            margin: 12px 0 18px 22px;
+            padding: 0;
+          }
+          .nt li { margin-bottom: 7px; }
+          .nt strong { color: #f2f7ff; }
+          .nt code {
+            display: inline-block;
+            padding: 2px 7px;
+            border-radius: 7px;
+            background: rgba(17, 24, 39, 0.75);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            color: #c4b5fd;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 12px;
+          }
+          .nt bq {
+            display: block;
+            margin: 18px 0;
+            padding: 18px 20px;
+            border-left: 4px solid #8b5cf6;
+            border-radius: 0 14px 14px 0;
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.12), rgba(15, 19, 30, 0.18));
+            color: #dfe8ff;
+            font-size: 14.5px;
+          }
+          .nt table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0 8px;
+            overflow: hidden;
+            border-radius: 14px;
+            border: 1px solid rgba(148, 163, 184, 0.18);
+          }
+          .nt th, .nt td {
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+            text-align: left;
+          }
+          .nt th {
+            background: rgba(17, 22, 34, 0.9);
+            color: #eef3ff;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+          }
+          .nt td { color: #bfd0ee; }
+          .nt tr:last-child td { border-bottom: none; }
+          .srch {
+            position: sticky;
+            top: 94px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            padding: 12px 14px 12px 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            background: rgba(15, 19, 30, 0.88);
+            box-shadow: 0 18px 38px rgba(2, 6, 23, 0.2);
+          }
+          .srch-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            background: rgba(139, 92, 246, 0.12);
+            color: #c4b5fd;
+            font-size: 18px;
+          }
+          .srch input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #f0f4ff;
+            font-size: 15px;
+            padding: 4px 0;
+          }
+          .srch input::placeholder { color: #8695b6; }
+          .srch-key {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #a9b5cf;
+            font-size: 11px;
+            font-weight: 700;
+            background: rgba(15, 18, 28, 0.55);
+          }
+          .gr {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+          }
+          .gp {
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            border-radius: 18px;
+            background: rgba(15, 19, 30, 0.86);
+            box-shadow: 0 18px 38px rgba(2, 6, 23, 0.18);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+          }
+          .gp:hover {
+            transform: translateY(-2px);
+            border-color: rgba(167, 139, 250, 0.45);
+            box-shadow: 0 22px 46px rgba(76, 29, 149, 0.24);
+          }
+          .gh {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 16px 14px;
+            cursor: pointer;
+            user-select: none;
+            background: linear-gradient(180deg, rgba(139, 92, 246, 0.06), rgba(15, 19, 30, 0.02));
+            border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+          }
+          .ge {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            font-size: 18px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+          }
+          .gn {
+            flex: 1;
+            min-width: 0;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 0.04em;
+            color: #f7faff;
+            text-transform: uppercase;
+          }
+          .gc {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+            padding: 0 8px;
+            border-radius: 999px;
+            background: rgba(167, 139, 250, 0.14);
+            color: #d9c8ff;
+            font-size: 10px;
+            font-weight: 800;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          }
+          .gv {
+            color: #a9b5cf;
+            font-size: 14px;
+            transition: transform 0.22s ease;
+          }
+          .gp.col .gv {
+            transform: rotate(-90deg);
+          }
+          .gb {
+            display: block;
+            padding: 10px;
+          }
+          .gp.col .gb { display: none; }
+          .link-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            padding: 0;
+          }
+          .link-row:last-child { margin-bottom: 0; }
+          .lk {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            min-width: 0;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 11px;
+            color: #c8d4f0;
+            text-decoration: none;
+            background: rgba(17, 24, 39, 0.52);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+          }
+          .lk:hover {
+            background: rgba(25, 34, 48, 0.85);
+            border-color: rgba(167, 139, 250, 0.3);
+            transform: translateX(2px);
+          }
+          .lk::before {
+            content: "›";
+            color: #8ea3d3;
+            font-size: 18px;
+            line-height: 1;
+          }
+          .lt {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 12px;
+          }
+          .lc {
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9px;
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            background: rgba(15, 18, 28, 0.65);
+            color: #a9b5cf;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            font-size: 13px;
+          }
+          .lc:hover {
+            border-color: rgba(167, 139, 250, 0.45);
+            color: #d9c8ff;
+          }
+          .lc.ok {
+            border-color: rgba(16, 185, 129, 0.75);
+            background: rgba(16, 185, 129, 0.12);
+            color: #6ee7b7;
+          }
+          .nr {
+            display: none;
+            margin-top: 18px;
+            padding: 30px 18px;
+            border-radius: 18px;
+            border: 1px dashed rgba(148, 163, 184, 0.25);
+            text-align: center;
+            font-size: 14px;
+            color: #a4b2cf;
+            background: rgba(15, 19, 30, 0.4);
+          }
+          .nr.on { display: block; }
+          .to {
+            position: fixed;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%) translateY(120px);
+            opacity: 0;
+            min-width: 120px;
+            text-align: center;
+            padding: 10px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(16, 185, 129, 0.55);
+            background: rgba(17, 24, 39, 0.9);
+            color: #9cecc7;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: lowercase;
+            box-shadow: 0 16px 38px rgba(16, 185, 129, 0.2);
+            transition: opacity 0.18s ease, transform 0.18s ease;
+            pointer-events: none;
+          }
+          .to.on {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+          }
+          .sb {
+            position: fixed;
+            left: 16px;
+            bottom: 16px;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(168, 85, 247, 0.92));
+            color: white;
+            box-shadow: 0 12px 28px rgba(139, 92, 246, 0.45);
+            cursor: pointer;
+            user-select: none;
+            font-size: 16px;
+            z-index: 30;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+          }
+          .sb.on {
+            box-shadow: 0 10px 24px rgba(139, 92, 246, 0.7);
+          }
+          @media (max-width: 640px) {
+            .wrap { padding: 18px 14px 100px; }
+            .head {
+              flex-direction: column;
+              align-items: stretch;
+              padding: 16px 16px 14px;
+            }
+            .brand { width: 100%; }
+            .actions {
+              width: 100%;
+              justify-content: space-between;
+            }
+            .tab { flex: 1; }
+            .theme { flex-shrink: 0; }
+            .nt { padding: 22px 18px 18px; }
+            .srch {
+              position: static;
+              top: auto;
+            }
+            .gr { grid-template-columns: 1fr; }
+            .sb {
+              left: 12px;
+              bottom: 12px;
+              width: 30px;
+              height: 30px;
+            }
+          }
+          [data-th="light"] {
+            --bg: #f3f6fb;
+            --bg2: #ffffff;
+            --card: #ffffff;
+            --card2: #f6f9ff;
+            --bd: rgba(148, 163, 184, 0.26);
+            --txt: #0f172a;
+            --dim: #475569;
+            --mut: #6b7280;
+            --ac: #7c3aed;
+            --ac2: #8b5cf6;
+            --ac3: #10b981;
+            --gl: 0 14px 28px rgba(124, 58, 237, 0.18);
+          }
+          [data-th="light"] body {
+            background:
+              radial-gradient(circle at top left, rgba(139, 92, 246, 0.12), transparent 30%),
+              radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.1), transparent 30%),
+              #f3f6fb;
+            color: #0f172a;
+          }
+          [data-th="light"] .head,
+          [data-th="light"] .nt,
+          [data-th="light"] .srch,
+          [data-th="light"] .gp {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(148, 163, 184, 0.24);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+          }
+          [data-th="light"] .tab,
+          [data-th="light"] .theme {
+            background: rgba(248, 250, 252, 0.95);
+            border-color: rgba(148, 163, 184, 0.2);
+            color: #172033;
+          }
+          [data-th="light"] .tab.on {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(16, 185, 129, 0.1));
+            border-color: rgba(124, 58, 237, 0.38);
+          }
+          [data-th="light"] .nt h2, [data-th="light"] .ht h1, [data-th="light"] .gn { color: #111827; }
+          [data-th="light"] .nt p, [data-th="light"] .nt li, [data-th="light"] .meta { color: #48556a; }
+          [data-th="light"] .lk,
+          [data-th="light"] .link-row .lc {
+            background: rgba(244, 247, 255, 0.9);
+            border-color: rgba(148, 163, 184, 0.16);
+            color: #334155;
+          }
+          [data-th="light"] .lk:hover {
+            background: rgba(241, 245, 249, 0.95);
+          }
+          [data-th="light"] .srch input { color: #0f172a; }
+          [data-th="light"] .srch input::placeholder { color: #6b7280; }
+        ]]></style>
+      </head>
+      <body>
+        <div id="app-root"></div>
+        <script><![CDATA[
+          (function () {
+            var DATA = [
+              { e: "⚡", n: "KITE", l: ["https://f5fy.z13.web.core.windows.net","https://ofiq.z19.web.core.windows.net","https://qb3p.z9.web.core.windows.net","https://tq7o.z4.web.core.windows.net"] },
+              { e: "☀️", n: "SOLARA", l: ["https://solara.tokeslaszlo.ro","https://solara.survet.cl","https://solara.explosionlearning.org","https://solara.lasersoft.net.au","https://solara.actadigital.com.ar","https://solara.aurorainsights.xyz"] },
+              { e: "🌙", n: "LUNAR", l: ["https://lunar.explosionlearning.org","https://lunar.actadigital.com.ar","https://saugatrlunar-uicvr.xcel.ch"] },
+              { e: "🌌", n: "AURORA", l: ["https://aurora.tokeslaszlo.ro","https://aurora.explosionlearning.org","https://aurora.actadigital.com.ar"] },
+              { e: "✨", n: "GLIM", l: ["https://sgt7.s3.amazonaws.com/index.html","https://s3.us-east-1.amazonaws.com/axk4/index.html","https://s3.amazonaws.com/sz1n/index.html","https://axk4.s3.amazonaws.com/index.html"] },
+              { e: "💭", n: "DAYDREAMX", l: ["https://h7ww.s3.amazonaws.com/index.html","https://h7ww.s3.us-east-1.amazonaws.com/index.html","https://s3.amazonaws.com/h7ww/index.html"] },
+              { e: "🚀", n: "INTERSTELLAR", l: ["https://gnd9.z13.web.core.windows.net","https://zzqf.z19.web.core.windows.net","https://agek.z5.web.core.windows.net","https://fyeq.z1.web.core.windows.net","https://p4x5.z11.web.core.windows.net"] },
+              { e: "🎭", n: "CINERA", l: ["https://cinera.explosionlearning.org","https://cinera.actadigital.com.ar"] },
+              { e: "🔥", n: "FLARE", l: ["https://note.adis.web.id","https://max.brusin.net","https://lab.labgarreguevara.com.ar","https://study.innovacioneseducativas.com.mx","https://global.mrgshri.in"] },
+              { e: "🌆", n: "UTOPIA", l: ["https://utopia.tokeslaszlo.ro","https://utopia.explosionlearning.org","https://utopia.actadigital.com.ar"] },
+              { e: "🎬", n: "TRIPLE T HD", l: ["https://triplethd.explosionlearning.org","https://triplethd.lasersoft.net.au","https://triplethd.actadigital.com.ar"] },
+              { e: "🛠️", n: "SPACE", l: ["https://space.explosionlearning.org","https://space.actadigital.com.ar"] },
+              { e: "🧺", n: "VOYA", l: ["https://voya.tokeslaszlo.ro","https://voya.explosionlearning.org","https://voya.actadigital.com.ar"] },
+              { e: "🧳", n: "STROBERRI", l: ["https://stroberri.explosionlearning.org","https://stroberri.actadigital.com.ar"] },
+              { e: "📚", n: "STUDY HUB", l: ["https://studyhub.tokeslaszlo.ro","https://studyhub.explosionlearning.org"] },
+              { e: "🐤", n: "TUNG TUNG", l: ["https://tungtung.survet.cl","https://tungtung.nikeinvest.ro","https://tungtung.cpmecatronica.cl","https://tungtung.colegiosanmarcel.cl","https://jhkf.z21.web.core.windows.net"] },
+              { e: "🏹", n: "ASTRA", l: ["https://sixseven.chanka.com","https://astra-bull.noble-house.tk","https://astra-education.top","https://animals.solidaritysafaris.com","https://bull.solidaritysafaris.com"] },
+              { e: "🌴", n: "FERN", l: ["https://family267740-saugatr.biec.com.np","https://saugatrfern-pzamu.biec.com.np","https://education265213-saugatr.codex-bot.com","https://saugatrgreat.hyperion-edu.net"] },
+              { e: "🧸", n: "DUCK SET", l: ["https://unpkg.com/classroomduck@1.0.0/index.html","https://unpkg.com/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck@1.0.0/index.html","https://cdn.jsdelivr.net/npm/classroomduck@1.0.0/index.html"] },
+              { e: "📦", n: "S3 / AMAZON", l: ["https://leahh-5a8u.s3.amazonaws.com/index.html","https://lmeyo-cok1.s3.amazonaws.com/index.html","https://ralsei.s3.amazonaws.com/index.html","https://ralsei.s3.us-east-1.amazonaws.com/index.html"] },
+              { e: "🎨", n: "EXTRAS", l: ["https://gelaoshi.global.ssl.fastly.net","https://fstudentsareinventors.s3.amazonaws.com/index.html","https://glwithfinals.s3.amazonaws.com/index.html","https://demo.example.com/extra/index.html"] },
+              { e: "🌐", n: "MISC HOSTS", l: ["https://mathtechmrk61.parcomunica.com","https://edumathschooledu.parcomunica.com","https://rkmathtech3.parcomunica.com","https://itsforubaks.parcomunica.com"] },
+              { e: "🧪", n: "B-CDN TEST SET", l: ["https://james-gonzalez-21.b-cdn.net","https://daniel-sanchez-82.b-cdn.net","https://jacob-thomas-19.b-cdn.net","https://lucas-jones-14.b-cdn.net","https://ethan-taylor-07.b-cdn.net"] },
+              { e: "🔗", n: "JSDELIVR SVG DUMP", l: ["https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6fd2c561e28a4b6ca92ceb469dfdd36f863b71fe/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7d1af53c69234f7de4f5f8d3cc3c19ea4de10d17/index.svg"] },
+              { e: "🧩", n: "GOOGLE SCRIPT + P5JS", l: ["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxkQK0dTqD4M3T8lYdD107ZkA6H5YFQ8iwK2TtNPQq2u0qgWw/exec"] }
+            ];
 
-<script><![CDATA[
-(function(){
-  var CSS = ""
-  + ":root{--bg:#08090d;--bg2:#0f1117;--card:#141721;--hover:#1a1f2c;--bd:#222634;--txt:#eef0f6;--dim:#98a0b5;--mut:#646c82;--ac:#8b5cf6;--ac2:#a78bfa;--ac3:#c4b5fd;--gr:#10b981;--sh:0 10px 40px rgba(0,0,0,.6);--gl:0 0 24px rgba(139,92,246,.45)}"
-  + "[data-th=light]{--bg:#f5f6fa;--bg2:#fff;--card:#fff;--hover:#f2f4f9;--bd:#e2e5ee;--txt:#0f1424;--dim:#5a6480;--mut:#8c94a8;--ac:#7c3aed;--ac2:#6d28d9;--ac3:#5b21b6;--gr:#059669;--sh:0 10px 40px rgba(20,20,50,.08);--gl:0 0 20px rgba(124,58,237,.25)}"
-  + "*{margin:0;padding:0;box-sizing:border-box}"
-  + "html,body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.55;min-height:100%}"
-  + "body{background-image:radial-gradient(circle at 15% -10%,rgba(139,92,246,.13),transparent 45%),radial-gradient(circle at 85% 110%,rgba(16,185,129,.07),transparent 45%);background-attachment:fixed}"
-  + ".wrap{max-width:1080px;margin:0 auto;padding:28px 22px 120px}"
-  + ".head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;margin-bottom:22px;gap:16px;flex-wrap:wrap;background:linear-gradient(180deg,var(--bg2),rgba(255,255,255,0));border:1px solid var(--bd);border-radius:18px;box-shadow:var(--sh)}"
-  + ".hi{width:44px;height:44px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,var(--ac),var(--ac2));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 6px 20px rgba(139,92,246,.4)}"
-  + ".ht{flex:1;min-width:200px}"
-  + ".ht h1{font-size:16px;font-weight:700;letter-spacing:-.015em;margin-bottom:3px;color:var(--txt)}"
-  + ".ht .m{font-size:12px;color:var(--dim);display:flex;gap:10px;flex-wrap:wrap}"
-  + ".ht .m span+span::before{content:'\00b7';color:var(--mut);margin-right:10px}"
-  + ".bt{width:40px;height:40px;border-radius:11px;border:1px solid var(--bd);background:var(--card);color:var(--dim);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:15px;transition:all .18s ease}"
-  + ".bt:hover{border-color:var(--ac);color:var(--ac2);box-shadow:var(--gl)}"
-  + ".pn{display:none}.pn.on{display:block}"
-  + ".nt{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:32px 36px;box-shadow:var(--sh);line-height:1.75}"
-  + ".nt h2{font-size:21px;font-weight:700;letter-spacing:-.02em;margin:30px 0 14px;color:var(--txt);position:relative;padding-left:14px}"
-  + ".nt h2:first-child{margin-top:0}"
-  + ".nt h2::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;background:linear-gradient(180deg,var(--ac),var(--ac3));border-radius:2px}"
-  + ".nt p{font-size:14.5px;color:var(--dim);margin-bottom:14px}"
-  + ".nt ul,.nt ol{margin:10px 0 16px 24px;font-size:14.5px;color:var(--dim)}"
-  + ".nt li{margin-bottom:7px}"
-  + ".nt strong{color:var(--txt);font-weight:600}"
-  + ".nt code{background:var(--bg2);border:1px solid var(--bd);padding:2px 7px;border-radius:5px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--ac2)}"
-  + ".nt bq{display:block;border-left:3px solid var(--ac);padding:18px 22px;margin:18px 0;background:linear-gradient(90deg,rgba(139,92,246,.08),transparent);border-radius:0 12px 12px 0;font-size:13.5px;color:var(--dim);line-height:1.8}"
-  + ".nt table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px}"
-  + ".nt th{text-align:left;padding:12px 14px;background:var(--bg2);border-bottom:1px solid var(--bd);font-weight:700;color:var(--txt);font-size:12px;letter-spacing:.04em;text-transform:uppercase}"
-  + ".nt td{padding:11px 14px;border-bottom:1px solid var(--bd);color:var(--dim)}"
-  + ".nt tr:last-child td{border-bottom:none}"
-  + ".srch{margin-bottom:22px;display:flex;align-items:center;gap:12px;padding:15px 20px;background:var(--card);border:1px solid var(--bd);border-radius:14px;box-shadow:var(--sh);transition:all .2s ease}"
-  + ".srch:focus-within{border-color:var(--ac);box-shadow:var(--gl),var(--sh)}"
-  + ".srch input{flex:1;background:transparent;border:none;outline:none;color:var(--txt);font-size:15px;font-family:inherit}"
-  + ".srch input::placeholder{color:var(--mut)}"
-  + ".gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}"
-  + ".gp{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden;transition:all .22s cubic-bezier(.4,0,.2,1)}"
-  + ".gp:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 12px 40px rgba(139,92,246,.22),0 0 0 1px rgba(139,92,246,.15)}"
-  + ".gh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;border-bottom:1px solid var(--bd);background:linear-gradient(180deg,rgba(139,92,246,.03),transparent)}"
-  + ".ge{font-size:18px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--bg2);border-radius:10px;flex-shrink:0;border:1px solid var(--bd)}"
-  + ".gn{flex:1;font-weight:700;font-size:13px;letter-spacing:.02em;color:var(--txt)}"
-  + ".gc{font-size:10.5px;color:var(--ac2);padding:3px 9px;background:rgba(139,92,246,.1);border-radius:20px;font-family:ui-monospace,monospace;font-weight:600}"
-  + ".gv{color:var(--mut);font-size:11px;transition:transform .25s ease}"
-  + ".gp.col .gv{transform:rotate(-90deg)}"
-  + ".gp.col .gb{display:none}"
-  + ".gb{padding:8px}"
-  + ".lk{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:9px;color:var(--dim);text-decoration:none;font-size:12.5px;font-family:ui-monospace,Menlo,monospace;transition:all .15s ease}"
-  + ".lk:hover{background:var(--hover);color:var(--ac2);padding-left:16px}"
-  + ".lk::before{content:'\203a';color:var(--mut);font-family:sans-serif;font-size:17px;margin-right:2px;transition:color .15s ease}"
-  + ".lk:hover::before{color:var(--ac)}"
-  + ".lt{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}"
-  + ".lc{opacity:.25;width:26px;height:26px;border-radius:7px;border:1px solid var(--bd);background:var(--bg2);color:var(--dim);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;transition:all .15s ease}"
-  + ".lk:hover .lc{opacity:1}"
-  + ".lc:hover{border-color:var(--ac);color:var(--ac)}"
-  + ".lc.ok{border-color:var(--gr);color:var(--gr);background:rgba(16,185,129,.1)}"
-  + ".nr{text-align:center;padding:60px 20px;color:var(--mut);font-size:14px;display:none}"
-  + ".nr.on{display:block}"
-  + ".fn{margin-top:36px;padding:20px;text-align:center;font-size:12px;color:var(--mut);border-top:1px solid var(--bd)}"
-  + ".to{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--card);border:1px solid var(--gr);color:var(--gr);padding:11px 22px;border-radius:12px;font-size:13px;font-weight:600;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;z-index:9999;pointer-events:none;transition:all .3s cubic-bezier(.4,0,.2,1)}"
-  + ".to.on{transform:translateX(-50%) translateY(0);opacity:1}"
-  + ".sb{position:fixed;bottom:16px;left:16px;width:32px;height:32px;border-radius:50%;z-index:9998;cursor:pointer;background:rgba(139,92,246,.35);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(139,92,246,.25);font-size:16px;line-height:1;opacity:.35;transition:all .25s cubic-bezier(.4,0,.2,1);user-select:none;border:1px solid rgba(139,92,246,.3);-webkit-tap-highlight-color:transparent;touch-action:manipulation;color:#fff}"
-  + ".sb:hover{opacity:1;transform:scale(1.15);background:rgba(139,92,246,.85);box-shadow:0 6px 20px rgba(139,92,246,.55)}"
-  + ".sb.on{opacity:.9;background:rgba(139,92,246,.9)}"
-  + "@media(max-width:640px){.wrap{padding:18px 14px 110px}.nt{padding:22px 20px}.nt h2{font-size:19px}.gr{grid-template-columns:1fr}.sb{bottom:12px;left:12px;width:28px;height:28px;font-size:14px}}";
+            var NOTES = "<h2>What Is Science?</h2>"
+              + "<p>Science is the systematic study of the natural world through observation, experimentation, and reasoning. Scientists ask questions, form hypotheses, collect data, and draw conclusions based on evidence.</p>"
+              + "<p>The three main branches of science:</p>"
+              + "<ul><li><strong>Life Science</strong> — the study of living things (biology)</li><li><strong>Physical Science</strong> — the study of matter and energy (chemistry + physics)</li><li><strong>Earth and Space Science</strong> — the study of Earth, planets, and the universe</li></ul>"
+              + "<h2>The Scientific Method</h2>"
+              + "<p>The scientific method is a step-by-step process scientists use to investigate questions. The steps are not always linear — scientists often loop back and revise.</p>"
+              + "<ol><li><strong>Ask a Question</strong> — What do you want to know?</li><li><strong>Research</strong> — What do you already know? What have others discovered?</li><li><strong>Form a Hypothesis</strong> — Make a testable prediction.</li><li><strong>Test It</strong> — Design and run an experiment.</li><li><strong>Analyze Data</strong> — Look for patterns and results.</li><li><strong>Draw Conclusions</strong> — Explain what your evidence shows.</li></ol>"
+              + "<h2>Variables and Controls</h2>"
+              + "<p>Every good experiment has three types of variables:</p>"
+              + "<ul><li><strong>Independent Variable (IV)</strong> — The one thing you change on purpose.</li><li><strong>Dependent Variable (DV)</strong> — The thing you measure; it depends on the IV.</li><li><strong>Constants</strong> — Things you keep the same so the test is fair.</li></ul>"
+              + "<p><strong>Control Group:</strong> The group that does not receive the experimental treatment. Used for comparison. Example: A plant given no fertilizer while others get fertilizer.</p>"
+              + "<p><strong>Experimental Group:</strong> The group that receives the treatment.</p>"
+              + "<h2>Data and Graphing</h2>"
+              + "<p>Data comes in two flavors:</p>"
+              + "<ul><li><strong>Qualitative Data</strong> — Descriptions. Uses your senses. (\"The liquid turned cloudy.\")</li><li><strong>Quantitative Data</strong> — Numbers. Measurements. (\"The water was 24°C.\")</li></ul>"
+              + "<p>Types of graphs:</p>"
+              + "<ul><li><strong>Bar Graph</strong> — Comparing categories.</li><li><strong>Line Graph</strong> — Showing change over time.</li><li><strong>Pie Chart</strong> — Showing parts of a whole.</li></ul>"
+              + "<p>Rules for graphing: label both axes with units, give the graph a title like <code>The Effect of [IV] on [DV]</code>, and use neat, accurate scales. Neatness counts.</p>"
+              + "<h2>Example — Why Bread Gets Soggy</h2>"
+              + "<bq><strong>Question:</strong> Why does my sandwich bread get soggy when I put sauce on it?<br/><br/><strong>Background research:</strong> Bread is porous — it has tiny holes. Sauce contains water, which can move into the bread and make it soft.<br/><br/><strong>Hypothesis:</strong> More sauce will make the bread soggier because the water content increases.</bq>"
+              + "<h2>Vocabulary Review</h2>"
+              + "<table><tr><th>Term</th><th>Definition</th></tr><tr><td>Science</td><td>The systematic study of the natural world</td></tr><tr><td>Hypothesis</td><td>A testable prediction based on observations</td></tr><tr><td>Independent Variable</td><td>The variable the scientist changes on purpose</td></tr><tr><td>Dependent Variable</td><td>The variable that is measured</td></tr><tr><td>Control Group</td><td>The group that receives no experimental treatment</td></tr><tr><td>Constant</td><td>A factor that stays the same in an experiment</td></tr><tr><td>Data</td><td>Information collected during an experiment</td></tr><tr><td>Qualitative Data</td><td>Descriptive observations using the senses</td></tr><tr><td>Quantitative Data</td><td>Numerical measurements</td></tr><tr><td>Inference</td><td>A logical conclusion based on evidence</td></tr><tr><td>Observation</td><td>Information gathered using the five senses</td></tr><tr><td>Theory</td><td>A well-tested explanation supported by much evidence</td></tr><tr><td>Law</td><td>A rule describing a pattern in nature</td></tr><tr><td>Model</td><td>A representation used to explain something</td></tr></table>"
+              + "<p style='margin-top:26px;font-style:italic;color:var(--mut);font-size:13px'>End of Chapter 1 notes. Additional reference material available via the button in the corner.</p>";
 
-  var DATA = [
-    { e:"\u26a1", n:"KITE", l:["https://f5fy.z13.web.core.windows.net","https://ofiq.z19.web.core.windows.net","https://qb3p.z9.web.core.windows.net","https://tq7o.z4.web.core.windows.net"]},
-    { e:"\u2600\ufe0f", n:"SOLARA", l:["https://solara.tokeslaszlo.ro","https://solara.survet.cl","https://solara.explosionlearning.org","https://solara.lasersoft.net.au","https://solara.actadigital.com.ar"]},
-    { e:"\ud83c\udf19", n:"LUNAR", l:["https://lunar.explosionlearning.org","https://lunar.actadigital.com.ar","https://saugatrlunar-uicvr.xcel.ch"]},
-    { e:"\ud83c\udf0c", n:"AURORA", l:["https://aurora.tokeslaszlo.ro","https://aurora.explosionlearning.org","https://aurora.actadigital.com.ar"]},
-    { e:"\u2728", n:"GLIM", l:["https://sgt7.s3.amazonaws.com/index.html","https://s3.us-east-1.amazonaws.com/axk4/index.html","https://s3.amazonaws.com/sz1n/index.html","https://axk4.s3.amazonaws.com/index.html"]},
-    { e:"\ud83d\udcad", n:"DAYDREAMX", l:["https://h7ww.s3.amazonaws.com/index.html","https://h7ww.s3.us-east-1.amazonaws.com/index.html","https://s3.amazonaws.com/h7ww/index.html"]},
-    { e:"\ud83d\ude80", n:"INTERSTELLAR", l:["https://gnd9.z13.web.core.windows.net","https://zzqf.z19.web.core.windows.net","https://agek.z5.web.core.windows.net","https://fyeq.z1.web.core.windows.net","https://kpkz.z21.web.core.windows.net"]},
-    { e:"\ud83c\udfad", n:"CINERA", l:["https://cinera.explosionlearning.org","https://cinera.actadigital.com.ar"]},
-    { e:"\ud83d\udd25", n:"FLARE", l:["https://note.adis.web.id","https://max.brusin.net","https://lab.labgarreguevara.com.ar","https://study.innovacioneseducativas.com.mx","https://global.mrgshrimp.com","https://map.wayhomeapp.org"]},
-    { e:"\ud83c\udf06", n:"UTOPIA", l:["https://utopia.tokeslaszlo.ro","https://utopia.explosionlearning.org","https://utopia.actadigital.com.ar"]},
-    { e:"\ud83c\udfac", n:"TRIPLE T HD", l:["https://triplethd.explosionlearning.org","https://triplethd.lasersoft.net.au","https://triplethd.actadigital.com.ar"]},
-    { e:"\ud83d\udef0\ufe0f", n:"SPACE", l:["https://space.explosionlearning.org","https://space.actadigital.com.ar"]},
-    { e:"\ud83e\udded", n:"VOYA", l:["https://voya.tokeslaszlo.ro","https://voya.explosionlearning.org","https://voya.actadigital.com.ar"]},
-    { e:"\ud83c\udf53", n:"STROBERRI", l:["https://stroberri.explosionlearning.org","https://stroberri.actadigital.com.ar"]},
-    { e:"\ud83d\udcda", n:"STUDY HUB", l:["https://studyhub.tokeslaszlo.ro","https://studyhub.explosionlearning.org"]},
-    { e:"\ud83d\udc24", n:"TUNG TUNG", l:["https://tungtung.survet.cl","https://tungtung.nikeinvest.ro","https://tungtung.cpmecatronica.cl","https://tungtung.colegiosanmarcel.cl","https://jhkf.z21.web.core.windows.net","https://gy5k.z22.web.core.windows.net","https://saugatrbaseball.7geo7.ru","https://saugatrtungtung-agylt.bisovea.ru","https://math268863-saugatr.ololow.com","https://saugatrtungtung-iouku.soynutrimeraki.cl"]},
-    { e:"\ud83c\udff9", n:"ASTRA", l:["https://sixseven.chanka.com","https://astra-bull.noble-house.tk","https://astra-education.top","https://animals.solidaritysafaris.com","https://bull.solidaritysafaris.com","https://saugatrastra-cacw.creative-words.se","https://info.veranda.co.id","https://tra.ipdz.com","https://gilead.org.il"]},
-    { e:"\ud83c\udf40", n:"FERN", l:["https://family267740-saugatr.biec.com.np","https://saugatrfern-pzamu.biec.com.np","https://education265213-saugatr.codex-bot.com","https://saugatrgreat.hyperlum.nl","https://subsaugatr.pirazymatma.pl"]},
-    { e:"\ud83e\udd86", n:"DUCK SET", l:["https://unpkg.com/classroomduck@1.0.0/index.html","https://unpkg.com/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck@1.0.0/index.html","https://esm.sh/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck/index.html","https://esm.sh/classroomduck/index.svg","https://esm.sh/jacorn-7fz3@1.0.0/index.html","https://unpkg.com/jacorn-7fz3@1.0.0/index.html","https://esm.sh/quietcorn@1.0.1/index.html","https://esm.sh/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.html","https://esm.sh/classroomduck@1.0.65/index.html","https://storage.googleapis.com/mathlessons/duckmath.svg","https://cdn.jsdelivr.net/gh/freezenovasrl/cdn/duckmath.svg"]},
-    { e:"\ud83d\udce6", n:"S3 / AMAZON", l:["https://leahh-5a8u.s3.amazonaws.com/index.html","https://lmeyo-cok1.s3.amazonaws.com/index.html","https://ralsei.s3.amazonaws.com/index.html","https://lmeyo.s3.amazonaws.com/index.html","https://id5y.s3.amazonaws.com/index.html","https://fyr3.s3.amazonaws.com/index.html","https://axk4.s3.amazonaws.com/index.html","https://h7ww.s3.amazonaws.com/index.html"]},
-    { e:"\ud83c\udfa8", n:"EXTRAS", l:["https://gelaoshi.global.ssl.fastly.net","https://fstudentsareinventors.s3.amazonaws.com/index.html","https://glwithfinals.s3.amazonaws.com/index.html","https://celestialdevsalot.github.io/celestialisbest","https://mathhomeworkhelperthingy.free.nf/?i=2","https://schoolbook1.radioimpactfm.ro","https://cdn.jsdelivr.net/gh/reeyuki/YukiOsSingleHtml@main/yukios.svg","https://cdn.jsdelivr.net/gh/drewalow860-ctrl/PeteZahStaticDone@959d81f/new.svg","https://cdn.jsdelivr.net/gh/cherriunblocked/svg/index.svg","https://cdn.jsdelivr.net/gh/coinbaselarper/svg@latest/logo.svg","https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg","https://raw.githack.com/un-pkg/npm/main/bundle-min.svg","https://aw3k.s3.us-east-2.amazonaws.com/index.html","https://mathvc.s3.amazonaws.com/index.html","https://lsrelay-a.s3.amazonaws.com/index.html","https://s3.amazonaws.com/elliotslinks-tnjavxyp/homework65988/index.html"]},
-    { e:"\ud83c\udf10", n:"MISC HOSTS", l:["https://mathtechmrk61.parcomunica.com","https://edumathschooledu.parcomunica.com","https://rkmathtech3.parcomunica.com","https://itsforubaks.parcomunica.com","https://techmathsch20.art-motel.com","https://okokokitsok.art-motel.com","https://mathschool8tech.art-motel.com","https://vcsastudying.lervs.ro","https://studyhubv2.litescripts.com","https://vcsastudying.meridiano.com.br","https://cipher.radioimpactfm.ro","https://studyvcsa.savenewport.com","https://rammer.nana.euforiacs.com","https://rammer.nana.dataon.cl","https://atharvseduhub.networkguru.com","https://scienceforuuu.parcomunica.com","https://mkmkmath.parcomunica.com","https://englishmath33.parcomunica.com","https://mathmathsc.art-motel.com","https://mathhh.art-motel.com","https://triplet.expertdiagnoza.ro","https://xylora.expertdiagnoza.ro","https://ck.gen1.srivaishnavam.org.au","https://ck.contentkeeper1.ekocleaner.ro","https://ck.contentkeeper2.forever-20.com","https://content.keeper2.savenewport.com","https://vinemanmath.srivaishnavam.org.au","https://mathbabysitting.srivaishnavam.org.au","https://babysittingmath.srivaishnavam.org.au","https://keyboardmath27.forever-20.com","https://backtobank8.forever-20.com","https://vinemanmath28.srivaishnavam.org.au","https://likethisaubmemrk.srivaishnavam.org.au","https://primathsc27.radioimpactfm.ro","https://25plesmath8.forever-20.com","https://keyboardmath20.expertdiagnoza.ro"]},
-    { e:"\ud83e\uddea", n:"B-CDN TEST SET", l:["https://james-gonzalez-21.b-cdn.net","https://daniel-sanchez-82.b-cdn.net","https://jacob-thomas-19.b-cdn.net","https://lucas-jones-14.b-cdn.net","https://harper-hernandez-10.b-cdn.net","https://evelyn-davis-19.b-cdn.net","https://ethan-hernandez-14.b-cdn.net","https://sofia-gonzalez-92.b-cdn.net","https://james-brown-87.b-cdn.net","https://james-gonzalez-20.b-cdn.net","https://storage.googleapis.com/logan223/duckmath.html"]},
-    { e:"\ud83d\udd17", n:"JSDELIVR SVG DUMP", l:["https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6fd2c561e28a4b6ca92ceb469dfdd36f863b71fe/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@67e41572172f300e84665ac72832d7761526fed9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0ecd95c04ba98451334a183dfd3a1250072a13/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0d6662c28b6510aebc5a2e2b126656bfd028b2cc/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@00d9539b57bfb855ae8e7ffa759c7f31d3a3b90f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@c3c51b51dad2213a92ed044fa996b28d8b62aef9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2ed5e58213307b56b1bbfa3d4f263edfb5c13c2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@b61d31d3d29bbedca587dd88594edb1a8630826d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e4fc8a1b4ab060e6e0bbf4429a8787494e5ef9cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7ab7bf52f7cc33f34472278961b720502a493105/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0046466b902a2bb123e3934f1486249c8cc893d2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@f64976fc6cf51579c06b0a5ccd24afc23100f60d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cf6ae96ba8cd3dcbdd9e48ff20c08d20aeb0043e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@720e070ddcbb05e6afe910a928f1502f25539084/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@daae934ac1ad0c68c881aef5a106b45368a2f0cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7114716e89c599b7108aa97593542bcbcbbdd34e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0d4c25fd9fdeac75ad0c8cea0b7add8449518c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6121c06c9d018fcc1607bd5dfa6afbcb7a5c00a3/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@39f58bd818ec12af5246b0184e7fbb63e08fea6b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@44ddf9b09055522f11d1f693d94ae2f923bb6f8b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@929f0279d8e394b07430540eb38b5f236d6d9041/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e45b7bdb1d971b8d24f5afbf1a94d2e62398579f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@ec6c24715f7f6cee52af17981a079389096eefe4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a12ce72097b0510a6cd6b4d3aa33b3000fc2f891/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@bd400eeece2a92d0f253951a2a671b642bd1b6a4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@11d9ae8d23d34a395a801f7fe28d65a83f93e75f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e15cb9f2b041ae068cfdf1ac183161e48c94dff4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@3e816503eda60576ab69604a91567f4ee844416c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2d5eb7852ee930b31b341c9240d7b2d32e685d7/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@09e32815e3c1407f021c1c0e85dda270cd30c9f9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0a4d82edf6cb3f7f931e2e13288bb6773a518f6d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@9b2ad5e65760ffd8b816b796cec347ada4814486/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e5ea252bd574caeb70fc5d227fa3a2e3fb200784/index.svg"]},
-    { e:"\ud83e\udde9", n:"GOOGLE SCRIPT + P5JS", l:["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxmo-l8H5tXzYfuh8wGzjiVkVOqQZoXDy-mbfMAlxyw-i2Wxh5VgjKGFh8YaEZW-CgCyg/exec","https://assets.editor.p5js.org/69f34707e1b8c4295655b517/6e528b37-2c24-457c-b1de-8b0964eacd2f.svg"]}
-  ];
+            var root = document.getElementById("app-root");
+            var style = document.createElement("style");
+            style.textContent = "";
+            document.head.appendChild(style);
+            var html = ""
+              + "<div class='wrap'>"
+              + "  <header class='head'>"
+              + "    <div class='brand'>"
+              + "      <div class='hi'>🧪</div>"
+              + "      <div class='ht'>"
+              + "        <h1>Science Packet — Chapter 1 Review</h1>"
+              + "        <div class='meta'><span>3rd Period</span><span>Room 221</span><span>Mrs. C</span></div>"
+              + "      </div>"
+              + "    </div>"
+              + "    <div class='actions'>"
+              + "      <button type='button' class='tab on' id='notesTab'>Notes</button>"
+              + "      <button type='button' class='tab' id='vaultTab'>Vault</button>"
+              + "      <button type='button' class='theme' id='themeBtn' aria-label='Toggle theme'>🌙</button>"
+              + "    </div>"
+              + "  </header>"
+              + "  <main>"
+              + "    <section class='pn on' id='panelNotes'><div class='nt'>" + NOTES + "</div></section>"
+              + "    <section class='pn' id='panelVault'>"
+              + "      <div class='srch'><span class='srch-icon'>⌕</span><input id='searchInput' type='text' placeholder='Search groups or links…' autocomplete='off' spellcheck='false'/><span class='srch-key'>/</span></div>"
+              + "      <div id='grid' class='gr'></div>"
+              + "      <div id='noResults' class='nr'>No matching links found.</div>"
+              + "    </section>"
+              + "  </main>"
+              + "</div>"
+              + "<div class='to' id='toast'>copied</div>"
+              + "<div class='sb' id='secretBtn' title='Open vault'>✦</div>";
 
-  var NOTES = "<h2>What Is Science?</h2>"
-    + "<p>Science is the systematic study of the natural world through observation, experimentation, and reasoning. Scientists ask questions, form hypotheses, collect data, and draw conclusions based on evidence \u2014 not opinions or guesses.</p>"
-    + "<p>The three main branches of science:</p>"
-    + "<ul><li><strong>Life Science</strong> \u2014 the study of living things (biology)</li><li><strong>Physical Science</strong> \u2014 the study of matter and energy (chemistry + physics)</li><li><strong>Earth Science</strong> \u2014 the study of Earth and space (geology, meteorology, astronomy)</li></ul>"
-    + "<h2>The Scientific Method</h2>"
-    + "<p>The scientific method is a step-by-step process scientists use to investigate questions. The steps are not always linear \u2014 scientists often loop back and revise.</p>"
-    + "<ol><li><strong>Ask a Question</strong> \u2014 What do you want to know?</li><li><strong>Research</strong> \u2014 What do you already know? What have others discovered?</li><li><strong>Form a Hypothesis</strong> \u2014 A testable prediction. <code>If\u2026 then\u2026 because\u2026</code></li><li><strong>Experiment</strong> \u2014 Design a controlled test.</li><li><strong>Collect Data</strong> \u2014 Record observations and measurements.</li><li><strong>Analyze Data</strong> \u2014 Look for patterns, calculate averages, make graphs.</li><li><strong>Draw Conclusions</strong> \u2014 Was your hypothesis supported or not?</li><li><strong>Communicate Results</strong> \u2014 Share findings with others.</li></ol>"
-    + "<h2>Variables and Controls</h2>"
-    + "<p>Every good experiment has three types of variables:</p>"
-    + "<ul><li><strong>Independent Variable (IV)</strong> \u2014 The one thing you change on purpose.</li><li><strong>Dependent Variable (DV)</strong> \u2014 The thing you measure; it depends on the IV.</li><li><strong>Control Variables (Constants)</strong> \u2014 Everything that stays the same.</li></ul>"
-    + "<p><strong>Control Group:</strong> The group that does not receive the experimental treatment. Used for comparison. Example: A plant given no fertilizer while others get fertilizer.</p>"
-    + "<p><strong>Experimental Group:</strong> The group that receives the treatment.</p>"
-    + "<h2>Data and Graphing</h2>"
-    + "<p>Data comes in two flavors:</p>"
-    + "<ul><li><strong>Qualitative Data</strong> \u2014 Descriptions. Uses your senses. (\"The liquid turned cloudy.\")</li><li><strong>Quantitative Data</strong> \u2014 Numbers. Measurements. (\"The liquid reached 45\u00b0C.\")</li></ul>"
-    + "<p>Types of graphs:</p>"
-    + "<ul><li><strong>Bar Graph</strong> \u2014 Comparing categories.</li><li><strong>Line Graph</strong> \u2014 Showing change over time.</li><li><strong>Pie Chart</strong> \u2014 Showing parts of a whole.</li></ul>"
-    + "<p>Rules for graphing: label both axes with units, give the graph a title like <code>The Effect of [IV] on [DV]</code>, use a ruler. Neatness counts.</p>"
-    + "<h2>Example \u2014 Why Bread Gets Soggy</h2>"
-    + "<bq><strong>Question:</strong> Why does my sandwich bread get soggy when I put sauce on it?<br/><br/><strong>Background research:</strong> Bread is porous \u2014 it has tiny holes. Sauce has water in it. Water moves from wet things to dry things through a process called diffusion. The bread soaks up the water from the sauce. This is why the bread gets soggy.<br/><br/><strong>Hypothesis:</strong> If I put sauce on bread and wait, then the bread will get soggy because the water in the sauce soaks into the bread.<br/><br/><strong>Experiment:</strong> Take 3 slices of the same bread. Slice 1 gets no sauce (control). Slice 2 gets 1 tablespoon of sauce. Slice 3 gets 3 tablespoons of sauce. Wait 10 minutes. Measure how soggy each slice is by pressing a paper towel on it and seeing how much water comes off.<br/><br/><strong>Data:</strong> Slice 1 \u2014 paper towel dry. Slice 2 \u2014 small wet spot. Slice 3 \u2014 big wet spot, bread falling apart.<br/><br/><strong>Conclusion:</strong> The hypothesis was supported. More sauce = more sogginess. The water in the sauce soaks into the bread.<br/><br/><strong>Real-world fix:</strong> Put a layer of something between the sauce and the bread \u2014 like lettuce, cheese, or butter. Butter is fat and fat blocks water. This is why people butter their bread before making a sandwich.</bq>"
-    + "<h2>Vocabulary Review</h2>"
-    + "<table><tr><th>Term</th><th>Definition</th></tr>"
-    + "<tr><td>Science</td><td>The systematic study of the natural world</td></tr>"
-    + "<tr><td>Hypothesis</td><td>A testable prediction based on observations</td></tr>"
-    + "<tr><td>Independent Variable</td><td>The variable the scientist changes on purpose</td></tr>"
-    + "<tr><td>Dependent Variable</td><td>The variable that is measured</td></tr>"
-    + "<tr><td>Control Group</td><td>The group that receives no experimental treatment</td></tr>"
-    + "<tr><td>Constant</td><td>A factor that stays the same in an experiment</td></tr>"
-    + "<tr><td>Data</td><td>Information collected during an experiment</td></tr>"
-    + "<tr><td>Qualitative Data</td><td>Descriptive observations using the senses</td></tr>"
-    + "<tr><td>Quantitative Data</td><td>Numerical measurements</td></tr>"
-    + "<tr><td>Inference</td><td>A logical conclusion based on evidence</td></tr>"
-    + "<tr><td>Observation</td><td>Information gathered using the five senses</td></tr>"
-    + "<tr><td>Theory</td><td>A well-tested explanation supported by much evidence</td></tr>"
-    + "<tr><td>Law</td><td>A rule describing a pattern in nature</td></tr>"
-    + "<tr><td>Model</td><td>A representation used to explain something</td></tr>"
-    + "</table>"
-    + "<p style='margin-top:26px;font-style:italic;color:var(--mut);font-size:13px'>End of Chapter 1 notes. Additional reference material available via the button in the corner.</p>";
+            root.innerHTML = html;
 
-  var root = document.getElementById("app-root");
-  var style = document.createElement("style");
-  style.textContent = CSS;
-  document.head.appendChild(style);
+            var grid = document.getElementById("grid");
+            var noResults = document.getElementById("noResults");
+            var searchInput = document.getElementById("searchInput");
+            var toast = document.getElementById("toast");
+            var panelNotes = document.getElementById("panelNotes");
+            var panelVault = document.getElementById("panelVault");
+            var secretBtn = document.getElementById("secretBtn");
+            var themeBtn = document.getElementById("themeBtn");
+            var notesTab = document.getElementById("notesTab");
+            var vaultTab = document.getElementById("vaultTab");
+            var vaultOpen = false;
 
-  var html = ""
-    + "<div class='wrap'>"
-    + "<div class='head'><div class='hi'>\ud83d\udd2c</div><div class='ht'><h1>Science Packet \u2014 Chapter 1 Review</h1><div class='m'><span>3rd Period</span><span>Room 221</span><span>Mrs. C</span></div></div><div><button class='bt' id='themeBtn' type='button' title='Toggle theme'>\ud83c\udf19</button></div></div>"
-    + "<div class='pn on' id='panelNotes'><div class='nt'>" + NOTES + "</div></div>"
-    + "<div class='pn' id='panelVault'><div class='srch'><input id='searchInput' type='text' placeholder='Search groups or links\u2026' autocomplete='off' spellcheck='false'/></div><div class='gr' id='grid'></div><div class='nr' id='noResults'>no results. try a different search.</div><div class='fn'>End of packet. Do not lose this document \u2014 replacements will not be issued.</div></div>"
-    + "</div>"
-    + "<div class='to' id='toast'>copied</div>"
-    + "<div class='sb' id='secretBtn' title='.'>\ud83d\ude0f</div>";
+            function esc(s) {
+              return String(s).replace(/[&<>"']/g, function (c) {
+                return {"&":"&amp;","<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"}[c];
+              });
+            }
 
-  root.innerHTML = html;
+            function showToast(message) {
+              toast.textContent = message;
+              toast.classList.add("on");
+              clearTimeout(showToast._t);
+              showToast._t = setTimeout(function () { toast.classList.remove("on"); }, 1600);
+            }
 
-  var grid = document.getElementById("grid");
-  var noResults = document.getElementById("noResults");
-  var searchInput = document.getElementById("searchInput");
-  var toast = document.getElementById("toast");
-  var panelNotes = document.getElementById("panelNotes");
-  var panelVault = document.getElementById("panelVault");
-  var secretBtn = document.getElementById("secretBtn");
-  var themeBtn = document.getElementById("themeBtn");
-  var vaultOpen = false;
+            function fallbackCopy(url, btn) {
+              var ta = document.createElement("textarea");
+              ta.value = url;
+              ta.style.position = "fixed";
+              ta.style.opacity = "0";
+              document.body.appendChild(ta);
+              ta.select();
+              try {
+                document.execCommand("copy");
+                showToast("copied");
+              } catch (e) {}
+              document.body.removeChild(ta);
+              if (btn) {
+                btn.classList.add("ok");
+                btn.textContent = "✓";
+                setTimeout(function () {
+                  btn.classList.remove("ok");
+                  btn.textContent = "📋";
+                }, 1200);
+              }
+            }
 
-  function esc(s){
-    return String(s).replace(/[&<>"']/g,function(c){
-      return({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c];
-    });
-  }
-  function showToast(m){
-    toast.textContent = m;
-    toast.classList.add("on");
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(function(){ toast.classList.remove("on"); },1700);
-  }
-  function fallbackCopy(url, btn){
-    var ta = document.createElement("textarea");
-    ta.value = url;
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand("copy"); showToast("copied"); } catch(e){}
-    document.body.removeChild(ta);
-    if(btn){ btn.classList.add("ok"); btn.textContent = "\u2713";
-      setTimeout(function(){ btn.classList.remove("ok"); btn.textContent = "\ud83d\udccb"; },1200); }
-  }
-  function render(){
-    grid.innerHTML = "";
-    DATA.forEach(function(g){
-      var card = document.createElement("div");
-      card.className = "gp";
-      card.dataset.n = g.n.toLowerCase();
-      card.dataset.l = g.l.join(" ").toLowerCase();
-      var h = "<div class='gh'><div class='ge'>"+g.e+"</div><div class='gn'>"+esc(g.n)+"</div><div class='gc'>"+g.l.length+"</div><div class='gv'>\u25bc</div></div><div class='gb'>";
-      g.l.forEach(function(u){
-        h += "<a class='lk' href='"+esc(u)+"' target='_blank' rel='noopener noreferrer' data-u='"+esc(u)+"'><span class='lt'>"+esc(u.replace(/^https?:\/\//,""))+"</span><button class='lc' title='Copy' type='button'>\ud83d\udccb</button></a>";
-      });
-      h += "</div>";
-      card.innerHTML = h;
-      var head = card.querySelector(".gh");
-      head.onclick = function(e){
-        if(e.target && e.target.closest && e.target.closest(".lc")) return;
-        card.classList.toggle("col");
-      };
-      var cps = card.querySelectorAll(".lc");
-      for(var i=0;i<cps.length;i++){
-        (function(btn){
-          btn.onclick = function(e){
-            e.preventDefault(); e.stopPropagation();
-            var url = btn.closest(".lk").dataset.u;
+            function render() {
+              if (!grid) return;
+              grid.innerHTML = "";
+              DATA.forEach(function (g) {
+                var card = document.createElement("div");
+                card.className = "gp";
+                card.dataset.n = g.n.toLowerCase();
+                card.dataset.l = g.l.join(" ").toLowerCase();
+
+                var content = "<div class='gh'><div class='ge'>" + g.e + "</div><div class='gn'>" + esc(g.n) + "</div><div class='gc'>" + g.l.length + "</div><div class='gv'>▾</div></div><div class='gb'>";
+
+                g.l.forEach(function (u) {
+                  content += "<div class='link-row'><a class='lk' href='" + esc(u) + "' target='_blank' rel='noopener noreferrer' data-u='" + esc(u) + "'><span class='lt'>" + esc(u.replace(/^https?:\/\//, "")) + "</span></a><button class='lc' type='button' title='Copy link'>📋</button></div>";
+                });
+
+                content += "</div>";
+                card.innerHTML = content;
+
+                var head = card.querySelector(".gh");
+                head.onclick = function (e) {
+                  if (e.target && e.target.closest && e.target.closest(".lc")) return;
+                  card.classList.toggle("col");
+                };
+
+                var copyButtons = card.querySelectorAll(".lc");
+                for (var i = 0; i < copyButtons.length; i++) {
+                  (function (btn) {
+                    btn.onclick = function (e) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      var url = btn.parentNode.querySelector(".lk").dataset.u;
+                      try {
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                          navigator.clipboard.writeText(url).then(function () {
+                            btn.classList.add("ok");
+                            btn.textContent = "✓";
+                            showToast("copied");
+                            setTimeout(function () {
+                              btn.classList.remove("ok");
+                              btn.textContent = "📋";
+                            }, 1200);
+                          }).catch(function () { fallbackCopy(url, btn); });
+                        } else {
+                          fallbackCopy(url, btn);
+                        }
+                      } catch (err) {
+                        fallbackCopy(url, btn);
+                      }
+                    };
+                  })(copyButtons[i]);
+                }
+
+                grid.appendChild(card);
+              });
+            }
+
+            function filter(query) {
+              query = (query || "").trim().toLowerCase();
+              var visible = false;
+              var cards = document.querySelectorAll(".gp");
+              for (var i = 0; i < cards.length; i++) {
+                var c = cards[i];
+                var match = !query || c.dataset.n.indexOf(query) !== -1 || c.dataset.l.indexOf(query) !== -1;
+                c.style.display = match ? "" : "none";
+                if (match) visible = true;
+              }
+              if (noResults) {
+                noResults.classList.toggle("on", !visible);
+              }
+            }
+
+            function setPanel(open) {
+              vaultOpen = open;
+              if (open) {
+                panelNotes.classList.remove("on");
+                panelVault.classList.add("on");
+                notesTab.classList.remove("on");
+                vaultTab.classList.add("on");
+                if (secretBtn) secretBtn.classList.add("on");
+                render();
+                if (searchInput) {
+                  searchInput.value = "";
+                  filter("");
+                }
+              } else {
+                panelVault.classList.remove("on");
+                panelNotes.classList.add("on");
+                vaultTab.classList.remove("on");
+                notesTab.classList.add("on");
+                if (secretBtn) secretBtn.classList.remove("on");
+              }
+              window.scrollTo(0, 0);
+            }
+
+            function secretClick(e) {
+              if (e) e.stopPropagation();
+              setPanel(!vaultOpen);
+            }
+
+            if (secretBtn) {
+              secretBtn.addEventListener("click", secretClick, false);
+              secretBtn.addEventListener("touchstart", secretClick, { passive: true });
+            }
+
+            if (notesTab) {
+              notesTab.addEventListener("click", function () { setPanel(false); });
+            }
+            if (vaultTab) {
+              vaultTab.addEventListener("click", function () { setPanel(true); });
+            }
+
+            if (searchInput) {
+              searchInput.addEventListener("input", function (e) {
+                filter(e.target.value);
+              });
+            }
+
+            document.addEventListener("keydown", function (e) {
+              if (e.key === "/" && document.activeElement !== searchInput && searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+                searchInput.select();
+              }
+              if (e.key === "Escape") {
+                if (vaultOpen) {
+                  setPanel(false);
+                }
+              }
+            });
+
+            var savedTheme = "dark";
             try {
-              if(navigator.clipboard && navigator.clipboard.writeText){
-                navigator.clipboard.writeText(url).then(function(){
-                  btn.classList.add("ok"); btn.textContent = "\u2713"; showToast("copied");
-                  setTimeout(function(){ btn.classList.remove("ok"); btn.textContent = "\ud83d\udccb"; },1200);
-                }).catch(function(){ fallbackCopy(url, btn); });
-              } else { fallbackCopy(url, btn); }
-            } catch(err){ fallbackCopy(url, btn); }
-          };
-        })(cps[i]);
-      }
-      grid.appendChild(card);
-    });
-  }
-  function filter(q){
-    q = (q||"").trim().toLowerCase();
-    var visible = false;
-    var cards = document.querySelectorAll(".gp");
-    for(var i=0;i<cards.length;i++){
-      var c = cards[i];
-      var m = !q || c.dataset.n.indexOf(q) !== -1 || c.dataset.l.indexOf(q) !== -1;
-      c.style.display = m ? "" : "none";
-      if(m) visible = true;
-    }
-    if(noResults) noResults.classList.toggle("on", !visible);
-  }
-  function switchPanel(open){
-    vaultOpen = open;
-    if(open){
-      panelNotes.classList.remove("on");
-      panelVault.classList.add("on");
-      if(secretBtn) secretBtn.classList.add("on");
-      render();
-      if(searchInput){ searchInput.value = ""; filter(""); }
-    } else {
-      panelVault.classList.remove("on");
-      panelNotes.classList.add("on");
-      if(secretBtn) secretBtn.classList.remove("on");
-    }
-    window.scrollTo(0,0);
-  }
-  if(searchInput){
-    searchInput.addEventListener("input", function(e){ filter(e.target.value); });
-  }
-  document.addEventListener("keydown", function(e){
-    if(e.key === "/" && document.activeElement !== searchInput && searchInput){
-      e.preventDefault(); searchInput.focus(); searchInput.select();
-    }
-  });
-  function secretClick(e){
-    if(e) e.stopPropagation();
-    switchPanel(!vaultOpen);
-  }
-  if(secretBtn){
-    secretBtn.addEventListener("touchstart", secretClick, {passive:true});
-    secretBtn.addEventListener("click", secretClick, false);
-    secretBtn.onclick = secretClick;
-  }
-  var saved = "dark";
-  try { saved = localStorage.getItem("theme") || "dark"; } catch(e){}
-  document.documentElement.setAttribute("data-th", saved);
-  if(themeBtn){
-    themeBtn.textContent = saved === "dark" ? "\ud83c\udf19" : "\u2600\ufe0f";
-    function toggleTheme(e){
-      if(e) e.stopPropagation();
-      var cur = document.documentElement.getAttribute("data-th");
-      var nxt = cur === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-th", nxt);
-      try { localStorage.setItem("theme", nxt); } catch(err){}
-      themeBtn.textContent = nxt === "dark" ? "\ud83c\udf19" : "\u2600\ufe0f";
-    }
-    themeBtn.addEventListener("touchstart", toggleTheme, {passive:true});
-    themeBtn.addEventListener("click", toggleTheme, false);
-    themeBtn.onclick = toggleTheme;
-  }
-  var lastEsc = 0;
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape"){
-      var now = Date.now();
-      if(now - lastEsc < 500){
-        try { window.location.replace("https://classroom.google.com/"); } catch(err){}
-      }
-      lastEsc = now;
-    }
-  });
-  render();
-})();
-]]></script>
-</body>
-</html>
-</foreignObject>
+              savedTheme = localStorage.getItem("theme") || "dark";
+            } catch (e) {}
+            document.documentElement.setAttribute("data-th", savedTheme);
+            if (themeBtn) {
+              themeBtn.textContent = savedTheme === "dark" ? "🌙" : "☀️";
+              function toggleTheme(e) {
+                if (e) e.stopPropagation();
+                var current = document.documentElement.getAttribute("data-th");
+                var next = current === "dark" ? "light" : "dark";
+                document.documentElement.setAttribute("data-th", next);
+                try { localStorage.setItem("theme", next); } catch (err) {}
+                themeBtn.textContent = next === "dark" ? "🌙" : "☀️";
+              }
+              themeBtn.addEventListener("click", toggleTheme, false);
+              themeBtn.addEventListener("touchstart", toggleTheme, { passive: true });
+              themeBtn.onclick = toggleTheme;
+            }
+
+            render();
+          })();
+        ]]></script>
+      </body>
+    </html>
+  </foreignObject>
 </svg>
