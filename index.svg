@@ -91,7 +91,6 @@ header.doc-head{display:flex;align-items:center;justify-content:space-between;pa
     <button class="tab" id="tabVault" type="button">Unit 2 Reference</button>
   </div>
 
-  <!-- ============ PANEL 1: NOTES ============ -->
   <div class="panel active" id="panelNotes">
     <div class="notes">
       <h2>What Is Science?</h2>
@@ -142,12 +141,12 @@ header.doc-head{display:flex;align-items:center;justify-content:space-between;pa
 
       <h2>Example — Why Bread Gets Soggy</h2>
       <blockquote>
-        <strong>Question:</strong> Why does my sandwich bread get soggy when I put sauce on it?<br><br>
-        <strong>Background research:</strong> Bread is porous — it has tiny holes. Sauce has water in it. Water moves from wet things to dry things through a process called diffusion. The bread soaks up the water from the sauce. This is why the bread gets soggy.<br><br>
-        <strong>Hypothesis:</strong> If I put sauce on bread and wait, then the bread will get soggy because the water in the sauce soaks into the bread.<br><br>
-        <strong>Experiment:</strong> Take 3 slices of the same bread. Slice 1 gets no sauce (control). Slice 2 gets 1 tablespoon of sauce. Slice 3 gets 3 tablespoons of sauce. Wait 10 minutes. Measure how soggy each slice is by pressing a paper towel on it and seeing how much water comes off.<br><br>
-        <strong>Data:</strong> Slice 1 — paper towel dry. Slice 2 — small wet spot. Slice 3 — big wet spot, bread falling apart.<br><br>
-        <strong>Conclusion:</strong> The hypothesis was supported. More sauce = more sogginess. The water in the sauce soaks into the bread.<br><br>
+        <strong>Question:</strong> Why does my sandwich bread get soggy when I put sauce on it?<br/><br/>
+        <strong>Background research:</strong> Bread is porous — it has tiny holes. Sauce has water in it. Water moves from wet things to dry things through a process called diffusion. The bread soaks up the water from the sauce. This is why the bread gets soggy.<br/><br/>
+        <strong>Hypothesis:</strong> If I put sauce on bread and wait, then the bread will get soggy because the water in the sauce soaks into the bread.<br/><br/>
+        <strong>Experiment:</strong> Take 3 slices of the same bread. Slice 1 gets no sauce (control). Slice 2 gets 1 tablespoon of sauce. Slice 3 gets 3 tablespoons of sauce. Wait 10 minutes. Measure how soggy each slice is by pressing a paper towel on it and seeing how much water comes off.<br/><br/>
+        <strong>Data:</strong> Slice 1 — paper towel dry. Slice 2 — small wet spot. Slice 3 — big wet spot, bread falling apart.<br/><br/>
+        <strong>Conclusion:</strong> The hypothesis was supported. More sauce = more sogginess. The water in the sauce soaks into the bread.<br/><br/>
         <strong>Real-world fix:</strong> Put a layer of something between the sauce and the bread — like lettuce, cheese, or butter. Butter is fat and fat blocks water. This is why people butter their bread before making a sandwich.
       </blockquote>
 
@@ -174,7 +173,6 @@ header.doc-head{display:flex;align-items:center;justify-content:space-between;pa
     </div>
   </div>
 
-  <!-- ============ PANEL 2: VAULT ============ -->
   <div class="panel" id="panelVault">
     <div class="note"><b>Note:</b> Unit 2 reference links organized by topic. Click a group to expand or collapse. Use the search to filter. Links open in a new tab.</div>
 
@@ -282,7 +280,6 @@ searchInput.addEventListener('input',function(e){filter(e.target.value)});
 document.addEventListener('keydown',function(e){
   if(e.key==='/'&&document.activeElement!==searchInput){e.preventDefault();searchInput.focus();searchInput.select()}
 });
-/* tabs */
 var tabNotes=document.getElementById('tabNotes');
 var tabVault=document.getElementById('tabVault');
 var panelNotes=document.getElementById('panelNotes');
@@ -298,7 +295,6 @@ function showTab(which){
 }
 tabNotes.addEventListener('click',function(){showTab('notes')});
 tabVault.addEventListener('click',function(){showTab('vault')});
-/* theme */
 var themeBtn=document.getElementById('themeBtn');
 var saved='dark';try{saved=localStorage.getItem('theme')||'dark'}catch(e){}
 document.documentElement.setAttribute('data-theme',saved);
@@ -310,7 +306,6 @@ themeBtn.addEventListener('click',function(){
   try{localStorage.setItem('theme',next)}catch(e){}
   themeBtn.textContent=next==='dark'?'🌙':'☀️';
 });
-/* panic */
 var lastEsc=0;
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){var now=Date.now();if(now-lastEsc<500){window.location.replace('https://classroom.google.com/')}lastEsc=now}
