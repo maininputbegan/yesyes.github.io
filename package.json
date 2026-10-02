@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "study index",
   "main": "index.svg",
-  "files": ["index.svg", "loader.js"],
+  "files": ["index.svg"],
+  "author": "fjnny",
   "license": "MIT"
 }
