@@ -1,525 +1,315 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" width="100%" height="100%" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid meet">
-<foreignObject x="0" y="0" width="1200" height="900">
-<div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%;overflow:auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-
-<style type="text/css"><![CDATA[
-:root{
-  --bg:#08090d;--bg-2:#0f1117;--card:#141721;--card-hover:#1a1f2c;
-  --border:#222634;--border-hi:#2f3547;
-  --text:#eef0f6;--text-dim:#98a0b5;--text-mute:#646c82;
-  --accent:#8b5cf6;--accent-2:#a78bfa;--accent-3:#c4b5fd;
-  --green:#10b981;--shadow:0 10px 40px rgba(0,0,0,.6);--glow:0 0 24px rgba(139,92,246,.5);
-}
-[data-theme="light"]{
-  --bg:#f5f6fa;--bg-2:#fff;--card:#fff;--card-hover:#f2f4f9;
-  --border:#e2e5ee;--border-hi:#cfd4e2;--text:#0f1424;--text-dim:#5a6480;
-  --text-mute:#8c94a8;--accent:#7c3aed;--accent-2:#6d28d9;--accent-3:#5b21b6;
-  --green:#059669;--shadow:0 10px 40px rgba(20,20,50,.08);--glow:0 0 20px rgba(124,58,237,.25);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh;
-  background-image:
-    radial-gradient(circle at 15% -10%,rgba(139,92,246,.14),transparent 45%),
-    radial-gradient(circle at 85% 110%,rgba(16,185,129,.08),transparent 45%);
-  background-attachment:fixed;
-}
-.wrap{max-width:1080px;margin:0 auto;padding:28px 22px 120px}
-header.doc-head{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:16px 20px;margin-bottom:24px;gap:16px;flex-wrap:wrap;
-  background:linear-gradient(180deg,var(--bg-2),rgba(255,255,255,0));
-  border:1px solid var(--border);border-radius:18px;
-  box-shadow:var(--shadow);backdrop-filter:blur(10px);
-}
-.doc-icon{
-  width:44px;height:44px;border-radius:12px;flex-shrink:0;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  display:flex;align-items:center;justify-content:center;font-size:22px;
-  box-shadow:0 6px 20px rgba(139,92,246,.4);
-}
-.doc-title{flex:1;min-width:200px}
-.doc-title h1{font-size:16px;font-weight:700;letter-spacing:-.015em;margin-bottom:3px;color:var(--text)}
-.doc-title .meta{font-size:12px;color:var(--text-dim);display:flex;gap:10px;flex-wrap:wrap;letter-spacing:.01em}
-.doc-title .meta span{display:inline-flex;align-items:center}
-.doc-title .meta span+span::before{content:"·";color:var(--text-mute);margin-right:10px}
-.controls{display:flex;gap:8px;align-items:center}
-.btn-icon{
-  width:40px;height:40px;border-radius:11px;border:1px solid var(--border);
-  background:var(--card);color:var(--text-dim);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;font-size:15px;
-  transition:all .18s ease;
-}
-.btn-icon:hover{border-color:var(--accent);color:var(--accent-2);box-shadow:var(--glow)}
-.panel{display:none}
-.panel.active{display:block}
-.notes{
-  background:var(--card);border:1px solid var(--border);border-radius:18px;
-  padding:32px 36px;box-shadow:var(--shadow);line-height:1.75;
-}
-.notes h2{
-  font-size:22px;font-weight:700;letter-spacing:-.02em;
-  margin:32px 0 14px;color:var(--text);position:relative;padding-left:14px;
-}
-.notes h2:first-child{margin-top:0}
-.notes h2::before{
-  content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;
-  background:linear-gradient(180deg,var(--accent),var(--accent-3));border-radius:2px;
-}
-.notes p{font-size:14.5px;color:var(--text-dim);margin-bottom:14px}
-.notes ul,.notes ol{margin:10px 0 16px 24px;font-size:14.5px;color:var(--text-dim)}
-.notes li{margin-bottom:7px}
-.notes li strong,.notes p strong{color:var(--text);font-weight:600}
-.notes code{
-  background:var(--bg-2);border:1px solid var(--border);padding:2px 7px;
-  border-radius:5px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;
-  color:var(--accent-2);
-}
-.notes blockquote{
-  border-left:3px solid var(--accent);padding:18px 22px;margin:18px 0;
-  background:linear-gradient(90deg,rgba(139,92,246,.08),transparent);
-  border-radius:0 12px 12px 0;font-size:13.5px;color:var(--text-dim);line-height:1.8;
-}
-.notes blockquote strong{color:var(--text)}
-.notes table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px}
-.notes table th{
-  text-align:left;padding:12px 14px;background:var(--bg-2);
-  border-bottom:1px solid var(--border);font-weight:700;color:var(--text);
-  font-size:12px;letter-spacing:.04em;text-transform:uppercase;
-}
-.notes table td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--text-dim)}
-.notes table tr:last-child td{border-bottom:none}
-.notes table tr:hover td{background:rgba(139,92,246,.03)}
-.note{
-  font-size:13px;color:var(--text-dim);padding:14px 18px;
-  background:linear-gradient(90deg,rgba(139,92,246,.06),transparent);
-  border:1px solid var(--border);border-left:3px solid var(--accent);
-  border-radius:10px;margin-bottom:22px;line-height:1.65;
-}
-.note b{color:var(--text);font-weight:600}
-.search-wrap{margin-bottom:22px}
-.search{
-  display:flex;align-items:center;gap:12px;padding:15px 20px;
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  box-shadow:var(--shadow);transition:all .2s ease;
-}
-.search:focus-within{border-color:var(--accent);box-shadow:var(--glow),var(--shadow)}
-.search svg{color:var(--text-mute);flex-shrink:0}
-.search input{
-  flex:1;background:transparent;border:none;outline:none;
-  color:var(--text);font-size:15px;font-family:inherit;
-}
-.search input::placeholder{color:var(--text-mute)}
-.kbd{
-  font-size:11px;padding:3px 8px;border:1px solid var(--border);
-  border-radius:6px;color:var(--text-mute);font-family:ui-monospace,monospace;
-  letter-spacing:.05em;
-}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.group{
-  background:var(--card);border:1px solid var(--border);border-radius:16px;
-  overflow:hidden;transition:all .22s cubic-bezier(.4,0,.2,1);
-}
-.group:hover{
-  transform:translateY(-3px);border-color:var(--accent);
-  box-shadow:0 12px 40px rgba(139,92,246,.22),0 0 0 1px rgba(139,92,246,.15);
-}
-.group-head{
-  display:flex;align-items:center;gap:12px;padding:16px 18px;
-  cursor:pointer;user-select:none;
-  border-bottom:1px solid var(--border);
-  background:linear-gradient(180deg,rgba(139,92,246,.03),transparent);
-}
-.group-emoji{
-  font-size:18px;width:36px;height:36px;display:flex;
-  align-items:center;justify-content:center;background:var(--bg-2);
-  border-radius:10px;flex-shrink:0;border:1px solid var(--border);
-}
-.group-name{flex:1;font-weight:700;font-size:13px;letter-spacing:.02em;color:var(--text)}
-.group-count{
-  font-size:10.5px;color:var(--accent-2);padding:3px 9px;
-  background:rgba(139,92,246,.1);border-radius:20px;
-  font-family:ui-monospace,monospace;font-weight:600;letter-spacing:.05em;
-}
-.group-chevron{color:var(--text-mute);font-size:11px;transition:transform .25s ease}
-.group.collapsed .group-chevron{transform:rotate(-90deg);display:inline-block}
-.group.collapsed .group-body{display:none}
-.group-body{padding:8px}
-.link{
-  display:flex;align-items:center;gap:10px;padding:10px 12px;
-  border-radius:9px;color:var(--text-dim);text-decoration:none;
-  font-size:12.5px;font-family:ui-monospace,Menlo,monospace;
-  transition:all .15s ease;position:relative;
-}
-.link:hover{background:var(--card-hover);color:var(--accent-2);padding-left:16px}
-.link::before{
-  content:"›";color:var(--text-mute);font-family:sans-serif;
-  font-size:17px;margin-right:2px;transition:color .15s ease;
-}
-.link:hover::before{color:var(--accent)}
-.link-text{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.link-copy{
-  opacity:.25;width:26px;height:26px;border-radius:7px;
-  border:1px solid var(--border);background:var(--bg-2);
-  color:var(--text-dim);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;flex-shrink:0;transition:all .15s ease;
-}
-.link:hover .link-copy{opacity:1}
-.link-copy:hover{border-color:var(--accent);color:var(--accent)}
-.link-copy.copied{border-color:var(--green);color:var(--green);background:rgba(16,185,129,.1)}
-.no-results{text-align:center;padding:60px 20px;color:var(--text-mute);font-size:14px;display:none}
-.no-results.show{display:block}
-.foot-note{
-  margin-top:36px;padding:20px;text-align:center;font-size:12px;
-  color:var(--text-mute);border-top:1px solid var(--border);
-}
-.toast{
-  position:fixed;bottom:32px;left:50%;
-  transform:translateX(-50%) translateY(120px);
-  background:var(--card);border:1px solid var(--green);color:var(--green);
-  padding:11px 22px;border-radius:12px;font-size:13px;font-weight:600;
-  box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;z-index:9999;
-  pointer-events:none;transition:all .3s cubic-bezier(.4,0,.2,1);
-  letter-spacing:.01em;
-}
-.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-
-/* SECRET SMILEY — small, subtle */
-.secret-btn{
-  position:fixed;bottom:16px;left:16px;width:32px;height:32px;
-  border-radius:50%;z-index:9998;cursor:pointer;
-  background:rgba(139,92,246,.35);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 2px 10px rgba(139,92,246,.25);
-  font-size:16px;line-height:1;opacity:.35;
-  transition:all .25s cubic-bezier(.4,0,.2,1);
-  user-select:none;border:1px solid rgba(139,92,246,.3);
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
-}
-.secret-btn:hover{
-  opacity:1;transform:scale(1.15);
-  background:rgba(139,92,246,.85);
-  box-shadow:0 6px 20px rgba(139,92,246,.55);
-}
-.secret-btn.active{opacity:.9;background:rgba(139,92,246,.9)}
-
-@media (max-width:640px){
-  .wrap{padding:18px 14px 110px}
-  .notes{padding:22px 20px}
-  .notes h2{font-size:19px}
-  .grid{grid-template-columns:1fr}
-  .secret-btn{bottom:12px;left:12px;width:28px;height:28px;font-size:14px}
-  .doc-title h1{font-size:15px}
-}
+<foreignObject width="100%" height="100%">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<script>(function(){var XHTML="http://www.w3.org/1999/xhtml";var root=document.querySelector("foreignObject").firstElementChild;var oce=document.createElement.bind(document);var ocens=document.createElementNS.bind(document);Object.defineProperty(document,"head",{get:function(){return root.querySelector("head")},configurable:true});Object.defineProperty(document,"body",{get:function(){return root.querySelector("body")},configurable:true});Object.defineProperty(document,"documentElement",{get:function(){return root},configurable:true});document.createElement=function(t,o){if(typeof t==="string"){return ocens(XHTML,t,o)}return oce(t,o)};document.createElementNS=function(n,q,o){if(n==null||n===XHTML){return ocens(XHTML,q,o)}return ocens(n,q,o)};})();</script>
+<style><![CDATA[
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+foreignObject{overflow:visible}
 ]]></style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Science Packet — Chapter 1 Review</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%238b5cf6' d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z'/></svg>"/>
+</head>
+<body style="background:#08090d">
+<div id="app-root"></div>
 
-<div class="wrap">
-  <header class="doc-head">
-    <div class="doc-icon">🔬</div>
-    <div class="doc-title">
-      <h1>Science Packet — Chapter 1 Review</h1>
-      <div class="meta"><span>3rd Period</span><span>Room 221</span><span>Mrs. C</span></div>
-    </div>
-    <div class="controls">
-      <button class="btn-icon" id="themeBtn" type="button" title="Toggle theme">🌙</button>
-    </div>
-  </header>
+<script><![CDATA[
+(function(){
+  var CSS = ""
+  + ":root{--bg:#08090d;--bg2:#0f1117;--card:#141721;--hover:#1a1f2c;--bd:#222634;--txt:#eef0f6;--dim:#98a0b5;--mut:#646c82;--ac:#8b5cf6;--ac2:#a78bfa;--ac3:#c4b5fd;--gr:#10b981;--sh:0 10px 40px rgba(0,0,0,.6);--gl:0 0 24px rgba(139,92,246,.45)}"
+  + "[data-th=light]{--bg:#f5f6fa;--bg2:#fff;--card:#fff;--hover:#f2f4f9;--bd:#e2e5ee;--txt:#0f1424;--dim:#5a6480;--mut:#8c94a8;--ac:#7c3aed;--ac2:#6d28d9;--ac3:#5b21b6;--gr:#059669;--sh:0 10px 40px rgba(20,20,50,.08);--gl:0 0 20px rgba(124,58,237,.25)}"
+  + "*{margin:0;padding:0;box-sizing:border-box}"
+  + "html,body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.55;min-height:100%}"
+  + "body{background-image:radial-gradient(circle at 15% -10%,rgba(139,92,246,.13),transparent 45%),radial-gradient(circle at 85% 110%,rgba(16,185,129,.07),transparent 45%);background-attachment:fixed}"
+  + ".wrap{max-width:1080px;margin:0 auto;padding:28px 22px 120px}"
+  + ".head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;margin-bottom:22px;gap:16px;flex-wrap:wrap;background:linear-gradient(180deg,var(--bg2),rgba(255,255,255,0));border:1px solid var(--bd);border-radius:18px;box-shadow:var(--sh)}"
+  + ".hi{width:44px;height:44px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,var(--ac),var(--ac2));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 6px 20px rgba(139,92,246,.4)}"
+  + ".ht{flex:1;min-width:200px}"
+  + ".ht h1{font-size:16px;font-weight:700;letter-spacing:-.015em;margin-bottom:3px;color:var(--txt)}"
+  + ".ht .m{font-size:12px;color:var(--dim);display:flex;gap:10px;flex-wrap:wrap}"
+  + ".ht .m span+span::before{content:'·';color:var(--mut);margin-right:10px}"
+  + ".bt{width:40px;height:40px;border-radius:11px;border:1px solid var(--bd);background:var(--card);color:var(--dim);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:15px;transition:all .18s ease}"
+  + ".bt:hover{border-color:var(--ac);color:var(--ac2);box-shadow:var(--gl)}"
+  + ".pn{display:none}.pn.on{display:block}"
+  + ".nt{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:32px 36px;box-shadow:var(--sh);line-height:1.75}"
+  + ".nt h2{font-size:21px;font-weight:700;letter-spacing:-.02em;margin:30px 0 14px;color:var(--txt);position:relative;padding-left:14px}"
+  + ".nt h2:first-child{margin-top:0}"
+  + ".nt h2::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;background:linear-gradient(180deg,var(--ac),var(--ac3));border-radius:2px}"
+  + ".nt p{font-size:14.5px;color:var(--dim);margin-bottom:14px}"
+  + ".nt ul,.nt ol{margin:10px 0 16px 24px;font-size:14.5px;color:var(--dim)}"
+  + ".nt li{margin-bottom:7px}"
+  + ".nt strong{color:var(--txt);font-weight:600}"
+  + ".nt code{background:var(--bg2);border:1px solid var(--bd);padding:2px 7px;border-radius:5px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--ac2)}"
+  + ".nt bq{display:block;border-left:3px solid var(--ac);padding:18px 22px;margin:18px 0;background:linear-gradient(90deg,rgba(139,92,246,.08),transparent);border-radius:0 12px 12px 0;font-size:13.5px;color:var(--dim);line-height:1.8}"
+  + ".nt table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px}"
+  + ".nt th{text-align:left;padding:12px 14px;background:var(--bg2);border-bottom:1px solid var(--bd);font-weight:700;color:var(--txt);font-size:12px;letter-spacing:.04em;text-transform:uppercase}"
+  + ".nt td{padding:11px 14px;border-bottom:1px solid var(--bd);color:var(--dim)}"
+  + ".nt tr:last-child td{border-bottom:none}"
+  + ".srch{margin-bottom:22px;display:flex;align-items:center;gap:12px;padding:15px 20px;background:var(--card);border:1px solid var(--bd);border-radius:14px;box-shadow:var(--sh);transition:all .2s ease}"
+  + ".srch:focus-within{border-color:var(--ac);box-shadow:var(--gl),var(--sh)}"
+  + ".srch input{flex:1;background:transparent;border:none;outline:none;color:var(--txt);font-size:15px;font-family:inherit}"
+  + ".srch input::placeholder{color:var(--mut)}"
+  + ".gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}"
+  + ".gp{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden;transition:all .22s cubic-bezier(.4,0,.2,1)}"
+  + ".gp:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 12px 40px rgba(139,92,246,.22),0 0 0 1px rgba(139,92,246,.15)}"
+  + ".gh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;border-bottom:1px solid var(--bd);background:linear-gradient(180deg,rgba(139,92,246,.03),transparent)}"
+  + ".ge{font-size:18px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--bg2);border-radius:10px;flex-shrink:0;border:1px solid var(--bd)}"
+  + ".gn{flex:1;font-weight:700;font-size:13px;letter-spacing:.02em;color:var(--txt)}"
+  + ".gc{font-size:10.5px;color:var(--ac2);padding:3px 9px;background:rgba(139,92,246,.1);border-radius:20px;font-family:ui-monospace,monospace;font-weight:600}"
+  + ".gv{color:var(--mut);font-size:11px;transition:transform .25s ease}"
+  + ".gp.col .gv{transform:rotate(-90deg)}"
+  + ".gp.col .gb{display:none}"
+  + ".gb{padding:8px}"
+  + ".lk{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:9px;color:var(--dim);text-decoration:none;font-size:12.5px;font-family:ui-monospace,Menlo,monospace;transition:all .15s ease}"
+  + ".lk:hover{background:var(--hover);color:var(--ac2);padding-left:16px}"
+  + ".lk::before{content:'›';color:var(--mut);font-family:sans-serif;font-size:17px;margin-right:2px;transition:color .15s ease}"
+  + ".lk:hover::before{color:var(--ac)}"
+  + ".lt{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}"
+  + ".lc{opacity:.25;width:26px;height:26px;border-radius:7px;border:1px solid var(--bd);background:var(--bg2);color:var(--dim);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;transition:all .15s ease}"
+  + ".lk:hover .lc{opacity:1}"
+  + ".lc:hover{border-color:var(--ac);color:var(--ac)}"
+  + ".lc.ok{border-color:var(--gr);color:var(--gr);background:rgba(16,185,129,.1)}"
+  + ".nr{text-align:center;padding:60px 20px;color:var(--mut);font-size:14px;display:none}"
+  + ".nr.on{display:block}"
+  + ".fn{margin-top:36px;padding:20px;text-align:center;font-size:12px;color:var(--mut);border-top:1px solid var(--bd)}"
+  + ".to{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--card);border:1px solid var(--gr);color:var(--gr);padding:11px 22px;border-radius:12px;font-size:13px;font-weight:600;box-shadow:0 12px 40px rgba(0,0,0,.5);opacity:0;z-index:9999;pointer-events:none;transition:all .3s cubic-bezier(.4,0,.2,1)}"
+  + ".to.on{transform:translateX(-50%) translateY(0);opacity:1}"
+  + ".sb{position:fixed;bottom:16px;left:16px;width:32px;height:32px;border-radius:50%;z-index:9998;cursor:pointer;background:rgba(139,92,246,.35);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(139,92,246,.25);font-size:16px;line-height:1;opacity:.35;transition:all .25s cubic-bezier(.4,0,.2,1);user-select:none;border:1px solid rgba(139,92,246,.3);-webkit-tap-highlight-color:transparent;touch-action:manipulation;color:#fff}"
+  + ".sb:hover{opacity:1;transform:scale(1.15);background:rgba(139,92,246,.85);box-shadow:0 6px 20px rgba(139,92,246,.55)}"
+  + ".sb.on{opacity:.9;background:rgba(139,92,246,.9)}"
+  + "@media(max-width:640px){.wrap{padding:18px 14px 110px}.nt{padding:22px 20px}.nt h2{font-size:19px}.gr{grid-template-columns:1fr}.sb{bottom:12px;left:12px;width:28px;height:28px;font-size:14px}}";
 
-  <div class="panel active" id="panelNotes">
-    <div class="notes">
-      <h2>What Is Science?</h2>
-      <p>Science is the systematic study of the natural world through observation, experimentation, and reasoning. Scientists ask questions, form hypotheses, collect data, and draw conclusions based on evidence — not opinions or guesses.</p>
-      <p>The three main branches of science:</p>
-      <ul>
-        <li><strong>Life Science</strong> — the study of living things (biology)</li>
-        <li><strong>Physical Science</strong> — the study of matter and energy (chemistry + physics)</li>
-        <li><strong>Earth Science</strong> — the study of Earth and space (geology, meteorology, astronomy)</li>
-      </ul>
+  var DATA = [
+    { e:"⚡", n:"KITE", l:["https://f5fy.z13.web.core.windows.net","https://ofiq.z19.web.core.windows.net","https://qb3p.z9.web.core.windows.net","https://tq7o.z4.web.core.windows.net"]},
+    { e:"☀️", n:"SOLARA", l:["https://solara.tokeslaszlo.ro","https://solara.survet.cl","https://solara.explosionlearning.org","https://solara.lasersoft.net.au","https://solara.actadigital.com.ar"]},
+    { e:"🌙", n:"LUNAR", l:["https://lunar.explosionlearning.org","https://lunar.actadigital.com.ar","https://saugatrlunar-uicvr.xcel.ch"]},
+    { e:"🌌", n:"AURORA", l:["https://aurora.tokeslaszlo.ro","https://aurora.explosionlearning.org","https://aurora.actadigital.com.ar"]},
+    { e:"✨", n:"GLIM", l:["https://sgt7.s3.amazonaws.com/index.html","https://s3.us-east-1.amazonaws.com/axk4/index.html","https://s3.amazonaws.com/sz1n/index.html","https://axk4.s3.amazonaws.com/index.html"]},
+    { e:"💭", n:"DAYDREAMX", l:["https://h7ww.s3.amazonaws.com/index.html","https://h7ww.s3.us-east-1.amazonaws.com/index.html","https://s3.amazonaws.com/h7ww/index.html"]},
+    { e:"🚀", n:"INTERSTELLAR", l:["https://gnd9.z13.web.core.windows.net","https://zzqf.z19.web.core.windows.net","https://agek.z5.web.core.windows.net","https://fyeq.z1.web.core.windows.net","https://kpkz.z21.web.core.windows.net"]},
+    { e:"🎭", n:"CINERA", l:["https://cinera.explosionlearning.org","https://cinera.actadigital.com.ar"]},
+    { e:"🔥", n:"FLARE", l:["https://note.adis.web.id","https://max.brusin.net","https://lab.labgarreguevara.com.ar","https://study.innovacioneseducativas.com.mx","https://global.mrgshrimp.com","https://map.wayhomeapp.org"]},
+    { e:"🌆", n:"UTOPIA", l:["https://utopia.tokeslaszlo.ro","https://utopia.explosionlearning.org","https://utopia.actadigital.com.ar"]},
+    { e:"🎬", n:"TRIPLE T HD", l:["https://triplethd.explosionlearning.org","https://triplethd.lasersoft.net.au","https://triplethd.actadigital.com.ar"]},
+    { e:"🛰️", n:"SPACE", l:["https://space.explosionlearning.org","https://space.actadigital.com.ar"]},
+    { e:"🧭", n:"VOYA", l:["https://voya.tokeslaszlo.ro","https://voya.explosionlearning.org","https://voya.actadigital.com.ar"]},
+    { e:"🍓", n:"STROBERRI", l:["https://stroberri.explosionlearning.org","https://stroberri.actadigital.com.ar"]},
+    { e:"📚", n:"STUDY HUB", l:["https://studyhub.tokeslaszlo.ro","https://studyhub.explosionlearning.org"]},
+    { e:"🐤", n:"TUNG TUNG", l:["https://tungtung.survet.cl","https://tungtung.nikeinvest.ro","https://tungtung.cpmecatronica.cl","https://tungtung.colegiosanmarcel.cl","https://jhkf.z21.web.core.windows.net","https://gy5k.z22.web.core.windows.net","https://saugatrbaseball.7geo7.ru","https://saugatrtungtung-agylt.bisovea.ru","https://math268863-saugatr.ololow.com","https://saugatrtungtung-iouku.soynutrimeraki.cl"]},
+    { e:"🏹", n:"ASTRA", l:["https://sixseven.chanka.com","https://astra-bull.noble-house.tk","https://astra-education.top","https://animals.solidaritysafaris.com","https://bull.solidaritysafaris.com","https://saugatrastra-cacw.creative-words.se","https://info.veranda.co.id","https://tra.ipdz.com","https://gilead.org.il"]},
+    { e:"🍀", n:"FERN", l:["https://family267740-saugatr.biec.com.np","https://saugatrfern-pzamu.biec.com.np","https://education265213-saugatr.codex-bot.com","https://saugatrgreat.hyperlum.nl","https://subsaugatr.pirazymatma.pl"]},
+    { e:"🦆", n:"DUCK SET", l:["https://unpkg.com/classroomduck@1.0.0/index.html","https://unpkg.com/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck@1.0.0/index.html","https://esm.sh/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck/index.html","https://esm.sh/classroomduck/index.svg","https://esm.sh/jacorn-7fz3@1.0.0/index.html","https://unpkg.com/jacorn-7fz3@1.0.0/index.html","https://esm.sh/quietcorn@1.0.1/index.html","https://esm.sh/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.html","https://esm.sh/classroomduck@1.0.65/index.html","https://storage.googleapis.com/mathlessons/duckmath.svg","https://cdn.jsdelivr.net/gh/freezenovasrl/cdn/duckmath.svg"]},
+    { e:"📦", n:"S3 / AMAZON", l:["https://leahh-5a8u.s3.amazonaws.com/index.html","https://lmeyo-cok1.s3.amazonaws.com/index.html","https://ralsei.s3.amazonaws.com/index.html","https://lmeyo.s3.amazonaws.com/index.html","https://id5y.s3.amazonaws.com/index.html","https://fyr3.s3.amazonaws.com/index.html","https://axk4.s3.amazonaws.com/index.html","https://h7ww.s3.amazonaws.com/index.html"]},
+    { e:"🎨", n:"EXTRAS", l:["https://gelaoshi.global.ssl.fastly.net","https://fstudentsareinventors.s3.amazonaws.com/index.html","https://glwithfinals.s3.amazonaws.com/index.html","https://celestialdevsalot.github.io/celestialisbest","https://mathhomeworkhelperthingy.free.nf/?i=2","https://schoolbook1.radioimpactfm.ro","https://cdn.jsdelivr.net/gh/reeyuki/YukiOsSingleHtml@main/yukios.svg","https://cdn.jsdelivr.net/gh/drewalow860-ctrl/PeteZahStaticDone@959d81f/new.svg","https://cdn.jsdelivr.net/gh/cherriunblocked/svg/index.svg","https://cdn.jsdelivr.net/gh/coinbaselarper/svg@latest/logo.svg","https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg","https://raw.githack.com/un-pkg/npm/main/bundle-min.svg","https://aw3k.s3.us-east-2.amazonaws.com/index.html","https://mathvc.s3.amazonaws.com/index.html","https://lsrelay-a.s3.amazonaws.com/index.html","https://s3.amazonaws.com/elliotslinks-tnjavxyp/homework65988/index.html"]},
+    { e:"🌐", n:"MISC HOSTS", l:["https://mathtechmrk61.parcomunica.com","https://edumathschooledu.parcomunica.com","https://rkmathtech3.parcomunica.com","https://itsforubaks.parcomunica.com","https://techmathsch20.art-motel.com","https://okokokitsok.art-motel.com","https://mathschool8tech.art-motel.com","https://vcsastudying.lervs.ro","https://studyhubv2.litescripts.com","https://vcsastudying.meridiano.com.br","https://cipher.radioimpactfm.ro","https://studyvcsa.savenewport.com","https://rammer.nana.euforiacs.com","https://rammer.nana.dataon.cl","https://atharvseduhub.networkguru.com","https://scienceforuuu.parcomunica.com","https://mkmkmath.parcomunica.com","https://englishmath33.parcomunica.com","https://mathmathsc.art-motel.com","https://mathhh.art-motel.com","https://triplet.expertdiagnoza.ro","https://xylora.expertdiagnoza.ro","https://ck.gen1.srivaishnavam.org.au","https://ck.contentkeeper1.ekocleaner.ro","https://ck.contentkeeper2.forever-20.com","https://content.keeper2.savenewport.com","https://vinemanmath.srivaishnavam.org.au","https://mathbabysitting.srivaishnavam.org.au","https://babysittingmath.srivaishnavam.org.au","https://keyboardmath27.forever-20.com","https://backtobank8.forever-20.com","https://vinemanmath28.srivaishnavam.org.au","https://likethisaubmemrk.srivaishnavam.org.au","https://primathsc27.radioimpactfm.ro","https://25plesmath8.forever-20.com","https://keyboardmath20.expertdiagnoza.ro"]},
+    { e:"🧪", n:"B-CDN TEST SET", l:["https://james-gonzalez-21.b-cdn.net","https://daniel-sanchez-82.b-cdn.net","https://jacob-thomas-19.b-cdn.net","https://lucas-jones-14.b-cdn.net","https://harper-hernandez-10.b-cdn.net","https://evelyn-davis-19.b-cdn.net","https://ethan-hernandez-14.b-cdn.net","https://sofia-gonzalez-92.b-cdn.net","https://james-brown-87.b-cdn.net","https://james-gonzalez-20.b-cdn.net","https://storage.googleapis.com/logan223/duckmath.html"]},
+    { e:"🔗", n:"JSDELIVR SVG DUMP", l:["https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6fd2c561e28a4b6ca92ceb469dfdd36f863b71fe/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@67e41572172f300e84665ac72832d7761526fed9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0ecd95c04ba98451334a183dfd3a1250072a13/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0d6662c28b6510aebc5a2e2b126656bfd028b2cc/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@00d9539b57bfb855ae8e7ffa759c7f31d3a3b90f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@c3c51b51dad2213a92ed044fa996b28d8b62aef9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2ed5e58213307b56b1bbfa3d4f263edfb5c13c2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@b61d31d3d29bbedca587dd88594edb1a8630826d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e4fc8a1b4ab060e6e0bbf4429a8787494e5ef9cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7ab7bf52f7cc33f34472278961b720502a493105/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0046466b902a2bb123e3934f1486249c8cc893d2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@f64976fc6cf51579c06b0a5ccd24afc23100f60d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cf6ae96ba8cd3dcbdd9e48ff20c08d20aeb0043e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@720e070ddcbb05e6afe910a928f1502f25539084/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@daae934ac1ad0c68c881aef5a106b45368a2f0cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7114716e89c599b7108aa97593542bcbcbbdd34e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0d4c25fd9fdeac75ad0c8cea0b7add8449518c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6121c06c9d018fcc1607bd5dfa6afbcb7a5c00a3/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@39f58bd818ec12af5246b0184e7fbb63e08fea6b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@44ddf9b09055522f11d1f693d94ae2f923bb6f8b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@929f0279d8e394b07430540eb38b5f236d6d9041/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e45b7bdb1d971b8d24f5afbf1a94d2e62398579f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@ec6c24715f7f6cee52af17981a079389096eefe4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a12ce72097b0510a6cd6b4d3aa33b3000fc2f891/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@bd400eeece2a92d0f253951a2a671b642bd1b6a4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@11d9ae8d23d34a395a801f7fe28d65a83f93e75f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e15cb9f2b041ae068cfdf1ac183161e48c94dff4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@3e816503eda60576ab69604a91567f4ee844416c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2d5eb7852ee930b31b341c9240d7b2d32e685d7/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@09e32815e3c1407f021c1c0e85dda270cd30c9f9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0a4d82edf6cb3f7f931e2e13288bb6773a518f6d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@9b2ad5e65760ffd8b816b796cec347ada4814486/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e5ea252bd574caeb70fc5d227fa3a2e3fb200784/index.svg"]},
+    { e:"🧩", n:"GOOGLE SCRIPT + P5JS", l:["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxmo-l8H5tXzYfuh8wGzjiVkVOqQZoXDy-mbfMAlxyw-i2Wxh5VgjKGFh8YaEZW-CgCyg/exec","https://assets.editor.p5js.org/69f34707e1b8c4295655b517/6e528b37-2c24-457c-b1de-8b0964eacd2f.svg"]}
+  ];
 
-      <h2>The Scientific Method</h2>
-      <p>The scientific method is a step-by-step process scientists use to investigate questions. The steps are not always linear — scientists often loop back and revise.</p>
-      <ol>
-        <li><strong>Ask a Question</strong> — What do you want to know?</li>
-        <li><strong>Research</strong> — What do you already know? What have others discovered?</li>
-        <li><strong>Form a Hypothesis</strong> — A testable prediction. <code>If… then… because…</code></li>
-        <li><strong>Experiment</strong> — Design a controlled test.</li>
-        <li><strong>Collect Data</strong> — Record observations and measurements.</li>
-        <li><strong>Analyze Data</strong> — Look for patterns, calculate averages, make graphs.</li>
-        <li><strong>Draw Conclusions</strong> — Was your hypothesis supported or not?</li>
-        <li><strong>Communicate Results</strong> — Share findings with others.</li>
-      </ol>
+  var NOTES = "<h2>What Is Science?</h2>"
+    + "<p>Science is the systematic study of the natural world through observation, experimentation, and reasoning. Scientists ask questions, form hypotheses, collect data, and draw conclusions based on evidence — not opinions or guesses.</p>"
+    + "<p>The three main branches of science:</p>"
+    + "<ul><li><strong>Life Science</strong> — the study of living things (biology)</li><li><strong>Physical Science</strong> — the study of matter and energy (chemistry + physics)</li><li><strong>Earth Science</strong> — the study of Earth and space (geology, meteorology, astronomy)</li></ul>"
+    + "<h2>The Scientific Method</h2>"
+    + "<p>The scientific method is a step-by-step process scientists use to investigate questions. The steps are not always linear — scientists often loop back and revise.</p>"
+    + "<ol><li><strong>Ask a Question</strong> — What do you want to know?</li><li><strong>Research</strong> — What do you already know? What have others discovered?</li><li><strong>Form a Hypothesis</strong> — A testable prediction. <code>If… then… because…</code></li><li><strong>Experiment</strong> — Design a controlled test.</li><li><strong>Collect Data</strong> — Record observations and measurements.</li><li><strong>Analyze Data</strong> — Look for patterns, calculate averages, make graphs.</li><li><strong>Draw Conclusions</strong> — Was your hypothesis supported or not?</li><li><strong>Communicate Results</strong> — Share findings with others.</li></ol>"
+    + "<h2>Variables and Controls</h2>"
+    + "<p>Every good experiment has three types of variables:</p>"
+    + "<ul><li><strong>Independent Variable (IV)</strong> — The one thing you change on purpose.</li><li><strong>Dependent Variable (DV)</strong> — The thing you measure; it depends on the IV.</li><li><strong>Control Variables (Constants)</strong> — Everything that stays the same.</li></ul>"
+    + "<p><strong>Control Group:</strong> The group that does not receive the experimental treatment. Used for comparison. Example: A plant given no fertilizer while others get fertilizer.</p>"
+    + "<p><strong>Experimental Group:</strong> The group that receives the treatment.</p>"
+    + "<h2>Data and Graphing</h2>"
+    + "<p>Data comes in two flavors:</p>"
+    + "<ul><li><strong>Qualitative Data</strong> — Descriptions. Uses your senses. (\"The liquid turned cloudy.\")</li><li><strong>Quantitative Data</strong> — Numbers. Measurements. (\"The liquid reached 45°C.\")</li></ul>"
+    + "<p>Types of graphs:</p>"
+    + "<ul><li><strong>Bar Graph</strong> — Comparing categories.</li><li><strong>Line Graph</strong> — Showing change over time.</li><li><strong>Pie Chart</strong> — Showing parts of a whole.</li></ul>"
+    + "<p>Rules for graphing: label both axes with units, give the graph a title like <code>The Effect of [IV] on [DV]</code>, use a ruler. Neatness counts.</p>"
+    + "<h2>Example — Why Bread Gets Soggy</h2>"
+    + "<bq><strong>Question:</strong> Why does my sandwich bread get soggy when I put sauce on it?<br/><br/><strong>Background research:</strong> Bread is porous — it has tiny holes. Sauce has water in it. Water moves from wet things to dry things through a process called diffusion. The bread soaks up the water from the sauce. This is why the bread gets soggy.<br/><br/><strong>Hypothesis:</strong> If I put sauce on bread and wait, then the bread will get soggy because the water in the sauce soaks into the bread.<br/><br/><strong>Experiment:</strong> Take 3 slices of the same bread. Slice 1 gets no sauce (control). Slice 2 gets 1 tablespoon of sauce. Slice 3 gets 3 tablespoons of sauce. Wait 10 minutes. Measure how soggy each slice is by pressing a paper towel on it and seeing how much water comes off.<br/><br/><strong>Data:</strong> Slice 1 — paper towel dry. Slice 2 — small wet spot. Slice 3 — big wet spot, bread falling apart.<br/><br/><strong>Conclusion:</strong> The hypothesis was supported. More sauce = more sogginess. The water in the sauce soaks into the bread.<br/><br/><strong>Real-world fix:</strong> Put a layer of something between the sauce and the bread — like lettuce, cheese, or butter. Butter is fat and fat blocks water. This is why people butter their bread before making a sandwich.</bq>"
+    + "<h2>Vocabulary Review</h2>"
+    + "<table><tr><th>Term</th><th>Definition</th></tr>"
+    + "<tr><td>Science</td><td>The systematic study of the natural world</td></tr>"
+    + "<tr><td>Hypothesis</td><td>A testable prediction based on observations</td></tr>"
+    + "<tr><td>Independent Variable</td><td>The variable the scientist changes on purpose</td></tr>"
+    + "<tr><td>Dependent Variable</td><td>The variable that is measured</td></tr>"
+    + "<tr><td>Control Group</td><td>The group that receives no experimental treatment</td></tr>"
+    + "<tr><td>Constant</td><td>A factor that stays the same in an experiment</td></tr>"
+    + "<tr><td>Data</td><td>Information collected during an experiment</td></tr>"
+    + "<tr><td>Qualitative Data</td><td>Descriptive observations using the senses</td></tr>"
+    + "<tr><td>Quantitative Data</td><td>Numerical measurements</td></tr>"
+    + "<tr><td>Inference</td><td>A logical conclusion based on evidence</td></tr>"
+    + "<tr><td>Observation</td><td>Information gathered using the five senses</td></tr>"
+    + "<tr><td>Theory</td><td>A well-tested explanation supported by much evidence</td></tr>"
+    + "<tr><td>Law</td><td>A rule describing a pattern in nature</td></tr>"
+    + "<tr><td>Model</td><td>A representation used to explain something</td></tr>"
+    + "</table>"
+    + "<p style='margin-top:26px;font-style:italic;color:var(--mut);font-size:13px'>End of Chapter 1 notes. Additional reference material available via the button in the corner.</p>";
 
-      <h2>Variables and Controls</h2>
-      <p>Every good experiment has three types of variables:</p>
-      <ul>
-        <li><strong>Independent Variable (IV)</strong> — The one thing you change on purpose.</li>
-        <li><strong>Dependent Variable (DV)</strong> — The thing you measure; it depends on the IV.</li>
-        <li><strong>Control Variables (Constants)</strong> — Everything that stays the same.</li>
-      </ul>
-      <p><strong>Control Group:</strong> The group that does not receive the experimental treatment. Used for comparison. Example: A plant given no fertilizer while others get fertilizer.</p>
-      <p><strong>Experimental Group:</strong> The group that receives the treatment.</p>
+  var root = document.getElementById("app-root");
+  var style = document.createElement("style");
+  style.textContent = CSS;
+  document.head.appendChild(style);
 
-      <h2>Data and Graphing</h2>
-      <p>Data comes in two flavors:</p>
-      <ul>
-        <li><strong>Qualitative Data</strong> — Descriptions. Uses your senses. ("The liquid turned cloudy.")</li>
-        <li><strong>Quantitative Data</strong> — Numbers. Measurements. ("The liquid reached 45°C.")</li>
-      </ul>
-      <p>Types of graphs:</p>
-      <ul>
-        <li><strong>Bar Graph</strong> — Comparing categories.</li>
-        <li><strong>Line Graph</strong> — Showing change over time.</li>
-        <li><strong>Pie Chart</strong> — Showing parts of a whole.</li>
-      </ul>
-      <p>Rules for graphing: label both axes with units, give the graph a title like <code>The Effect of [IV] on [DV]</code>, use a ruler. Neatness counts.</p>
+  var html = ""
+    + "<div class='wrap'>"
+    + "<div class='head'><div class='hi'>🔬</div><div class='ht'><h1>Science Packet — Chapter 1 Review</h1><div class='m'><span>3rd Period</span><span>Room 221</span><span>Mrs. C</span></div></div><div><button class='bt' id='themeBtn' type='button' title='Toggle theme'>🌙</button></div></div>"
+    + "<div class='pn on' id='panelNotes'><div class='nt'>" + NOTES + "</div></div>"
+    + "<div class='pn' id='panelVault'><div class='srch'><svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><path d='m21 21-4.3-4.3'/></svg><input id='searchInput' type='text' placeholder='Search groups or links…' autocomplete='off' spellcheck='false'/></div><div class='gr' id='grid'></div><div class='nr' id='noResults'>no results. try a different search.</div><div class='fn'>End of packet. Do not lose this document — replacements will not be issued.</div></div>"
+    + "</div>"
+    + "<div class='to' id='toast'>copied</div>"
+    + "<div class='sb' id='secretBtn' title='.'>😏</div>";
 
-      <h2>Example — Why Bread Gets Soggy</h2>
-      <blockquote>
-        <strong>Question:</strong> Why does my sandwich bread get soggy when I put sauce on it?<br/><br/>
-        <strong>Background research:</strong> Bread is porous — it has tiny holes. Sauce has water in it. Water moves from wet things to dry things through a process called diffusion. The bread soaks up the water from the sauce. This is why the bread gets soggy.<br/><br/>
-        <strong>Hypothesis:</strong> If I put sauce on bread and wait, then the bread will get soggy because the water in the sauce soaks into the bread.<br/><br/>
-        <strong>Experiment:</strong> Take 3 slices of the same bread. Slice 1 gets no sauce (control). Slice 2 gets 1 tablespoon of sauce. Slice 3 gets 3 tablespoons of sauce. Wait 10 minutes. Measure how soggy each slice is by pressing a paper towel on it and seeing how much water comes off.<br/><br/>
-        <strong>Data:</strong> Slice 1 — paper towel dry. Slice 2 — small wet spot. Slice 3 — big wet spot, bread falling apart.<br/><br/>
-        <strong>Conclusion:</strong> The hypothesis was supported. More sauce = more sogginess. The water in the sauce soaks into the bread.<br/><br/>
-        <strong>Real-world fix:</strong> Put a layer of something between the sauce and the bread — like lettuce, cheese, or butter. Butter is fat and fat blocks water. This is why people butter their bread before making a sandwich.
-      </blockquote>
+  root.innerHTML = html;
 
-      <h2>Vocabulary Review</h2>
-      <table>
-        <tr><th>Term</th><th>Definition</th></tr>
-        <tr><td>Science</td><td>The systematic study of the natural world</td></tr>
-        <tr><td>Hypothesis</td><td>A testable prediction based on observations</td></tr>
-        <tr><td>Independent Variable</td><td>The variable the scientist changes on purpose</td></tr>
-        <tr><td>Dependent Variable</td><td>The variable that is measured</td></tr>
-        <tr><td>Control Group</td><td>The group that receives no experimental treatment</td></tr>
-        <tr><td>Constant</td><td>A factor that stays the same in an experiment</td></tr>
-        <tr><td>Data</td><td>Information collected during an experiment</td></tr>
-        <tr><td>Qualitative Data</td><td>Descriptive observations using the senses</td></tr>
-        <tr><td>Quantitative Data</td><td>Numerical measurements</td></tr>
-        <tr><td>Inference</td><td>A logical conclusion based on evidence</td></tr>
-        <tr><td>Observation</td><td>Information gathered using the five senses</td></tr>
-        <tr><td>Theory</td><td>A well-tested explanation supported by much evidence</td></tr>
-        <tr><td>Law</td><td>A rule describing a pattern in nature</td></tr>
-        <tr><td>Model</td><td>A representation used to explain something</td></tr>
-      </table>
+  var grid = document.getElementById("grid");
+  var noResults = document.getElementById("noResults");
+  var searchInput = document.getElementById("searchInput");
+  var toast = document.getElementById("toast");
+  var panelNotes = document.getElementById("panelNotes");
+  var panelVault = document.getElementById("panelVault");
+  var secretBtn = document.getElementById("secretBtn");
+  var themeBtn = document.getElementById("themeBtn");
+  var vaultOpen = false;
 
-      <p style="margin-top:26px;font-style:italic;color:var(--text-mute);font-size:13px">End of Chapter 1 notes. Additional reference material available via the button in the corner.</p>
-    </div>
-  </div>
-
-  <div class="panel" id="panelVault">
-    <div class="note"><b>Reference Library</b> — organized by topic. Click a group to expand or collapse. Use search to filter. Links open in a new tab.</div>
-
-    <div class="search-wrap">
-      <div class="search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input id="searchInput" type="text" placeholder="Search groups or links…" autocomplete="off" spellcheck="false"/>
-        <span class="kbd">/</span>
-      </div>
-    </div>
-
-    <div class="grid" id="grid"></div>
-    <div class="no-results" id="noResults">no results. try a different search.</div>
-
-    <div class="foot-note">End of packet. Do not lose this document — replacements will not be issued.</div>
-  </div>
-
-</div>
-
-<div class="toast" id="toast">copied</div>
-
-<div id="secretBtn" class="secret-btn" title=".">😏</div>
-
-<script type="text/javascript"><![CDATA[
-var DATA = [
-  { emoji: "⚡", name: "KITE", links: ["https://f5fy.z13.web.core.windows.net","https://ofiq.z19.web.core.windows.net","https://qb3p.z9.web.core.windows.net","https://tq7o.z4.web.core.windows.net"]},
-  { emoji: "☀️", name: "SOLARA", links: ["https://solara.tokeslaszlo.ro","https://solara.survet.cl","https://solara.explosionlearning.org","https://solara.lasersoft.net.au","https://solara.actadigital.com.ar"]},
-  { emoji: "🌙", name: "LUNAR", links: ["https://lunar.explosionlearning.org","https://lunar.actadigital.com.ar","https://saugatrlunar-uicvr.xcel.ch"]},
-  { emoji: "🌌", name: "AURORA", links: ["https://aurora.tokeslaszlo.ro","https://aurora.explosionlearning.org","https://aurora.actadigital.com.ar"]},
-  { emoji: "✨", name: "GLIM", links: ["https://sgt7.s3.amazonaws.com/index.html","https://s3.us-east-1.amazonaws.com/axk4/index.html","https://s3.amazonaws.com/sz1n/index.html","https://axk4.s3.amazonaws.com/index.html"]},
-  { emoji: "💭", name: "DAYDREAMX", links: ["https://h7ww.s3.amazonaws.com/index.html","https://h7ww.s3.us-east-1.amazonaws.com/index.html","https://s3.amazonaws.com/h7ww/index.html"]},
-  { emoji: "🚀", name: "INTERSTELLAR", links: ["https://gnd9.z13.web.core.windows.net","https://zzqf.z19.web.core.windows.net","https://agek.z5.web.core.windows.net","https://fyeq.z1.web.core.windows.net","https://kpkz.z21.web.core.windows.net"]},
-  { emoji: "🎭", name: "CINERA", links: ["https://cinera.explosionlearning.org","https://cinera.actadigital.com.ar"]},
-  { emoji: "🔥", name: "FLARE", links: ["https://note.adis.web.id","https://max.brusin.net","https://lab.labgarreguevara.com.ar","https://study.innovacioneseducativas.com.mx","https://global.mrgshrimp.com","https://map.wayhomeapp.org"]},
-  { emoji: "🌆", name: "UTOPIA", links: ["https://utopia.tokeslaszlo.ro","https://utopia.explosionlearning.org","https://utopia.actadigital.com.ar"]},
-  { emoji: "🎬", name: "TRIPLE T HD", links: ["https://triplethd.explosionlearning.org","https://triplethd.lasersoft.net.au","https://triplethd.actadigital.com.ar"]},
-  { emoji: "🛰️", name: "SPACE", links: ["https://space.explosionlearning.org","https://space.actadigital.com.ar"]},
-  { emoji: "🧭", name: "VOYA", links: ["https://voya.tokeslaszlo.ro","https://voya.explosionlearning.org","https://voya.actadigital.com.ar"]},
-  { emoji: "🍓", name: "STROBERRI", links: ["https://stroberri.explosionlearning.org","https://stroberri.actadigital.com.ar"]},
-  { emoji: "📚", name: "STUDY HUB", links: ["https://studyhub.tokeslaszlo.ro","https://studyhub.explosionlearning.org"]},
-  { emoji: "🐤", name: "TUNG TUNG", links: ["https://tungtung.survet.cl","https://tungtung.nikeinvest.ro","https://tungtung.cpmecatronica.cl","https://tungtung.colegiosanmarcel.cl","https://jhkf.z21.web.core.windows.net","https://gy5k.z22.web.core.windows.net","https://saugatrbaseball.7geo7.ru","https://saugatrtungtung-agylt.bisovea.ru","https://math268863-saugatr.ololow.com","https://saugatrtungtung-iouku.soynutrimeraki.cl"]},
-  { emoji: "🏹", name: "ASTRA", links: ["https://sixseven.chanka.com","https://astra-bull.noble-house.tk","https://astra-education.top","https://animals.solidaritysafaris.com","https://bull.solidaritysafaris.com","https://saugatrastra-cacw.creative-words.se","https://info.veranda.co.id","https://tra.ipdz.com","https://gilead.org.il"]},
-  { emoji: "🍀", name: "FERN", links: ["https://family267740-saugatr.biec.com.np","https://saugatrfern-pzamu.biec.com.np","https://education265213-saugatr.codex-bot.com","https://saugatrgreat.hyperlum.nl","https://subsaugatr.pirazymatma.pl"]},
-  { emoji: "🦆", name: "DUCK SET", links: ["https://unpkg.com/classroomduck@1.0.0/index.html","https://unpkg.com/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck@1.0.0/index.html","https://esm.sh/classroomduck@1.0.0/index.svg","https://esm.sh/classroomduck/index.html","https://esm.sh/classroomduck/index.svg","https://esm.sh/jacorn-7fz3@1.0.0/index.html","https://unpkg.com/jacorn-7fz3@1.0.0/index.html","https://esm.sh/quietcorn@1.0.1/index.html","https://esm.sh/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.svg","https://unpkg.com/quietcorn@1.0.1/index.html","https://esm.sh/classroomduck@1.0.65/index.html","https://storage.googleapis.com/mathlessons/duckmath.svg","https://cdn.jsdelivr.net/gh/freezenovasrl/cdn/duckmath.svg"]},
-  { emoji: "📦", name: "S3 / AMAZON", links: ["https://leahh-5a8u.s3.amazonaws.com/index.html","https://lmeyo-cok1.s3.amazonaws.com/index.html","https://ralsei.s3.amazonaws.com/index.html","https://lmeyo.s3.amazonaws.com/index.html","https://id5y.s3.amazonaws.com/index.html","https://fyr3.s3.amazonaws.com/index.html","https://axk4.s3.amazonaws.com/index.html","https://h7ww.s3.amazonaws.com/index.html"]},
-  { emoji: "🎨", name: "EXTRAS", links: ["https://gelaoshi.global.ssl.fastly.net","https://fstudentsareinventors.s3.amazonaws.com/index.html","https://glwithfinals.s3.amazonaws.com/index.html","https://celestialdevsalot.github.io/celestialisbest","https://mathhomeworkhelperthingy.free.nf/?i=2","https://schoolbook1.radioimpactfm.ro","https://cdn.jsdelivr.net/gh/reeyuki/YukiOsSingleHtml@main/yukios.svg","https://cdn.jsdelivr.net/gh/drewalow860-ctrl/PeteZahStaticDone@959d81f/new.svg","https://cdn.jsdelivr.net/gh/cherriunblocked/svg/index.svg","https://cdn.jsdelivr.net/gh/coinbaselarper/svg@latest/logo.svg","https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg","https://raw.githack.com/un-pkg/npm/main/bundle-min.svg","https://aw3k.s3.us-east-2.amazonaws.com/index.html","https://mathvc.s3.amazonaws.com/index.html","https://lsrelay-a.s3.amazonaws.com/index.html","https://s3.amazonaws.com/elliotslinks-tnjavxyp/homework65988/index.html"]},
-  { emoji: "🌐", name: "MISC HOSTS", links: ["https://mathtechmrk61.parcomunica.com","https://edumathschooledu.parcomunica.com","https://rkmathtech3.parcomunica.com","https://itsforubaks.parcomunica.com","https://techmathsch20.art-motel.com","https://okokokitsok.art-motel.com","https://mathschool8tech.art-motel.com","https://vcsastudying.lervs.ro","https://studyhubv2.litescripts.com","https://vcsastudying.meridiano.com.br","https://cipher.radioimpactfm.ro","https://studyvcsa.savenewport.com","https://rammer.nana.euforiacs.com","https://rammer.nana.dataon.cl","https://atharvseduhub.networkguru.com","https://scienceforuuu.parcomunica.com","https://mkmkmath.parcomunica.com","https://englishmath33.parcomunica.com","https://mathmathsc.art-motel.com","https://mathhh.art-motel.com","https://triplet.expertdiagnoza.ro","https://xylora.expertdiagnoza.ro","https://ck.gen1.srivaishnavam.org.au","https://ck.contentkeeper1.ekocleaner.ro","https://ck.contentkeeper2.forever-20.com","https://content.keeper2.savenewport.com","https://vinemanmath.srivaishnavam.org.au","https://mathbabysitting.srivaishnavam.org.au","https://babysittingmath.srivaishnavam.org.au","https://keyboardmath27.forever-20.com","https://backtobank8.forever-20.com","https://vinemanmath28.srivaishnavam.org.au","https://likethisaubmemrk.srivaishnavam.org.au","https://primathsc27.radioimpactfm.ro","https://25plesmath8.forever-20.com","https://keyboardmath20.expertdiagnoza.ro"]},
-  { emoji: "🧪", name: "B-CDN TEST SET", links: ["https://james-gonzalez-21.b-cdn.net","https://daniel-sanchez-82.b-cdn.net","https://jacob-thomas-19.b-cdn.net","https://lucas-jones-14.b-cdn.net","https://harper-hernandez-10.b-cdn.net","https://evelyn-davis-19.b-cdn.net","https://ethan-hernandez-14.b-cdn.net","https://sofia-gonzalez-92.b-cdn.net","https://james-brown-87.b-cdn.net","https://james-gonzalez-20.b-cdn.net","https://storage.googleapis.com/logan223/duckmath.html"]},
-  { emoji: "🔗", name: "JSDELIVR SVG DUMP", links: ["https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6fd2c561e28a4b6ca92ceb469dfdd36f863b71fe/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@67e41572172f300e84665ac72832d7761526fed9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0ecd95c04ba98451334a183dfd3a1250072a13/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0d6662c28b6510aebc5a2e2b126656bfd028b2cc/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@00d9539b57bfb855ae8e7ffa759c7f31d3a3b90f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@c3c51b51dad2213a92ed044fa996b28d8b62aef9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2ed5e58213307b56b1bbfa3d4f263edfb5c13c2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@b61d31d3d29bbedca587dd88594edb1a8630826d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e4fc8a1b4ab060e6e0bbf4429a8787494e5ef9cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7ab7bf52f7cc33f34472278961b720502a493105/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0046466b902a2bb123e3934f1486249c8cc893d2/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@f64976fc6cf51579c06b0a5ccd24afc23100f60d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cf6ae96ba8cd3dcbdd9e48ff20c08d20aeb0043e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@720e070ddcbb05e6afe910a928f1502f25539084/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@daae934ac1ad0c68c881aef5a106b45368a2f0cf/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@7114716e89c599b7108aa97593542bcbcbbdd34e/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@cc0d4c25fd9fdeac75ad0c8cea0b7add8449518c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@6121c06c9d018fcc1607bd5dfa6afbcb7a5c00a3/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@39f58bd818ec12af5246b0184e7fbb63e08fea6b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@44ddf9b09055522f11d1f693d94ae2f923bb6f8b/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@929f0279d8e394b07430540eb38b5f236d6d9041/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e45b7bdb1d971b8d24f5afbf1a94d2e62398579f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@ec6c24715f7f6cee52af17981a079389096eefe4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a12ce72097b0510a6cd6b4d3aa33b3000fc2f891/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@bd400eeece2a92d0f253951a2a671b642bd1b6a4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@11d9ae8d23d34a395a801f7fe28d65a83f93e75f/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e15cb9f2b041ae068cfdf1ac183161e48c94dff4/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@3e816503eda60576ab69604a91567f4ee844416c/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@a2d5eb7852ee930b31b341c9240d7b2d32e685d7/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@09e32815e3c1407f021c1c0e85dda270cd30c9f9/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@0a4d82edf6cb3f7f931e2e13288bb6773a518f6d/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@9b2ad5e65760ffd8b816b796cec347ada4814486/index.svg","https://cdn.jsdelivr.net/gh/hameslabybu-web/svg@e5ea252bd574caeb70fc5d227fa3a2e3fb200784/index.svg"]},
-  { emoji: "🧩", name: "GOOGLE SCRIPT + P5JS", links: ["https://script.google.com/macros/s/AKfycbxnbwF6Gs2_XnVzz_mBOInAp54aR2a7LLGyHn2AvEp-k765vSdQl5YnDfW6QT6zVU68/exec","https://script.google.com/macros/s/AKfycbxmo-l8H5tXzYfuh8wGzjiVkVOqQZoXDy-mbfMAlxyw-i2Wxh5VgjKGFh8YaEZW-CgCyg/exec","https://assets.editor.p5js.org/69f34707e1b8c4295655b517/6e528b37-2c24-457c-b1de-8b0964eacd2f.svg"]}
-];
-
-var grid = document.getElementById('grid');
-var noResults = document.getElementById('noResults');
-var searchInput = document.getElementById('searchInput');
-var toast = document.getElementById('toast');
-var panelNotes = document.getElementById('panelNotes');
-var panelVault = document.getElementById('panelVault');
-var secretBtn = document.getElementById('secretBtn');
-var themeBtn = document.getElementById('themeBtn');
-var vaultOpen = false;
-
-function esc(s){
-  return String(s).replace(/[&<>"']/g,function(c){
-    return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
-  });
-}
-
-function render(){
-  if(!grid)return;
-  grid.innerHTML='';
-  DATA.forEach(function(g){
-    var card=document.createElement('div');
-    card.className='group';
-    card.dataset.name=g.name.toLowerCase();
-    card.dataset.links=g.links.join(' ').toLowerCase();
-    var html='<div class="group-head"><div class="group-emoji">'+g.emoji+'</div><div class="group-name">'+esc(g.name)+'</div><div class="group-count">'+g.links.length+'</div><div class="group-chevron">▼</div></div><div class="group-body">';
-    g.links.forEach(function(l){
-      html+='<a class="link" href="'+esc(l)+'" target="_blank" rel="noopener noreferrer" data-url="'+esc(l)+'"><span class="link-text">'+esc(l.replace(/^https?:\/\//,''))+'</span><button class="link-copy" title="Copy" type="button">📋</button></a>';
+  function esc(s){
+    return String(s).replace(/[&<>"']/g,function(c){
+      return({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c];
     });
-    html+='</div>';
-    card.innerHTML=html;
-    var head=card.querySelector('.group-head');
-    head.onclick=function(e){
-      if(e.target && e.target.closest && e.target.closest('.link-copy'))return;
-      card.classList.toggle('collapsed');
-    };
-    grid.appendChild(card);
-  });
-
-  var copies=document.querySelectorAll('.link-copy');
-  for(var i=0;i<copies.length;i++){
-    (function(btn){
-      btn.onclick=function(e){
-        e.preventDefault();e.stopPropagation();
-        var url=btn.closest('.link').dataset.url;
-        try{
-          if(navigator.clipboard && navigator.clipboard.writeText){
-            navigator.clipboard.writeText(url).then(function(){
-              btn.classList.add('copied');btn.textContent='✓';showToast('copied');
-              setTimeout(function(){btn.classList.remove('copied');btn.textContent='📋'},1200);
-            }).catch(function(){fallbackCopy(url,btn)});
-          }else{fallbackCopy(url,btn)}
-        }catch(err){fallbackCopy(url,btn)}
+  }
+  function showToast(m){
+    toast.textContent = m;
+    toast.classList.add("on");
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(function(){ toast.classList.remove("on"); },1700);
+  }
+  function fallbackCopy(url, btn){
+    var ta = document.createElement("textarea");
+    ta.value = url;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); showToast("copied"); } catch(e){}
+    document.body.removeChild(ta);
+    if(btn){ btn.classList.add("ok"); btn.textContent = "✓";
+      setTimeout(function(){ btn.classList.remove("ok"); btn.textContent = "📋"; },1200); }
+  }
+  function render(){
+    grid.innerHTML = "";
+    DATA.forEach(function(g){
+      var card = document.createElement("div");
+      card.className = "gp";
+      card.dataset.n = g.n.toLowerCase();
+      card.dataset.l = g.l.join(" ").toLowerCase();
+      var h = "<div class='gh'><div class='ge'>"+g.e+"</div><div class='gn'>"+esc(g.n)+"</div><div class='gc'>"+g.l.length+"</div><div class='gv'>▼</div></div><div class='gb'>";
+      g.l.forEach(function(u){
+        h += "<a class='lk' href='"+esc(u)+"' target='_blank' rel='noopener noreferrer' data-u='"+esc(u)+"'><span class='lt'>"+esc(u.replace(/^https?:\/\//,""))+"</span><button class='lc' title='Copy' type='button'>📋</button></a>";
+      });
+      h += "</div>";
+      card.innerHTML = h;
+      var head = card.querySelector(".gh");
+      head.onclick = function(e){
+        if(e.target && e.target.closest && e.target.closest(".lc")) return;
+        card.classList.toggle("col");
       };
-    })(copies[i]);
+      var cps = card.querySelectorAll(".lc");
+      for(var i=0;i<cps.length;i++){
+        (function(btn){
+          btn.onclick = function(e){
+            e.preventDefault(); e.stopPropagation();
+            var url = btn.closest(".lk").dataset.u;
+            try {
+              if(navigator.clipboard && navigator.clipboard.writeText){
+                navigator.clipboard.writeText(url).then(function(){
+                  btn.classList.add("ok"); btn.textContent = "✓"; showToast("copied");
+                  setTimeout(function(){ btn.classList.remove("ok"); btn.textContent = "📋"; },1200);
+                }).catch(function(){ fallbackCopy(url, btn); });
+              } else { fallbackCopy(url, btn); }
+            } catch(err){ fallbackCopy(url, btn); }
+          };
+        })(cps[i]);
+      }
+      grid.appendChild(card);
+    });
   }
-}
-
-function fallbackCopy(url,btn){
-  var ta=document.createElement('textarea');ta.value=url;
-  ta.style.position='fixed';ta.style.opacity='0';
-  document.body.appendChild(ta);ta.select();
-  try{document.execCommand('copy');showToast('copied')}catch(e){}
-  document.body.removeChild(ta);
-  if(btn){btn.classList.add('copied');btn.textContent='✓';
-    setTimeout(function(){btn.classList.remove('copied');btn.textContent='📋'},1200);}
-}
-
-function showToast(msg){
-  if(!toast)return;
-  toast.textContent=msg;toast.classList.add('show');
-  clearTimeout(showToast._t);
-  showToast._t=setTimeout(function(){toast.classList.remove('show')},1700);
-}
-
-function filter(q){
-  q=(q||'').trim().toLowerCase();
-  var visible=false;
-  var cards=document.querySelectorAll('.group');
-  for(var i=0;i<cards.length;i++){
-    var c=cards[i];
-    var m=!q||c.dataset.name.indexOf(q)!==-1||c.dataset.links.indexOf(q)!==-1;
-    c.style.display=m?'':'none';
-    if(m)visible=true;
-  }
-  if(noResults)noResults.classList.toggle('show',!visible);
-}
-
-function switchPanel(openVault){
-  vaultOpen=openVault;
-  if(openVault){
-    panelNotes.classList.remove('active');
-    panelVault.classList.add('active');
-    if(secretBtn)secretBtn.classList.add('active');
-    render();
-    if(searchInput){searchInput.value='';filter('');}
-    window.scrollTo(0,0);
-  }else{
-    panelVault.classList.remove('active');
-    panelNotes.classList.add('active');
-    if(secretBtn)secretBtn.classList.remove('active');
-    window.scrollTo(0,0);
-  }
-}
-
-if(searchInput){
-  searchInput.addEventListener('input',function(e){filter(e.target.value)});
-  searchInput.addEventListener('keyup',function(e){filter(e.target.value)});
-}
-document.addEventListener('keydown',function(e){
-  if(e.key==='/'&&document.activeElement!==searchInput&&searchInput){
-    e.preventDefault();searchInput.focus();searchInput.select();
-  }
-});
-
-/* SECRET BUTTON — touchstart WITHOUT preventDefault = single tap, no hold */
-function secretClick(e){
-  if(e){e.stopPropagation();}
-  switchPanel(!vaultOpen);
-}
-if(secretBtn){
-  secretBtn.addEventListener('touchstart',secretClick,{passive:true});
-  secretBtn.addEventListener('click',secretClick,false);
-  secretBtn.onclick=secretClick;
-}
-
-/* theme */
-var saved='dark';
-try{saved=localStorage.getItem('theme')||'dark';}catch(e){}
-document.documentElement.setAttribute('data-theme',saved);
-if(themeBtn){
-  themeBtn.textContent=saved==='dark'?'🌙':'☀️';
-  function toggleTheme(e){
-    if(e){e.stopPropagation();}
-    var cur=document.documentElement.getAttribute('data-theme');
-    var next=cur==='dark'?'light':'dark';
-    document.documentElement.setAttribute('data-theme',next);
-    try{localStorage.setItem('theme',next);}catch(err){}
-    themeBtn.textContent=next==='dark'?'🌙':'☀️';
-  }
-  themeBtn.addEventListener('touchstart',toggleTheme,{passive:true});
-  themeBtn.addEventListener('click',toggleTheme,false);
-  themeBtn.onclick=toggleTheme;
-}
-
-/* panic */
-var lastEsc=0;
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){
-    var now=Date.now();
-    if(now-lastEsc<500){
-      try{window.location.replace('https://classroom.google.com/');}catch(err){}
+  function filter(q){
+    q = (q||"").trim().toLowerCase();
+    var visible = false;
+    var cards = document.querySelectorAll(".gp");
+    for(var i=0;i<cards.length;i++){
+      var c = cards[i];
+      var m = !q || c.dataset.n.indexOf(q) !== -1 || c.dataset.l.indexOf(q) !== -1;
+      c.style.display = m ? "" : "none";
+      if(m) visible = true;
     }
-    lastEsc=now;
+    if(noResults) noResults.classList.toggle("on", !visible);
   }
-});
-
-render();
+  function switchPanel(open){
+    vaultOpen = open;
+    if(open){
+      panelNotes.classList.remove("on");
+      panelVault.classList.add("on");
+      if(secretBtn) secretBtn.classList.add("on");
+      render();
+      if(searchInput){ searchInput.value = ""; filter(""); }
+    } else {
+      panelVault.classList.remove("on");
+      panelNotes.classList.add("on");
+      if(secretBtn) secretBtn.classList.remove("on");
+    }
+    window.scrollTo(0,0);
+  }
+  if(searchInput){
+    searchInput.addEventListener("input", function(e){ filter(e.target.value); });
+  }
+  document.addEventListener("keydown", function(e){
+    if(e.key === "/" && document.activeElement !== searchInput && searchInput){
+      e.preventDefault(); searchInput.focus(); searchInput.select();
+    }
+  });
+  function secretClick(e){
+    if(e) e.stopPropagation();
+    switchPanel(!vaultOpen);
+  }
+  if(secretBtn){
+    secretBtn.addEventListener("touchstart", secretClick, {passive:true});
+    secretBtn.addEventListener("click", secretClick, false);
+    secretBtn.onclick = secretClick;
+  }
+  var saved = "dark";
+  try { saved = localStorage.getItem("theme") || "dark"; } catch(e){}
+  document.documentElement.setAttribute("data-th", saved);
+  if(themeBtn){
+    themeBtn.textContent = saved === "dark" ? "🌙" : "☀️";
+    function toggleTheme(e){
+      if(e) e.stopPropagation();
+      var cur = document.documentElement.getAttribute("data-th");
+      var nxt = cur === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-th", nxt);
+      try { localStorage.setItem("theme", nxt); } catch(err){}
+      themeBtn.textContent = nxt === "dark" ? "🌙" : "☀️";
+    }
+    themeBtn.addEventListener("touchstart", toggleTheme, {passive:true});
+    themeBtn.addEventListener("click", toggleTheme, false);
+    themeBtn.onclick = toggleTheme;
+  }
+  var lastEsc = 0;
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      var now = Date.now();
+      if(now - lastEsc < 500){
+        try { window.location.replace("https://classroom.google.com/"); } catch(err){}
+      }
+      lastEsc = now;
+    }
+  });
+  render();
+})();
 ]]></script>
-
-</div>
+</body>
+</html>
 </foreignObject>
 </svg>
