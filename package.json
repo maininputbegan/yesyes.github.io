@@ -1,6 +1,6 @@
 {
   "name": "@fjnny/proxy-index",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "study index",
   "main": "index.svg",
   "files": ["index.svg"],
